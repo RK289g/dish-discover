@@ -1,12 +1,18 @@
-import { Button } from "antd";
+import { Carousel } from "antd";
 import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <Button type="primary">Primary Button</Button>
-    </div>
+    <>
+      <div>
+        <Carousel autoplay>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </Carousel>
+      </div>
+    </>
   );
 };
 

@@ -1,0 +1,24 @@
+.header {
+  /* position: fixed; */
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layout-menu {
+  padding-right: 15%;
+  gap: 10%;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 8%;
+}
+
+.item{
+    font-size: 20px;
+}
