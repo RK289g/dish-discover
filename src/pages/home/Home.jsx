@@ -1,18 +1,11 @@
-import { Carousel } from "antd";
-import "./Home.css";
+// import React from 'react';
+import Hero from '../../components/hero/Hero';
 
 const Home = () => {
   return (
-    <>
-      <div>
-        <Carousel autoplay>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </Carousel>
-      </div>
-    </>
+    <div>
+      <Hero/>
+    </div>
   );
 };
 

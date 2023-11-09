@@ -11,6 +11,7 @@ const LayoutWrapper = () => {
           <div className="logo" color="#ffffff">Dish Discover</div>
           <Menu className="layout-menu" theme="dark" color="#ffffff" mode="horizontal" >
             <Menu.Item className="item">Recipes</Menu.Item>
+            <Menu.Item className="item"> Random Recipes</Menu.Item>
             <Menu.Item className="item">Contact Us</Menu.Item>
           </Menu>
         </Header>
