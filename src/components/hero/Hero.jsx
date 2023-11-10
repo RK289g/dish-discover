@@ -35,13 +35,13 @@ const Hero = () => {
         </div>
         <div>
           <img
-            src="https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg"
+            src="https://www.themealdb.com/images/media/meals/sbx7n71587673022.jpg"
             alt=""
           />
         </div>
         <div>
           <img
-            src="https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg"
+            src="https://www.themealdb.com/images/media/meals/sbx7n71587673023.jpg"
             alt=""
           />
         </div>

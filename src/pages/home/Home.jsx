@@ -2,17 +2,14 @@ import { useEffect, useState } from "react";
 import Hero from "../../components/hero/Hero";
 import axios from "axios";
 import "./Home.css";
-import {
-  FieldTimeOutlined,
-  FireFilled,
-  StarFilled,
-  StarOutlined,
-} from "@ant-design/icons";
 import Card from "antd/es/card/Card";
-import { Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
+import { ArrowRightOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [recipeData, setRecipeData] = useState([]);
+  const navigate = useNavigate();
 
   const fetchRecipe = async () => {
     axios
@@ -32,45 +29,49 @@ const Home = () => {
     fetchRecipe();
   }, []);
 
+  const handleClick = (recipeId) => {
+    console.log(recipeId);
+    navigate(`/recipe/${recipeId}`);
+  };
+
   return (
     <div>
       <div>
         <Hero></Hero>
       </div>
-      <Row gutter={20} className="card-wrapper">
+      <Row gutter={20} style={{ margin: "0px" }}>
         {recipeData?.map((recData) => {
           return (
-            <Card className="card" key={recData?.idMeal}>
-              <div className="image-wrapper">
-                <img
-                  className="image"
-                  src={recData?.strMealThumb}
-                  alt="ThumbNail"
-                />
-              </div>
-              <div className="card-text">
-                <h1>{recData?.strMeal}</h1>
-                <div>
-                  <div className="star">
-                    <StarFilled />
-                    <StarFilled />
-                    <StarFilled />
-                    <StarFilled />
-                    <StarOutlined />
-                  </div>
-                  <div className="timer-calory">
-                    <div className="timer">
-                      <FieldTimeOutlined />
-                      <p>45 min</p>
+            <Col key={recData?.idMeal}>
+              <Card className="card">
+                <div className="image-wrapper">
+                  <img
+                    className="image"
+                    src={recData?.strMealThumb}
+                    alt="ThumbNail"
+                  />
+                </div>
+                <div className="card-text">
+                  <h1>{recData?.strMeal}</h1>
+                  <div className="text-btn-wrapper">
+                    <div>
+                      <p>Category: {recData?.strCategory}</p>
+                      <p className="ellipsis">Tags: {recData?.strTags}</p>
                     </div>
-                    <div className="calory">
-                      <FireFilled />
-                      <p>325 Calories</p>
-                    </div>
+                    <Button
+                      type="primary"
+                      size="large"
+                      icon={<ArrowRightOutlined />}
+                      onClick={() => {
+                        handleClick(recData.idMeal);
+                      }}
+                    >
+                      view full recipe
+                    </Button>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </Col>
           );
         })}
       </Row>
