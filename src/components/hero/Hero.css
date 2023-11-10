@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   /* margin-top: 20px; */
-  background-color: lightblue;
+  background-color: #fbd9bf;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -10,10 +10,12 @@
 .container-left {
   align-items: center;
   text-align: center;
-  background-color: cadetblue;
+  background-color: #68d8d6;
   border-radius: 20px;
   padding: 20px;
   width: 33%;
+  box-shadow: 5px solid blue;
+  border: 1px solid blueviolet;
 }
 
 .container-left h2 {
@@ -32,19 +34,21 @@
 }
 
 .container-left .btn {
-    background-color: rgb(207, 170, 170);
-    font-size: 20px;
-    box-shadow: 3px snow;
-    border: none;
-    border-radius: 5px;
-    margin: 3px;
-    padding: 10px;
+  background-color: #72434b;
+  font-size: 20px;
+  box-shadow: 3px snow;
+  border: none;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 10px;
+  color: aliceblue;
 }
 
 .container-left .btn:hover {
-    background-color: yellowgreen;
+  background-color: yellowgreen;
+  color: black;
 }
 
-.container-right img{
-    border-radius: 20px;
+.container-right img {
+  border-radius: 20px;
 }

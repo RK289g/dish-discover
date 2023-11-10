@@ -1,3 +1,71 @@
-.home-wrapper {
-  padding: 30px 100px;
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* column-gap: 30px; */
+  justify-items: center;
+}
+
+.card {
+  margin-top: 40px;
+  width: 526px;
+  /* padding: 3px; */
+  border-radius: 12px;
+  box-shadow: 0px 1px 20px rgb(212, 115, 115);
+  /* overflow: hidden; */
+}
+
+.image-wrapper {
+  overflow: hidden;
+}
+
+.card .image {
+  height: 400px;
+  width: 526px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  object-fit: cover;
+  transition-duration: 1s;
+  /* overflow: hidden; */
+}
+
+.card:hover .image {
+  transform: scale(1.1);
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card .card-text {
+  padding-left: 10px;
+}
+
+.card .card-text h1 {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.star {
+  font-size: 25px;
+  color: green;
+  /* padding-bottom: 20px; */
+}
+
+.timer-calory {
+  display: flex;
+  /* gap: 20px; */
+  column-gap: 20px;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+
+.timer,
+.calory {
+  margin: 0;
+  display: flex;
+  padding: 0px;
+  column-gap: 5px;
+  /* border: 1px solid red; */
+  padding: 0;
 }
