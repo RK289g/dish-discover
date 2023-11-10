@@ -1,13 +1,15 @@
 .card-wrapper {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* column-gap: 30px; */
+  column-gap: 30px; */
   justify-items: center;
+  align-items: center;
 }
 
 .card {
-  margin-top: 40px;
+  margin: 40px;
   width: 526px;
+  /* padding: 20px; */
   /* padding: 3px; */
   border-radius: 12px;
   box-shadow: 0px 1px 20px rgb(212, 115, 115);

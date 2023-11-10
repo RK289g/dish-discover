@@ -1,46 +1,12 @@
 // import { useEffect, useState } from "react";
+import { Carousel } from "antd";
 import "./Hero.css";
 // import axios from "axios";
 
 const Hero = () => {
-  // const [chickenRecipe, setChickenRecipe] = useState("");
-  // const [burgerRecipe, setBurgerRecipe] = useState("");
-
-  // useEffect(() => {
-  //   const fetchChickenRecipe = async () => {
-  //     axios
-  //       .get(
-  //         "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast"
-  //       )
-  //       .then((resp) => {
-  //         const data = resp.data;
-  //         console.log(data.meals[0]);
-  //       })
-  //       .catch((err) => {
-  //         console.error("Error fetching tasks: ", err);
-  //       });
-  //   };
-  //   fetchChickenRecipe();
-  // }, []);
-
-  // useEffect(() => {
-  //   const fetchBurgerRecipe = async () => {
-  //     axios
-  //       .get("https://www.themealdb.com/api/json/v1/1/search.php?s=burger")
-  //       .then((res) => {
-  //         const data = res.data;
-  //         console.log(data.meals[0]);
-  //       })
-  //       .catch((er) => {
-  //         console.error("Error fetching tasks: ", er);
-  //       });
-  //   };
-  //   fetchBurgerRecipe();
-  // }, []);
-
   return (
     <div>
-      <div className="container">
+      {/* <div className="container">
         <div className="conatiner-wrapper">
           <div className="container-left">
             <h2>
@@ -59,7 +25,27 @@ const Hero = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
+      <Carousel autoplay>
+        <div>
+          <img
+            src="https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg"
+            alt=""
+          />
+        </div>
+      </Carousel>
     </div>
   );
 };

@@ -8,6 +8,8 @@ import {
   StarFilled,
   StarOutlined,
 } from "@ant-design/icons";
+import Card from "antd/es/card/Card";
+import { Col, Row } from "antd";
 
 const Home = () => {
   const [recipeData, setRecipeData] = useState([]);
@@ -35,10 +37,10 @@ const Home = () => {
       <div>
         <Hero></Hero>
       </div>
-      <div className="card-wrapper">
+      <Row gutter={20} className="card-wrapper">
         {recipeData?.map((recData) => {
           return (
-            <div className="card" key={recData?.idMeal}>
+            <Card className="card" key={recData?.idMeal}>
               <div className="image-wrapper">
                 <img
                   className="image"
@@ -68,10 +70,10 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
           );
         })}
-      </div>
+      </Row>
     </div>
   );
 };
