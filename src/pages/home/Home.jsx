@@ -11,7 +11,7 @@ const Home = () => {
   const [recipeData, setRecipeData] = useState([]);
   const navigate = useNavigate();
 
-  const fetchRecipe = async () => {
+  const fetchRecipes = async () => {
     axios
       .get("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
       .then((res) => {
@@ -26,7 +26,7 @@ const Home = () => {
       });
   };
   useEffect(() => {
-    fetchRecipe();
+    fetchRecipes();
   }, []);
 
   const handleClick = (recipeId) => {
