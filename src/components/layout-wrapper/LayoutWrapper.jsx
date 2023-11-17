@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./LayoutWrapper.css";
 import { Menu } from "antd";
 import { Header } from "antd/es/layout/layout";
@@ -8,11 +8,20 @@ const LayoutWrapper = () => {
     <>
       <nav>
         <Header className="header">
-          <div className="logo" color="#ffffff">Dish Discover</div>
-          <Menu className="layout-menu" theme="dark" color="#ffffff" mode="horizontal" >
-            <Menu.Item className="item">Recipes</Menu.Item>
-            <Menu.Item className="item"> Random Recipes</Menu.Item>
-            <Menu.Item className="item">Contact Us</Menu.Item>
+          <div className="logo" color="#ffffff">
+            Dish Discover
+          </div>
+          <Menu
+            className="layout-menu"
+            theme="dark"
+            color="#ffffff"
+            mode="horizontal"
+          >
+            <Link className="item">Recipes</Link>
+            <Link to="/RandomRecipe" className="item">
+              Random Recipe
+            </Link>
+            <Link className="item">Contact Us</Link>
           </Menu>
         </Header>
       </nav>

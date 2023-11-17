@@ -1,30 +1,30 @@
-import "./Recipe.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import "./RandomRecipe.css";
 
-const Recipe = () => {
-  const { recipeId } = useParams();
-  const [recipeIdData, setRecipeIdData] = useState([]);
+const randomRecipe = () => {
+  const [recipeData, setRecipeData] = useState();
 
-  const fetchRecipeIdData = async () => {
+  const fetchRandomRecipe = async () => {
     axios
-      .get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + recipeId)
+      .get("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((res) => {
-        setRecipeIdData(res.data.meals);
-        console.log(recipeIdData.meals);
+        setRecipeData(res.data.meals);
       })
       .catch((err) => {
         console.error("Error fetching tasks: ", err);
       });
   };
 
-  useEffect(() => {
-    fetchRecipeIdData();
-  }, []);
+  // useEffect(() => {}, []);
   return (
     <div>
-      {recipeIdData?.map((recData) => {
+      <div className="btn-get-recipe-wrapper">
+        <button className="btn-get-recipe" onClick={() => fetchRandomRecipe()}>
+          Get Random Recipe
+        </button>
+      </div>
+      {recipeData?.map((recData) => {
         return (
           <div className="wrapper" key={recData?.idMeal}>
             <div className="recipe-top">
@@ -140,11 +140,15 @@ const Recipe = () => {
             <div className="YT-div">
               <h3>Youtube</h3>
               <div className="YT-wrapper">
-                <iframe width="1200" height="700" src={recData?.strYoutube}
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
+                <iframe
+                  width="1200"
+                  height="700"
+                  src={recData?.strYoutube}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
               </div>
               <h3>{recData?.strYoutube}</h3>
             </div>
@@ -155,4 +159,4 @@ const Recipe = () => {
   );
 };
 
-export default Recipe;
+export default randomRecipe;

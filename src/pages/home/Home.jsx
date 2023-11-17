@@ -54,20 +54,23 @@ const Home = () => {
                 <div className="card-text">
                   <h1>{recData?.strMeal}</h1>
                   <div className="text-btn-wrapper">
-                    <div>
+                    <div className="tag-div">
                       <p>Category: {recData?.strCategory}</p>
-                      <p className="ellipsis">Tags: {recData?.strTags}</p>
+                      <p>Tags: {recData?.strTags}</p>
                     </div>
-                    <Button
-                      type="primary"
-                      size="large"
-                      icon={<ArrowRightOutlined />}
-                      onClick={() => {
-                        handleClick(recData.idMeal);
-                      }}
-                    >
-                      view full recipe
-                    </Button>
+                    <div className="btn-div">
+                      <Button
+                        className="btn-main"
+                        type="primary"
+                        size="large"
+                        icon={<ArrowRightOutlined />}
+                        onClick={() => {
+                          handleClick(recData.idMeal);
+                        }}
+                      >
+                        view full recipe
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </Card>

@@ -9,7 +9,7 @@
 
 .layout-menu {
   padding-right: 15%;
-  gap: 5px;
+  /* gap: 5px; */
 }
 
 .logo {
@@ -19,6 +19,8 @@
   padding-left: 8%;
 }
 
-.item{
-    font-size: 20px;
+.item {
+  margin-left: 25px;
+  font-size: 20px;
+  color: white;
 }
