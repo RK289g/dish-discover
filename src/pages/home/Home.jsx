@@ -39,6 +39,7 @@ const Home = () => {
       <div>
         <Hero></Hero>
       </div>
+      <h1 className="popular-recipe">Popular Recipe</h1>
       <Row gutter={20} style={{ margin: "0px" }}>
         {recipeData?.map((recData) => {
           return (

@@ -140,11 +140,15 @@ const Recipe = () => {
             <div className="YT-div">
               <h3>Youtube</h3>
               <div className="YT-wrapper">
-                <iframe width="1200" height="700" src={recData?.strYoutube}
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
+                <iframe
+                  width="1200"
+                  height="700"
+                  src={recData?.strYoutube}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
               </div>
               <h3>{recData?.strYoutube}</h3>
             </div>
