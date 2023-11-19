@@ -23,16 +23,18 @@ const Hero = () => {
         <span>Cant think of anything?</span> Try these popular tags
       </p>
       <Flex className="multi-btn" gap="small" wrap="wrap">
-        <Button size="large">
-        Meat
+        <Button className="btn-tags" type="primary" size="large">
+          Meat
         </Button>
-        <Button size="large">
+        <Button className="btn-tags" type="primary" size="large">
           Breakfast
         </Button>
-        <Button size="large">
+        <Button className="btn-tags" type="primary" size="large">
           Sweet
         </Button>
-        <Button size="large">Link Button</Button>
+        <Button className="btn-tags" type="primary" size="large">
+          Seafood
+        </Button>
       </Flex>
     </div>
   );

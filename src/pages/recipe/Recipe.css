@@ -6,7 +6,7 @@
 .wrapper .recipe-top {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 10px;
   /* align-items: center; */
   gap: 30px;
   align-items: center;
@@ -20,6 +20,7 @@
 
 .wrapper .top-text h3 {
   font-size: 40px;
+  color: #124559;
 }
 
 .wrapper .recipe-top .top-text h3 span {
@@ -55,19 +56,15 @@
   border-spacing: 0 15px;
 }
 
-.wrapper .table-div {
-  /* text-align: center; */
-  margin: 1px;
-}
-
-.wrapper .table-div h3 {
+.wrapper .table-div h2 {
   font-size: 50px;
   text-align: center;
+  color: #124559;
 }
 
 .wrapper .table-div table {
   /* border-collapse: collapse; */
-  width: 50%;
+  width: 70%;
   /* margin: 20px auto; */
   font-size: 35px;
 }
@@ -83,25 +80,46 @@
   padding-bottom: 4px;
 }
 
-.wrapper .instruction-div {
+/* .wrapper .instruction-div {
   text-align: center;
-}
+} */
 
 .wrapper .instruction-div h3 {
   font-size: 50px;
+  text-align: center;
+  color: #124559;
 }
 
 .wrapper .instruction-div p {
   font-size: 35px;
-  text-align: center;
+  /* text-align: center; */
   text-wrap: pretty;
+  background-color: lavender;
+  margin: 40px;
+  padding: 15px;
+  border-radius: 20px;
 }
 
-.wrapper .YT-div h3 {
+.wrapper .instruction-div p span {
+  color: green;
+}
+
+.wrapper .YT-wrapper h3 {
   text-align: center;
   font-size: 50px;
+  color: #124559;
+}
+
+.wrapper .YT-wrapper h4 {
+  text-align: center;
+  font-size: 35px;
+  color: green;
 }
 
 .wrapper .YT-wrapper {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this based on your design */
 }

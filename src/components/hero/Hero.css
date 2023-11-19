@@ -46,3 +46,10 @@
 .Hero-wrapper p span {
   font-weight: bold;
 }
+
+.Hero-wrapper .multi-btn .btn-tags {
+  /* background-color: #4361ee;
+  color: #fff0f3; */
+  border: none;
+  /* font-size: 20px; */
+}

@@ -49,114 +49,67 @@ const Recipe = () => {
               </div>
             </div>
             <div className="table-div">
-              <h3>Ingredient</h3>
+              <h2>Ingredients</h2>
+
               <table>
-                <tr>
-                  <td>{recData?.strIngredient1}</td>
-                  <td>{recData?.strMeasure1}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient2}</td>
-                  <td>{recData?.strMeasure2}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient3}</td>
-                  <td>{recData?.strMeasure3}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient4}</td>
-                  <td>{recData?.strMeasure4}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient5}</td>
-                  <td>{recData?.strMeasure5}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient6}</td>
-                  <td>{recData?.strMeasure6}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient7}</td>
-                  <td>{recData?.strMeasure7}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient8}</td>
-                  <td>{recData?.strMeasure8}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient9}</td>
-                  <td>{recData?.strMeasure9}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient10}</td>
-                  <td>{recData?.strMeasure10}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient11}</td>
-                  <td>{recData?.strMeasure11}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient12}</td>
-                  <td>{recData?.strMeasure12}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient13}</td>
-                  <td>{recData?.strMeasure13}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient14}</td>
-                  <td>{recData?.strMeasure14}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient15}</td>
-                  <td>{recData?.strMeasure15}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient16}</td>
-                  <td>{recData?.strMeasure16}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient17}</td>
-                  <td>{recData?.strMeasure17}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient18}</td>
-                  <td>{recData?.strMeasure18}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient19}</td>
-                  <td>{recData?.strMeasure19}</td>
-                </tr>
-                <tr>
-                  <td>{recData?.strIngredient20}</td>
-                  <td>{recData?.strMeasure20}</td>
-                </tr>
+                {[...Array(20)].map((_, index) => {
+                  const ingredientKey = `strIngredient${index + 1}`;
+                  const measureKey = `strMeasure${index + 1}`;
+
+                  // Check if both strIngredient and strMeasure have values
+                  if (recData[ingredientKey]) {
+                    return (
+                      <tr key={index}>
+                        <td>{recData[ingredientKey]}</td>
+                        <td>{recData[measureKey]}</td>
+                      </tr>
+                    );
+                  }
+
+                  return null; // If either strIngredient or strMeasure is null, skip rendering the row
+                })}
               </table>
             </div>
             <div className="instruction-div">
-              <h3>Instruction</h3>
-              <p>{recData?.strInstructions}</p>
+              <h3>Instructions</h3>
+              {/* <p>{recData?.strInstructions}</p> */}
+              {recData?.strInstructions
+                .split("\r\n\r\n")
+                .map((instruction, index) => (
+                  <p key={index}>
+                    <span>Step-{index + 1}: </span>
+                    {instruction}
+                  </p>
+                ))}
             </div>
-            <div className="YT-div">
-              <h3>Youtube</h3>
-              <div className="YT-wrapper">
-                <iframe
-                  width="1200"
-                  height="700"
-                  src={recData?.strYoutube}
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <h3>{recData?.strYoutube}</h3>
+
+            <div className="YT-wrapper">
+              <h3>Watch Video</h3>
+              <iframe
+                width="1200"
+                height="700"
+                src={`https://www.youtube.com/embed/${getYoutubeVideoId(
+                  recData?.strYoutube
+                )}`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+              <h4>Video on {recData?.strMeal}</h4>
             </div>
           </div>
         );
       })}
     </div>
   );
+};
+
+const getYoutubeVideoId = (url) => {
+  const match = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
+  );
+  return match && match[1];
 };
 
 export default Recipe;

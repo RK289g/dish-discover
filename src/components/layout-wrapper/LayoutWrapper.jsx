@@ -17,7 +17,9 @@ const LayoutWrapper = () => {
             color="#ffffff"
             mode="horizontal"
           >
-            <Link className="item">Recipes</Link>
+            <Link to="/Recipes" className="item">
+              Recipes
+            </Link>
             <Link to="/RandomRecipe" className="item">
               Random Recipe
             </Link>
