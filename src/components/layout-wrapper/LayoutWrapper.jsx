@@ -8,9 +8,9 @@ const LayoutWrapper = () => {
     <>
       <nav>
         <Header className="header">
-          <div className="logo" color="#ffffff">
+         <Link to="/" className="logo">
             Dish Discover
-          </div>
+          </Link>
           <Menu
             className="layout-menu"
             theme="dark"

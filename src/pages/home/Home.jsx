@@ -40,24 +40,34 @@ const Home = () => {
         <Hero></Hero>
       </div>
       <h1 className="popular-recipe">Popular Recipe</h1>
-      <Row gutter={20} style={{ margin: "0px" }}>
+      <Row gutter={50} style={{ margin: "0px", padding: "0px 300px" }}>
         {recipeData?.map((recData) => {
           return (
-            <Col key={recData?.idMeal}>
-              <Card className="card">
-                <div className="image-wrapper">
+            <Col span={12} key={recData?.idMeal}>
+              <Card
+                hoverable
+                className="card"
+                cover={
                   <img
                     className="image"
                     src={recData?.strMealThumb}
                     alt="ThumbNail"
                   />
-                </div>
+                }
+              >
+                {/* <div className="image-wrapper">
+                  <img
+                    className="image"
+                    src={recData?.strMealThumb}
+                    alt="ThumbNail"
+                  />
+                </div> */}
                 <div className="card-text">
                   <h1>{recData?.strMeal}</h1>
                   <div className="text-btn-wrapper">
                     <div className="tag-div">
                       <p>Category: {recData?.strCategory}</p>
-                      <p>Tags: {recData?.strTags}</p>
+                      {/* <p>Tags: {recData?.strTags}</p> */}
                     </div>
                     <div className="btn-div">
                       <Button

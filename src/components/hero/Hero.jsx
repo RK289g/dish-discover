@@ -6,7 +6,7 @@ import { Button, Flex, Tooltip } from "antd";
 const Hero = () => {
   return (
     <div className="Hero-wrapper">
-      <h4 className="Hero-header">Explore Over 5000+ Unique Recipes</h4>
+      <h4 className="Hero-header">Explore Over 5000+ <span>Unique Recipes</span></h4>
       <div className="input-div">
         <input
           className="input-class"

@@ -15,7 +15,11 @@
 .Hero-wrapper .Hero-header {
   font-size: 60px;
   text-align: center;
-  color: white;
+  color: #a799a1;
+}
+
+.Hero-wrapper .Hero-header span{
+  color: #ffd60a;
 }
 
 .Hero-wrapper .input-div {
