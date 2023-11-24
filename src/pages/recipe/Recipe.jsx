@@ -28,6 +28,13 @@ const Recipe = () => {
         return (
           <div className="wrapper" key={recData?.idMeal}>
             <div className="recipe-top">
+              <div className="image-wrapper">
+                <img
+                  className="image"
+                  src={recData?.strMealThumb}
+                  alt="ThumbNail"
+                />
+              </div>
               <div className="top-text">
                 <h1>{recData?.strMeal}</h1>
                 <h3>
@@ -39,13 +46,6 @@ const Recipe = () => {
                 <h3>
                   Category: <span>{recData?.strCategory}</span>
                 </h3>
-              </div>
-              <div className="image-wrapper">
-                <img
-                  className="image"
-                  src={recData?.strMealThumb}
-                  alt="ThumbNail"
-                />
               </div>
             </div>
             <div className="table-div">

@@ -1,5 +1,7 @@
 body,html {
   font-family: "Belanosima", sans-serif;
+  margin: 0px;
+  padding: 0px;
 }
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

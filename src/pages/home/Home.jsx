@@ -3,8 +3,7 @@ import Hero from "../../components/hero/Hero";
 import axios from "axios";
 import "./Home.css";
 import Card from "antd/es/card/Card";
-import { Button, Col, Row } from "antd";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -43,34 +42,25 @@ const Home = () => {
       <Row gutter={50} style={{ margin: "0px", padding: "0px 300px" }}>
         {recipeData?.map((recData) => {
           return (
-            <Col span={12} key={recData?.idMeal}>
+            <Col span={8} key={recData?.idMeal}>
               <Card
+                onClick={() => {
+                  handleClick(recData.idMeal);
+                }}
                 hoverable
                 className="card"
-                cover={
-                  <img
-                    className="image"
-                    src={recData?.strMealThumb}
-                    alt="ThumbNail"
-                  />
-                }
               >
-                {/* <div className="image-wrapper">
+                <div>
                   <img
                     className="image"
                     src={recData?.strMealThumb}
                     alt="ThumbNail"
                   />
-                </div> */}
-                <div className="card-text">
-                  <h1>{recData?.strMeal}</h1>
-                  <div className="text-btn-wrapper">
-                    <div className="tag-div">
+                  <div className="card-text">
+                    <h1>{recData?.strMeal}</h1>
+                    <div className="text-btn-wrapper">
                       <p>Category: {recData?.strCategory}</p>
-                      {/* <p>Tags: {recData?.strTags}</p> */}
-                    </div>
-                    <div className="btn-div">
-                      <Button
+                      {/* <Button
                         className="btn-main"
                         type="primary"
                         size="large"
@@ -80,7 +70,7 @@ const Home = () => {
                         }}
                       >
                         view full recipe
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </div>

@@ -1,13 +1,13 @@
 import React from "react";
 import "./Hero.css";
-import { SearchOutlined } from "@ant-design/icons";
-import { Button, Flex, Tooltip } from "antd";
 
 const Hero = () => {
   return (
     <div className="Hero-wrapper">
-      <h4 className="Hero-header">Explore Over 5000+ <span>Unique Recipes</span></h4>
-      <div className="input-div">
+      <h4 className="Hero-header">
+        Discover more than 5000+ <span>Unique Recipes</span>
+      </h4>
+      {/* <div className="input-div">
         <input
           className="input-class"
           type="text"
@@ -18,8 +18,8 @@ const Hero = () => {
             Search
           </Button>
         </Tooltip>
-      </div>
-      <p>
+      </div> */}
+      {/* <p>
         <span>Cant think of anything?</span> Try these popular tags
       </p>
       <Flex className="multi-btn" gap="small" wrap="wrap">
@@ -35,7 +35,7 @@ const Hero = () => {
         <Button className="btn-tags" type="primary" size="large">
           Seafood
         </Button>
-      </Flex>
+      </Flex> */}
     </div>
   );
 };
