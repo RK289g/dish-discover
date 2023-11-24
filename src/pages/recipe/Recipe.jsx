@@ -22,6 +22,7 @@ const Recipe = () => {
   useEffect(() => {
     fetchRecipeIdData();
   }, []);
+
   return (
     <div>
       {recipeIdData?.map((recData) => {

@@ -12,6 +12,7 @@
   padding: 8px;
   border-radius: 12px;
   /* box-shadow: 0px 1px 5px gray; */
+  cursor: pointer;
 }
 
 .btn-get-recipe-wrapper .btn-get-recipe:hover {

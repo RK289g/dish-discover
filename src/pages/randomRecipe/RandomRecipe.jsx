@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./RandomRecipe.css";
 
 const randomRecipe = () => {
@@ -16,7 +16,6 @@ const randomRecipe = () => {
       });
   };
 
-  // useEffect(() => {}, []);
   return (
     <div>
       <div className="btn-get-recipe-wrapper">
