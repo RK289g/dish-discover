@@ -1,4 +1,9 @@
-.top-text {
+.recipes-wrapper {
+  background: #ececec;
+  padding: 10px;
+}
+
+.header-text {
   font-size: 40px;
   color: #124559;
   margin: 0;
@@ -17,6 +22,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  padding: 20px;
 }
 
 .cuisine-container .cuisine-img {
@@ -26,14 +33,18 @@
   cursor: pointer;
 }
 
-.cuisine-container .cuisine-text {
+.cuisine-container .cuisine-title {
   margin: 0;
   padding: 0;
   text-align: center;
   font-weight: 600;
   font-size: 16px;
 }
-.cuisine-container:hover .cuisine-text {
-  border-bottom: 4px solid green;
-  cursor: pointer;
+
+.cuisine-container:hover .cuisine-img {
+  border: 1px solid red;
+}
+
+.cuisine-container:hover .cuisine-title {
+  font-weight: 600;
 }
