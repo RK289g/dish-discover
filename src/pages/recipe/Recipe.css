@@ -1,11 +1,11 @@
-.wrapper {
-  margin-left: 15%;
-  margin-right: 15%;
-}
+/* .wrapper {
+  margin-left: 10%;
+  margin-right: 10%;
+} */
 
 .wrapper .recipe-top {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   margin-top: 10px;
   /* align-items: center; */
   gap: 60px;
@@ -17,6 +17,7 @@
   color: #124559;
   margin-top: 0px;
   padding: 0px;
+  text-align: start;
   /* text-shadow: gray 1px 1px 1px; */
 }
 
@@ -26,6 +27,7 @@
   margin: 0px;
   padding: 0px;
   padding-bottom: 10px;
+  text-align: start;
 }
 
 .wrapper .recipe-top .top-text h3 span {
@@ -58,7 +60,7 @@
 .wrapper .table-div table {
   width: 100%;
   margin: 0px auto;
-  border-collapse: separate;
+  /* border-collapse: separate; */
   border-spacing: 0 15px;
 }
 
@@ -73,7 +75,7 @@
 
 .wrapper .table-div table {
   /* border-collapse: collapse; */
-  width: 60%;
+  width: 45%;
   /* margin: 20px auto; */
   font-size: 25px;
 }
@@ -89,9 +91,13 @@
   padding-bottom: 5px;
 }
 
-/* .wrapper .instruction-div {
+.wrapper .instruction-div {
   text-align: center;
-} */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .wrapper .instruction-div h3 {
   font-size: 40px;
@@ -111,6 +117,7 @@
   padding: 25px;
   line-height: 1.4;
   border-radius: 20px;
+  width: 60%;
 }
 
 .wrapper .instruction-div p span {
