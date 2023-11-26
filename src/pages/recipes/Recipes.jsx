@@ -13,7 +13,7 @@ const Recipes = () => {
 
       <Row>
         {typeData.map((type) => (
-          <Col key={type.id} className="cuisine-column" span={3}>
+          <Col key={type.id} className="cuisine-column" span={2}>
             <div
               className="cuisine-container"
               onClick={() => setTypeName(type.name)}

@@ -5,6 +5,9 @@
 .cuisines-type-wrapper .type-header-text {
   text-align: center;
   font-size: 30px;
-  color: #124559;
   margin-bottom: 30px;
+}
+
+.cuisines-type-wrapper .type-header-text span {
+  color: #124559;
 }

@@ -35,7 +35,7 @@ const CuisinesType = ({ typeName }) => {
 
   return (
     <div className="cuisines-type-wrapper">
-      <h1 className="type-header-text">Cuisines Type: {typeName}</h1>
+      <h1 className="type-header-text">Cuisines Type: <span>{typeName}</span></h1>
 
       <Row gutter={50} style={{ margin: "0px", padding: "0px 300px" }}>
         {cuisineData?.map((recData) => {

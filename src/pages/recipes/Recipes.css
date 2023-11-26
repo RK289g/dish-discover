@@ -1,5 +1,5 @@
 .recipes-wrapper {
-  background: #ececec;
+  /* background: #ececec; */
   padding: 10px;
 }
 
@@ -27,10 +27,10 @@
 }
 
 .cuisine-container .cuisine-img {
-  height: 110px;
+  height: 120px;
   width: 120px;
   border-radius: 50%;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .cuisine-container .cuisine-title {
@@ -39,12 +39,14 @@
   text-align: center;
   font-weight: 600;
   font-size: 16px;
+  border-bottom: 4px solid white;
 }
 
-.cuisine-container:hover .cuisine-img {
+/* .cuisine-container:hover .cuisine-img {
   border: 1px solid red;
-}
+} */
 
 .cuisine-container:hover .cuisine-title {
   font-weight: 600;
+  border-bottom: 4px solid green;
 }
