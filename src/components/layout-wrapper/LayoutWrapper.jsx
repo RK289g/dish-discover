@@ -8,7 +8,7 @@ const LayoutWrapper = () => {
     <>
       <nav>
         <Header className="header">
-         <Link to="/" className="logo">
+          <Link to="/" className="logo">
             Dish Discover
           </Link>
           <Menu
@@ -23,6 +23,7 @@ const LayoutWrapper = () => {
             <Link to="/RandomRecipe" className="item">
               Random Recipe
             </Link>
+            <Link className="item">Articles</Link>
             <Link className="item">Contact Us</Link>
           </Menu>
         </Header>
