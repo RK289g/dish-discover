@@ -1,6 +1,5 @@
 import CuisinesType from "../../components/cuisinesType/CuisinesType";
 import "./Recipes.css";
-import { Col, Row } from "antd";
 import { typeData } from "./typeData";
 import { useState } from "react";
 
@@ -10,10 +9,9 @@ const Recipes = () => {
   return (
     <div className="recipes-wrapper">
       <h1 className="header-text">Cuisines</h1>
-
-      <Row>
+      <div className="cuisine-row">
         {typeData.map((type) => (
-          <Col key={type.id} className="cuisine-column" span={2}>
+          <div key={type.id} className="cuisine-column">
             <div
               className="cuisine-container"
               onClick={() => setTypeName(type.name)}
@@ -21,9 +19,9 @@ const Recipes = () => {
               <img className="cuisine-img" src={type.image} alt={type.name} />
               <p className="cuisine-title">{type.name}</p>
             </div>
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
       <CuisinesType typeName={typeName} />
     </div>
   );

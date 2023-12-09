@@ -1,15 +1,15 @@
-import imgAmerican from "../../assets/cusine-images/american.jpg";
-import imgBritish from "../../assets/cusine-images/british.jpg";
-import imgCanadian from "../../assets/cusine-images/canada.jpg";
-import imgChina from "../../assets/cusine-images/china.jpg";
-import imgTurkish from "../../assets/cusine-images/turkish.jpg";
-import imgItalian from "../../assets/cusine-images/Italian.jpg";
-import imgEgyptian from "../../assets/cusine-images/Egyptian.jpg";
-import imgFrench from "../../assets/cusine-images/french.jpg";
-import imgIndian from "../../assets/cusine-images/indian.jpg";
+import imgAmerican from "../../assets/cusine-images/american.webp";
+import imgBritish from "../../assets/cusine-images/british.webp";
+import imgCanadian from "../../assets/cusine-images/canada.webp";
+import imgChina from "../../assets/cusine-images/china.webp";
+import imgTurkish from "../../assets/cusine-images/turkish.webp";
+import imgItalian from "../../assets/cusine-images/Italian.webp";
+import imgEgyptian from "../../assets/cusine-images/Egyptian.webp";
+import imgFrench from "../../assets/cusine-images/french.webp";
+import imgIndian from "../../assets/cusine-images/indian.webp";
 import imgDutch from "../../assets/cusine-images/dutch.jpg";
-import imgMexican from "../../assets/cusine-images/mexican.jpg";
-import imgThai from "../../assets/cusine-images/thai.jpg";
+import imgMexican from "../../assets/cusine-images/mexican.webp";
+import imgThai from "../../assets/cusine-images/thai.webp";
 
 export const typeData = [
   {

@@ -1,0 +1,58 @@
+.footer-wrapper {
+  background-color: #001529;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.footer-wrapper .contact-section-wrapper h4 {
+  font-size: 30px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 15px;
+}
+
+.footer-wrapper .contact-section-wrapper .contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-wrapper .contact-section-wrapper .contact-section a {
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-wrapper .contact-section-wrapper .contact-section a:hover {
+  color: blueviolet;
+}
+
+.footer-wrapper .quick-links h4 {
+  font-size: 30px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 15px;
+}
+.footer-wrapper .quick-links .quick-link-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-wrapper .quick-links .quick-link-wrapper .items {
+  font-size: 25px;
+  outline: none;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-wrapper .quick-links .quick-link-wrapper .items:hover {
+  color: blueviolet;
+}
+
+.footer-wrapper p {
+  color: white;
+  text-align: center;
+}

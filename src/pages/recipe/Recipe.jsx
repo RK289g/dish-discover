@@ -41,9 +41,12 @@ const Recipe = () => {
                 <h3>
                   Origin: <span>{recData?.strArea}</span>
                 </h3>
-                <h3>
-                  Tags: <span>{recData?.strTags}</span>
-                </h3>
+                {recData?.strTags && (
+                  <h3>
+                    Tags: <span>{recData?.strTags}</span>
+                  </h3>
+                )}
+
                 <h3>
                   Category: <span>{recData?.strCategory}</span>
                 </h3>

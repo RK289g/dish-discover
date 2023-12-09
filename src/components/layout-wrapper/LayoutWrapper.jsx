@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import "./LayoutWrapper.css";
 import { Menu } from "antd";
 import { Header } from "antd/es/layout/layout";
+import Footer from "../footer/Footer";
 
 const LayoutWrapper = () => {
   return (
@@ -29,6 +30,7 @@ const LayoutWrapper = () => {
         </Header>
       </nav>
       <Outlet />
+      <Footer />
     </>
   );
 };

@@ -80,6 +80,9 @@
   filter: brightness(30%);
 }
 
-/* .btn-div {
-  position: relative;
-} */
+.btn-see-more {
+  margin-bottom: 20px;
+  font-weight: 800;
+  color: #124559;
+  border: 2px solid blue;
+}
