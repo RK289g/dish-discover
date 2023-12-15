@@ -1,48 +1,68 @@
 .footer-wrapper {
   background-color: #001529;
   display: flex;
-  justify-content: space-evenly;
-  padding: 20px;
-}
-
-.footer-wrapper .contact-section-wrapper h4 {
-  font-size: 30px;
-  color: white;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 15px;
+  flex-direction: column;
+  padding: 40px;
+  gap: 50px;
 }
 
 .footer-wrapper .contact-section-wrapper .contact-section {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 20px;
 }
+
 .footer-wrapper .contact-section-wrapper .contact-section a {
-  font-size: 25px;
-  color: white;
+  padding: 6px;
+  font-size: 22px;
   text-decoration: none;
+  border-radius: 50%;
+}
+
+.logo-linkedin {
+  color: white;
+  background-color: #0077b5;
+}
+
+.logo-github {
+  color: white;
+  background-color: black;
+  font-size: 28px;
+}
+
+.logo-facebook {
+  color: white;
+  background-color: #316ff6;
+}
+
+.logo-insta {
+  background-color: red;
+  color: white;
 }
 
 .footer-wrapper .contact-section-wrapper .contact-section a:hover {
   color: blueviolet;
 }
 
-.footer-wrapper .quick-links h4 {
+/* .footer-wrapper .quick-links h4 {
   font-size: 30px;
   color: white;
   margin: 0;
   padding: 0;
   padding-bottom: 15px;
-}
+  text-align: center;
+} */
+
 .footer-wrapper .quick-links .quick-link-wrapper {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 20px;
+  justify-content: center;
 }
 
 .footer-wrapper .quick-links .quick-link-wrapper .items {
-  font-size: 25px;
+  padding-left: 20px;
+  font-size: 18px;
   outline: none;
   color: white;
   text-decoration: none;

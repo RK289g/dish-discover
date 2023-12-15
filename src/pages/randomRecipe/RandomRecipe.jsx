@@ -17,12 +17,11 @@ const randomRecipe = () => {
   };
 
   return (
-    <div>
-      <div className="btn-get-recipe-wrapper">
-        <button className="btn-get-recipe" onClick={() => fetchRandomRecipe()}>
-          Get Random Recipe
-        </button>
-      </div>
+    <div className="btn-get-recipe-wrapper">
+      <button className="btn-get-recipe" onClick={() => fetchRandomRecipe()}>
+        Get Random Recipe
+      </button>
+
       {recipeData?.map((recData) => {
         return (
           <div className="wrapper" key={recData?.idMeal}>

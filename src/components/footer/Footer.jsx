@@ -1,8 +1,8 @@
 import {
-  FacebookOutlined,
-  GithubOutlined,
-  InstagramOutlined,
-  LinkedinOutlined,
+  FacebookFilled,
+  GithubFilled,
+  InstagramFilled,
+  LinkedinFilled,
 } from "@ant-design/icons";
 import "./Footer.css";
 import { Link } from "react-router-dom";
@@ -11,43 +11,47 @@ const Footer = () => {
   return (
     <footer className="footer-wrapper">
       <div className="contact-section-wrapper">
-        <h4>Contact Us</h4>
+        {/* <h4>Contact Us</h4> */}
         <div className="contact-section">
           <a
+            className="logo-linkedin"
             href="https://www.linkedin.com/in/raisul-karim-saju/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <LinkedinOutlined /> Linkedin
+            <FacebookFilled />
           </a>
           <a
+            className="logo-github"
             href="https://github.com/RK289g"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GithubOutlined /> Github
+            <GithubFilled />
           </a>
 
           <a
+            className="logo-facebook"
             href="https://www.facebook.com/profile.php?id=100086738076898"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FacebookOutlined /> Facebook
+            <LinkedinFilled />
           </a>
 
           <a
+            className="logo-insta"
             href="https://www.instagram.com/raisul_saju/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <InstagramOutlined /> Instagran
+            <InstagramFilled />
           </a>
         </div>
       </div>
 
       <div className="quick-links">
-        <h4>Quick Links</h4>
+        {/* <h4>Quick Links</h4> */}
         <div className="quick-link-wrapper">
           <Link to="/Recipes" className="items">
             Recipes
