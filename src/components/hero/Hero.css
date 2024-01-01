@@ -1,35 +1,63 @@
 .Hero-wrapper {
   position: relative;
-  text-align: center; /* Center the text horizontally */
-  color: white; /* Set text color to white or a color that contrasts well with your image */
+  text-align: center;
+  color: white;
 }
 
 .Hero-wrapper .hero-image {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Ensure the image covers the entire container */
+  object-fit: cover;
   filter: brightness(50%);
 }
 
 .Hero-wrapper .hero-text {
   position: absolute;
-  top: 50%; /* Position text at the vertical center of the container */
-  left: 50%; /* Position text at the horizontal center of the container */
-  transform: translate(-50%, -50%); /* Center the text precisely */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.Hero-wrapper .hero-text .Hero-header {
+.Hero-wrapper .hero-text .hero-header {
   font-size: 60px;
   margin: 0;
   padding: 0;
 }
 
-.Hero-wrapper .Hero-header span {
+.Hero-wrapper .hero-header span {
   color: #a3cef1;
-  /* padding: 5px 10px; */
-  
 }
 
 .Hero-wrapper .text-2 {
-  font-size: 45px;
+  font-size: 35px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .Hero-wrapper .hero-text .hero-header {
+    font-size: 35px;
+  }
+
+  .Hero-wrapper .text-2 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Hero-wrapper .hero-text .hero-header {
+    font-size: 25px;
+  }
+
+  .Hero-wrapper .text-2 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .Hero-wrapper .hero-text .hero-header {
+    font-size: 20px;
+  }
+
+  .Hero-wrapper .text-2 {
+    font-size: 16px;
+  }
 }

@@ -8,21 +8,23 @@ const Recipes = () => {
 
   return (
     <div className="recipes-wrapper">
-      <h1 className="header-text">Cuisines</h1>
-      <div className="cuisine-row">
-        {typeData.map((type) => (
-          <div key={type.id} className="cuisine-column">
-            <div
-              className="cuisine-container"
-              onClick={() => setTypeName(type.name)}
-            >
-              <img className="cuisine-img" src={type.image} alt={type.name} />
-              <p className="cuisine-title">{type.name}</p>
+      <div className="recipe-inner-wrapper">
+        <h1 className="header-text">Cuisines</h1>
+        <div className="cuisine-row">
+          {typeData.map((type) => (
+            <div key={type.id} className="cuisine-column">
+              <div
+                className="cuisine-container"
+                onClick={() => setTypeName(type.name)}
+              >
+                <img className="cuisine-img" src={type.image} alt={type.name} />
+                <p className="cuisine-title">{type.name}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <CuisinesType typeName={typeName} />
       </div>
-      <CuisinesType typeName={typeName} />
     </div>
   );
 };

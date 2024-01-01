@@ -24,8 +24,12 @@ const LayoutWrapper = () => {
             <Link to="/RandomRecipe" className="item">
               Random Recipe
             </Link>
-            <Link className="item">Articles</Link>
-            <Link className="item">Contact Us</Link>
+            <Link to="/Article" className="item">
+              Articles
+            </Link>
+            <Link to="/ContactUs" className="item">
+              Contact Us
+            </Link>
           </Menu>
         </Header>
       </nav>

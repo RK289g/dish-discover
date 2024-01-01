@@ -3,76 +3,76 @@
   display: flex;
   flex-direction: column;
   padding: 40px;
-  gap: 50px;
+  gap: 20px; /* Reduce the gap for smaller screens */
+  align-items: center; /* Center content horizontally */
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
-.footer-wrapper .contact-section-wrapper .contact-section {
+.contact-section-wrapper {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.footer-wrapper .contact-section-wrapper .contact-section a {
+.contact-section-wrapper .contact-section a {
   padding: 6px;
   font-size: 22px;
   text-decoration: none;
   border-radius: 50%;
 }
 
-.logo-linkedin {
-  color: white;
-  background-color: #0077b5;
-}
-
-.logo-github {
-  color: white;
-  background-color: black;
-  font-size: 28px;
-}
-
-.logo-facebook {
-  color: white;
-  background-color: #316ff6;
-}
-
-.logo-insta {
-  background-color: red;
-  color: white;
-}
-
-.footer-wrapper .contact-section-wrapper .contact-section a:hover {
+.contact-section-wrapper .contact-section a:hover {
   color: blueviolet;
 }
 
-/* .footer-wrapper .quick-links h4 {
-  font-size: 30px;
-  color: white;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 15px;
-  text-align: center;
-} */
-
-.footer-wrapper .quick-links .quick-link-wrapper {
+.quick-links {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   gap: 20px;
   justify-content: center;
+  align-items: center; /* Center content horizontally */
 }
 
-.footer-wrapper .quick-links .quick-link-wrapper .items {
-  padding-left: 20px;
+.quick-links .quick-link-wrapper {
+  gap: 5%;
+}
+
+.quick-links .quick-link-wrapper .items {
   font-size: 18px;
   outline: none;
   color: white;
   text-decoration: none;
+  margin-right: 20px;
 }
 
-.footer-wrapper .quick-links .quick-link-wrapper .items:hover {
+.quick-links .quick-link-wrapper .items:hover {
   color: blueviolet;
 }
 
-.footer-wrapper p {
+p {
   color: white;
   text-align: center;
+  margin: 0; /* Remove default margin */
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-wrapper {
+    padding: 20px;
+  }
+
+  .contact-section-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-section-wrapper .contact-section {
+    gap: 10px;
+  }
+
+  .quick-links .quick-link-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }

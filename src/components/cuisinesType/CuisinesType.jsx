@@ -39,10 +39,10 @@ const CuisinesType = ({ typeName }) => {
         Cuisines Type: <span>{typeName}</span>
       </h1>
 
-      <Row gutter={50} style={{ margin: "0px", padding: "0px 170px" }}>
+      <Row gutter={50} style={{ margin: "0px", padding: "0px 20px" }}>
         {cuisineData?.map((recData) => {
           return (
-            <Col span={8} key={recData?.idMeal}>
+            <Col xl={8} md={12} sm={24} key={recData?.idMeal}>
               <Card
                 onClick={() => {
                   handleCuisineClick(recData.idMeal);
@@ -53,7 +53,7 @@ const CuisinesType = ({ typeName }) => {
                 <Skeleton
                   active={true}
                   loading={isLoading}
-                  avatar={{ shape: "square", size: 400 }}
+                  avatar={{ shape: "square", size: 350 }}
                 >
                   <div>
                     <Image

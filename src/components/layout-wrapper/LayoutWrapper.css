@@ -17,11 +17,30 @@
   color: white;
   font-size: 30px;
   font-weight: 700;
-  padding-left: 3%;
+  /* padding-left: 3%; */
 }
 
 .item {
   margin-left: 25px;
   font-size: 22px;
   color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+  .header{
+    height: 45px;
+  }
+  .logo{
+    font-size: 20px;
+  }
+
+  .item{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header{
+    height: 30px;
+  }
 }

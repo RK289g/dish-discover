@@ -63,6 +63,9 @@ const Footer = () => {
           <Link className="items">Contact Us</Link>
         </div>
       </div>
+      <div>
+        <p>copyright all right reserves to Dish DIscover</p>
+      </div>
     </footer>
   );
 };

@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   const handleSeeMore = () => {
-    setVisibleRecipes((prevVisibleRecipes) => prevVisibleRecipes + 6);
+    setVisibleRecipes((prevVisibleRecipes) => prevVisibleRecipes + 4);
   };
 
   return (
@@ -39,37 +39,43 @@ const Home = () => {
       <div>
         <Hero />
       </div>
-      <h1 className="popular-recipe">Popular Recipe</h1>
-      <Row gutter={50} style={{ margin: "0px", padding: "0px 300px" }}>
-        {recipeData?.slice(0, visibleRecipes).map((recData) => (
-          <Col span={8} key={recData?.idMeal}>
-            <Card
-              onClick={() => {
-                handleClick(recData.idMeal);
-              }}
-              hoverable
-              className="card"
-            >
-              <div>
-                <img
-                  className="image"
-                  src={recData?.strMealThumb}
-                  alt="ThumbNail"
-                />
-                <div className="card-text">
-                  <h1>{recData?.strMeal}</h1>
-                  <div className="text-btn-wrapper">
-                    <p>Category: {recData?.strCategory}</p>
+      <div className="home-wrapper">
+        <h1 className="popular-recipe">Popular Recipe</h1>
+        <div className="card-wrapper">
+          <Row gutter={[40, 16]} style={{ margin: "0px", padding: "0px 10px" }}>
+            {recipeData?.slice(0, visibleRecipes).map((recData) => (
+              <Col xs={24} sm={12} md={8} key={recData?.idMeal}>
+                <Card
+                  onClick={() => {
+                    handleClick(recData.idMeal);
+                  }}
+                  hoverable
+                  className="card"
+                >
+                  <div>
+                    <img
+                      className="image"
+                      src={recData?.strMealThumb}
+                      alt="ThumbNail"
+                    />
+                    <div className="card-text">
+                      <h1>{recData?.strMeal}</h1>
+                      <div className="text-btn-wrapper">
+                        <p>Category: {recData?.strCategory}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+                </Card>
+                </Col>
+            ))}
+          </Row>
+        </div>
+      </div>
       {visibleRecipes < recipeData.length && (
         <div style={{ textAlign: "center", marginTop: "20px" }}>
-          <Button className="btn-see-more" onClick={handleSeeMore}>See More</Button>
+          <Button className="btn-see-more" onClick={handleSeeMore}>
+            See More
+          </Button>
         </div>
       )}
     </div>

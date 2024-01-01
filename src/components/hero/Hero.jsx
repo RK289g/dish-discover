@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="Hero-wrapper">
       <img className="hero-image" src={display1} alt="" />
       <div className="hero-text">
-        <h4 className="Hero-header">
+        <h4 className="hero-header">
           Discover more than 5000+ <span>Unique Recipes</span>
         </h4>
         <h4 className="text-2">
