@@ -1,8 +1,3 @@
-/* .wrapper {
-  margin-left: 10%;
-  margin-right: 10%;
-} */
-
 .wrapper .recipe-top {
   display: flex;
   justify-content: center;
@@ -73,9 +68,16 @@
   margin-top: 90px;
 }
 
+.wrapper .table-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .wrapper .table-div table {
   /* border-collapse: collapse; */
-  width: 45%;
+  width: 60%;
   /* margin: 20px auto; */
   font-size: 25px;
 }
@@ -112,14 +114,16 @@
 
 .wrapper .instruction-div p {
   font-size: 22px;
-  text-align:left;
+  text-align: left;
   /* text-wrap: pretty; */
   background-color: lavender;
   /* margin-bottom: 40px; */
   padding: 20px;
+  margin-bottom: 3%;
   line-height: 1.4;
   border-radius: 20px;
   width: 60%;
+  color: black;
 }
 
 .wrapper .instruction-div p span {
@@ -147,9 +151,103 @@
 }
 
 .wrapper .YT-wrapper {
+  margin-top: 5%;
+  margin-bottom: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust this based on your design */
+  /* height: 100vh;  */
+}
+
+.wrapper .YT-wrapper .i-frame {
+  width: 65%;
+  height: 500px;
+}
+
+@media only screen and (max-width: 767px) {
+  .wrapper .recipe-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    /* align-items: center; */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .wrapper .recipe-top .top-text h1 {
+    font-size: 20px;
+  }
+
+  .wrapper .top-text h3 {
+    font-size: 15px;
+    padding-bottom: 5px;
+  }
+
+  .wrapper .recipe-top .image-wrapper .image {
+    border-radius: 12px;
+    object-fit: cover;
+    transition-duration: 1s;
+    height: 200px;
+    /* margin: 3px; */
+    overflow: hidden;
+  }
+
+  .wrapper .table-div table {
+    width: 100%;
+    margin: 0px auto;
+    /* border-collapse: separate; */
+    border-spacing: 0 5px;
+  }
+
+  .wrapper .table-div h2 {
+    font-size: 20px;
+    /* margin-top: 30px; */
+    margin-top: 12px;
+  }
+
+  .wrapper .table-div table {
+    /* border-collapse: collapse; */
+    width: 60%;
+    /* margin: 20px auto; */
+    font-size: 12px;
+  }
+
+  .wrapper .table-div table td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .wrapper .instruction-div h3 {
+    font-size: 20px;
+    /* margin-top: 30px; */
+  }
+
+  .wrapper .instruction-div p {
+    font-size: 10px;
+    padding: 10px;
+    line-height: 1.2;
+    border-radius: 8px;
+  }
+
+  .wrapper .instruction-div p span {
+    color: green;
+    font-size: 12px;
+  }
+
+  .wrapper .YT-wrapper h3 {
+    font-size: 20px;
+    padding-bottom: 0px;
+  }
+
+  .wrapper .YT-wrapper h4 {
+    font-size: 12px;
+    margin-top: 0px;
+  }
+
+  .wrapper .YT-wrapper .i-frame {
+    width: 65%;
+    height: 250px;
+  }
 }

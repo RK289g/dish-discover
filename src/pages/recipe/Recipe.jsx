@@ -60,7 +60,6 @@ const Recipe = () => {
                   const ingredientKey = `strIngredient${index + 1}`;
                   const measureKey = `strMeasure${index + 1}`;
 
-                  // Check if both strIngredient and strMeasure have values
                   if (recData[ingredientKey]) {
                     return (
                       <tr key={index}>
@@ -90,8 +89,7 @@ const Recipe = () => {
             <div className="YT-wrapper">
               <h3>Watch Video</h3>
               <iframe
-                width="1200"
-                height="700"
+                className="i-frame"
                 src={`https://www.youtube.com/embed/${getYoutubeVideoId(
                   recData?.strYoutube
                 )}`}

@@ -44,7 +44,7 @@ const Home = () => {
         <div className="card-wrapper">
           <Row gutter={[40, 16]} style={{ margin: "0px", padding: "0px 10px" }}>
             {recipeData?.slice(0, visibleRecipes).map((recData) => (
-              <Col xs={24} sm={12} md={8} key={recData?.idMeal}>
+              <Col lg={8} xs={24} sm={12} md={12} key={recData?.idMeal}>
                 <Card
                   onClick={() => {
                     handleClick(recData.idMeal);

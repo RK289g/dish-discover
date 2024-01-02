@@ -1,10 +1,21 @@
 import { Link, Outlet } from "react-router-dom";
 import "./LayoutWrapper.css";
-import { Menu } from "antd";
+import { Button, Drawer, Menu } from "antd";
 import { Header } from "antd/es/layout/layout";
 import Footer from "../footer/Footer";
+import { useState } from "react";
+import { MenuFoldOutlined } from "@ant-design/icons";
 
 const LayoutWrapper = () => {
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
   return (
     <>
       <nav>
@@ -31,6 +42,50 @@ const LayoutWrapper = () => {
               Contact Us
             </Link>
           </Menu>
+
+          <MenuFoldOutlined className="drawer-button" onClick={showDrawer} />
+          <Drawer
+            title="Options"
+            placement={"right"}
+            closable={true}
+            onClose={onClose}
+            open={open}
+            key={"right"}
+            className="drawer-wrapper"
+          >
+            <Menu
+              mode="vertical"
+              defaultSelectedKeys={["1"]}
+              defaultOpenKeys={["sub1"]}
+              // items={items}
+              className="menu-wrapper-drawer"
+              style={{
+                background: "#FAFAFA",
+              }}
+            />
+            <div className="auth-actions" onClick={onClose}>
+              <Button>
+                <Link to="/Recipes" className="itemx">
+                  Recipes
+                </Link>
+              </Button>
+              <Button>
+                <Link to="/RandomRecipe" className="itemx">
+                  Random Recipe
+                </Link>
+              </Button>
+              <Button>
+                <Link to="/Article" className="itemx">
+                  Articles
+                </Link>
+              </Button>
+              <Button>
+                <Link to="/ContactUs" className="itemx">
+                  Contact Us
+                </Link>
+              </Button>
+            </div>
+          </Drawer>
         </Header>
       </nav>
       <Outlet />

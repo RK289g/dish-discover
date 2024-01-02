@@ -7,7 +7,7 @@
   align-items: center; /* Center content horizontally */
   position: relative;
   bottom: 0;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .contact-section-wrapper {

@@ -66,13 +66,13 @@ const randomRecipe = () => {
                     );
                   }
 
-                  return null; // If either strIngredient or strMeasure is null, skip rendering the row
+                  return null;
                 })}
               </table>
             </div>
             <div className="instruction-div">
               <h3>Instructions</h3>
-              {/* <p>{recData?.strInstructions}</p> */}
+
               {recData?.strInstructions
                 .split("\r\n\r\n")
                 .map((instruction, index) => (
@@ -86,8 +86,7 @@ const randomRecipe = () => {
             <div className="YT-wrapper">
               <h3>Watch Video</h3>
               <iframe
-                width="1200"
-                height="700"
+                className="i-frame"
                 src={`https://www.youtube.com/embed/${getYoutubeVideoId(
                   recData?.strYoutube
                 )}`}
