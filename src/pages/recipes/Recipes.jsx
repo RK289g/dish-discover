@@ -29,15 +29,17 @@ const Recipes = () => {
                 onClick={() => setTypeName(type.name)}
               >
                 <img className="cuisine-img" src={type.image} alt={type.name} />
-                <p className="cuisine-title">{type.name}</p>
+                <p className="cuisine-titles">{type.name}</p>
               </div>
             </div>
           ))}
         </div>
         <div>
-          <Button className="drawer-buttons" onClick={showDrawer}>
-            Cuisines
-          </Button>
+          <div className="action-button">
+            <Button className="drawer-buttons" onClick={showDrawer}>
+              Cuisines
+            </Button>
+          </div>
           <Drawer
             title="Cuisines"
             placement={"right"}
@@ -48,7 +50,7 @@ const Recipes = () => {
             className="drawer-wrappers"
           >
             {typeData.map((type) => (
-              <div key={type.id} className="cuis">
+              <div key={type.id} className="cuis" onClick={onClose}>
                 {/* <img
                     className="cuisine-img"
                     src={type.image}

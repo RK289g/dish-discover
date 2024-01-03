@@ -4,10 +4,16 @@
 
 .cuisines-type-wrapper .type-header-text {
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 30px;
 }
 
 .cuisines-type-wrapper .type-header-text span {
   color: #124559;
+}
+
+@media only screen and (max-width: 767px){
+  .cuisines-type-wrapper .type-header-text{
+    font-size: 18px;
+  }
 }

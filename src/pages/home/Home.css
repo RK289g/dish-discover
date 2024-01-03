@@ -54,6 +54,7 @@
 .card .card-text h1 {
   margin: 0px;
   padding: 0px;
+  text-align: start;
 }
 
 .card .card-text .text-btn-wrapper {
