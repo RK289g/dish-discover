@@ -25,7 +25,7 @@
 }
 
 .contact-section-wrapper .contact-section a:hover {
-  color: blueviolet;
+  color: rgb(203, 193, 212);
 }
 
 .quick-links {
@@ -49,7 +49,7 @@
 }
 
 .quick-links .quick-link-wrapper .items:hover {
-  color: blueviolet;
+  color: rgb(203, 193, 212);
 }
 
 p {

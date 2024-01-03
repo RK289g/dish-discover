@@ -34,7 +34,7 @@
 
 @media only screen and (max-width: 1200px) {
   .Hero-wrapper .hero-image {
-    height: 280px;
+    height: 380px;
   }
   .Hero-wrapper .hero-text .hero-header {
     font-size: 35px;
@@ -47,7 +47,7 @@
 
 @media only screen and (max-width: 768px) {
   .Hero-wrapper .hero-image {
-    height: 180px;
+    height: 220px;
   }
   .Hero-wrapper .hero-text .hero-header {
     font-size: 25px;

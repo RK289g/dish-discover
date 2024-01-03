@@ -45,7 +45,7 @@ const LayoutWrapper = () => {
 
           <MenuFoldOutlined className="drawer-button" onClick={showDrawer} />
           <Drawer
-            title="Options"
+            title="Navigations"
             placement={"right"}
             closable={true}
             onClose={onClose}

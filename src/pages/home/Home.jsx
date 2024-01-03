@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   const handleSeeMore = () => {
-    setVisibleRecipes((prevVisibleRecipes) => prevVisibleRecipes + 4);
+    setVisibleRecipes((prevVisibleRecipes) => prevVisibleRecipes + 6);
   };
 
   return (
