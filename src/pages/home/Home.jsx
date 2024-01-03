@@ -42,9 +42,20 @@ const Home = () => {
       <div className="home-wrapper">
         <h1 className="popular-recipe">Popular Recipe</h1>
         <div className="card-wrapper">
-          <Row gutter={[40, 16]} style={{ margin: "0px", padding: "0px 10px" }}>
+          <Row
+            align={"middle"}
+            gutter={[40, 16]}
+            style={{ margin: "0px", padding: "0px 10px" }}
+          >
             {recipeData?.slice(0, visibleRecipes).map((recData) => (
-              <Col lg={8} xs={24} sm={12} md={12} key={recData?.idMeal}>
+              <Col
+                align="middle"
+                lg={8}
+                xs={24}
+                sm={12}
+                key={recData?.idMeal}
+                // style={{ border: "1px solid red" }}
+              >
                 <Card
                   onClick={() => {
                     handleClick(recData.idMeal);
@@ -66,7 +77,7 @@ const Home = () => {
                     </div>
                   </div>
                 </Card>
-                </Col>
+              </Col>
             ))}
           </Row>
         </div>

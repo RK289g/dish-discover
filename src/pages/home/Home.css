@@ -9,7 +9,7 @@
   max-width: calc(1180px - 20px);
 }
 .popular-recipe {
-  margin-top: 100px;
+  margin-top: 60px;
   text-align: center;
   font-size: 40px;
   color: #124559;
@@ -23,6 +23,7 @@
   box-shadow: 0px 1px 2px gray;
   overflow: hidden;
   position: relative;
+  /* border: 1px solid red; */
 }
 
 .card .ant-card-body {
@@ -42,6 +43,7 @@
   color: white;
   /* background-color: white; */
   transition: height 1s ease-out;
+  /* border: 1px solid red; */
 }
 
 .card:hover .card-text {
@@ -95,4 +97,16 @@
   font-weight: 800;
   color: #124559;
   border: 1px solid blue;
+}
+
+@media only screen and (max-width: 762px) {
+  .popular-recipe {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+  .card {
+    width: 250px;
+    height: 250px;
+    /* border: 1px solid red; */
+  }
 }

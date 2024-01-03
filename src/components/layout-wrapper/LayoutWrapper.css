@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 75px;
+  /* height: 75px; */
   color: lightblue !important ;
 }
 
@@ -42,15 +42,18 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .header {
+  /* .header {
     height: 45px;
-  }
+  } */
   .logo {
     font-size: 20px;
   }
 
   .item {
     font-size: 14px;
+  }
+  .layout-menu {
+    display: flex;
   }
 }
 

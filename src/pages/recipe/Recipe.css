@@ -189,7 +189,7 @@
     border-radius: 12px;
     object-fit: cover;
     transition-duration: 1s;
-    height: 200px;
+    height: 250px;
     /* margin: 3px; */
     overflow: hidden;
   }
