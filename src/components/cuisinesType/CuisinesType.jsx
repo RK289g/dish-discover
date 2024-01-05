@@ -62,7 +62,7 @@ const CuisinesType = ({ typeName }) => {
                       alt="ThumbNail"
                       preview={false}
                     />
-                    <div className="card-text">
+                    <div className="card-text recipe-card-text">
                       <h1>{recData?.strMeal}</h1>
                     </div>
                   </div>

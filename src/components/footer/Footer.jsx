@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p>© 2024 Dish Discover. All rights reserved.</p>
+        <p className="copyright-text">© 2024 Dish Discover. All rights reserved.</p>
       </div>
     </footer>
   );

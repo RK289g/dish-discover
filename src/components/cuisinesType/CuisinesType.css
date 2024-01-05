@@ -12,8 +12,16 @@
   color: #124559;
 }
 
-@media only screen and (max-width: 767px){
-  .cuisines-type-wrapper .type-header-text{
+.card:hover .recipe-card-text {
+  height: 70px;
+}
+
+@media only screen and (max-width: 767px) {
+  .cuisines-type-wrapper .type-header-text {
     font-size: 18px;
+  }
+
+  .recipe-card-text {
+    height: 60px !important;
   }
 }
