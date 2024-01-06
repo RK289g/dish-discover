@@ -1,12 +1,22 @@
 import { Link, Outlet } from "react-router-dom";
 import "./LayoutWrapper.css";
-import { Button, Drawer, Menu } from "antd";
+import { Drawer, Menu } from "antd";
 import { Header } from "antd/es/layout/layout";
 import Footer from "../footer/Footer";
 import { useState } from "react";
 import { MenuFoldOutlined } from "@ant-design/icons";
 
 const LayoutWrapper = () => {
+  function getItem(label, key, icon, children, type) {
+    return {
+      key: key,
+      icon: icon,
+      children: children,
+      label: label,
+      type: type,
+    };
+  }
+
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -16,78 +26,54 @@ const LayoutWrapper = () => {
   const onClose = () => {
     setOpen(false);
   };
+
+  const items = [
+    getItem(<Link to="/">Home</Link>, "1"),
+    getItem(<Link to="/recipes">Recipes</Link>, "2"),
+    getItem(<Link to="/random-recipe">Random Recipe</Link>, "3"),
+    getItem(<Link to="/contact-us">Contact Us</Link>, "4"),
+  ];
+
   return (
     <>
-      <nav>
-        <Header className="header">
-          <Link to="/" className="logo">
-            Dish Discover
-          </Link>
+      <Header className="header">
+        <Link to="/" className="logo">
+          Dish Discover
+        </Link>
+
+        <Menu
+          className="layout-menu"
+          theme="dark"
+          color="#ffffff"
+          mode="horizontal"
+          defaultSelectedKeys={["1"]}
+          defaultOpenKeys={["sub1"]}
+          items={items}
+        />
+
+        <MenuFoldOutlined className="drawer-button" onClick={showDrawer} />
+
+        <Drawer
+        title="Navigations"
+          placement={"right"}
+          closable={true}
+          onClose={onClose}
+          open={open}
+          key={"right"}
+          className="drawer-wrapper"
+        >
           <Menu
-            className="layout-menu"
+            className="drawer-layout-menu"
             theme="dark"
             color="#ffffff"
-            mode="horizontal"
-          >
-            <Link to="/Recipes" className="item">
-              Recipes
-            </Link>
-            <Link to="/RandomRecipe" className="item">
-              Random Recipe
-            </Link>
-            <Link to="/Article" className="item">
-              Articles
-            </Link>
-            <Link to="/ContactUs" className="item">
-              Contact Us
-            </Link>
-          </Menu>
+            mode="vertical"
+            defaultSelectedKeys={["1"]}
+            defaultOpenKeys={["sub1"]}
+            items={items}
+          />
+        </Drawer>
+      </Header>
 
-          <MenuFoldOutlined className="drawer-button" onClick={showDrawer} />
-          <Drawer
-            title="Navigations"
-            placement={"right"}
-            closable={true}
-            onClose={onClose}
-            open={open}
-            key={"right"}
-            className="drawer-wrapper"
-          >
-            <Menu
-              mode="vertical"
-              defaultSelectedKeys={["1"]}
-              defaultOpenKeys={["sub1"]}
-              // items={items}
-              className="menu-wrapper-drawer"
-              style={{
-                background: "#FAFAFA",
-              }}
-            />
-            <div className="auth-actions" onClick={onClose}>
-              <Button>
-                <Link to="/Recipes" className="itemx">
-                  Recipes
-                </Link>
-              </Button>
-              <Button>
-                <Link to="/RandomRecipe" className="itemx">
-                  Random Recipe
-                </Link>
-              </Button>
-              <Button>
-                <Link to="/Article" className="itemx">
-                  Articles
-                </Link>
-              </Button>
-              <Button>
-                <Link to="/ContactUs" className="itemx">
-                  Contact Us
-                </Link>
-              </Button>
-            </div>
-          </Drawer>
-        </Header>
-      </nav>
       <Outlet />
       <Footer />
     </>

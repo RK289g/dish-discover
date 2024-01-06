@@ -21,7 +21,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FacebookFilled />
+            <LinkedinFilled />
           </a>
           <a
             className="logo-github"
@@ -38,7 +38,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <LinkedinFilled />
+            <FacebookFilled />
           </a>
 
           <a
