@@ -6,8 +6,10 @@ import {
 } from "@ant-design/icons";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Footer = () => {
+  const [currentYear] = useState(new Date().getFullYear());
   return (
     <footer className="footer-wrapper">
       <div className="contact-section-wrapper">
@@ -64,7 +66,9 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p className="copyright-text">© 2024 Dish Discover. All rights reserved.</p>
+        <p className="copyright-text">
+          © {currentYear} Dish Discover. All rights reserved.
+        </p>
       </div>
     </footer>
   );

@@ -1,19 +1,31 @@
+.wrapper {
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .inner-wrapper {
+  max-width: 1440px;
+}
+
 .wrapper .recipe-top {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  /* align-items: center; */
   gap: 60px;
   align-items: center;
 }
 
 .wrapper .recipe-top .top-text h1 {
   font-size: 40px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 13px;
   color: #124559;
-  margin-top: 0px;
-  padding: 0px;
-  text-align: start;
-  /* text-shadow: gray 1px 1px 1px; */
+  display: block;
+  text-transform: uppercase;
 }
 
 .wrapper .top-text h3 {
@@ -33,30 +45,26 @@
   overflow: hidden;
   margin: 0;
   padding: 0;
-  border-radius: 12px;
-  box-shadow: 0px 1px 20px gray;
+  border-radius: 2px;
+  box-shadow: 0px 10px 20px gray;
   margin-left: 20px;
 }
 
 .wrapper .recipe-top .image-wrapper .image {
-  border-radius: 12px;
+  border-radius: 2px;
   object-fit: cover;
   transition-duration: 1s;
   height: 370px;
-  /* margin: 3px; */
   overflow: hidden;
 }
 
 .wrapper .recipe-top .image-wrapper:hover .image {
   transform: scale(1.1);
   overflow: hidden;
-  /* border-radius: 12px; */
 }
 
 .wrapper .table-div table {
-  width: 100%;
-  /* margin: 0px auto; */
-  /* border-collapse: separate; */
+  width: 60%;
   border-spacing: 0 15px;
 }
 
@@ -71,38 +79,28 @@
 
 .wrapper .table-div {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .wrapper .table-div table {
-  /* border-collapse: collapse; */
-  width: 80%;
-  /* margin: 20px auto; */
   font-size: 25px;
   border-radius: 10px;
 }
 
 .wrapper .table-div tr {
-  /* border: 1px solid #350a0a; */
   text-align: center;
   background-color: rgb(223, 230, 236);
 }
 
 .wrapper .table-div table td {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .wrapper .instruction-div {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+  padding: 0 80px;
 }
 
 .wrapper .instruction-div h3 {
@@ -116,32 +114,37 @@
 }
 
 .wrapper .instruction-div p {
+  list-style: none;
   font-size: 25px;
-  text-align: left;
-  /* text-wrap: pretty; */
-  background-color: lavender;
-  /* margin-bottom: 40px; */
-  padding: 25px;
-  margin: 0 auto;
   line-height: 1.4;
-  border-radius: 20px;
-  width: 80%;
   color: black;
 }
 
-.wrapper .instruction-div p span {
-  color: green;
+.wrapper .instruction-div ul {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper .instruction-div li {
+  list-style: none;
   font-size: 25px;
+  line-height: 1.4;
+  color: black;
+}
+
+.wrapper .instruction-div p {
+  color: green;
+  font-size: 30px;
 }
 
 .wrapper .YT-wrapper h3 {
-  text-align: center;
   font-size: 40px;
+  text-align: center;
   color: #124559;
   margin: 0px;
   padding: 0px;
-  padding-bottom: 20px;
-  /* margin-top: 20px; */
+  margin-top: 50px;
+  margin-bottom: 8px;
 }
 
 .wrapper .YT-wrapper h4 {
@@ -212,9 +215,9 @@
 
   .wrapper .table-div table {
     /* border-collapse: collapse; */
-    width: 60%;
+    width: 80%;
     /* margin: 20px auto; */
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .wrapper .table-div table td {
@@ -228,7 +231,7 @@
   }
 
   .wrapper .instruction-div p {
-    font-size: 10px;
+    font-size: 14px;
     padding: 10px;
     line-height: 1.2;
     border-radius: 8px;
