@@ -22,7 +22,7 @@
 
 .cuisine-rows {
   max-width: calc(1180px - 20px);
-  height: 150px;
+  height: 160px;
   overflow-x: auto;
   white-space: nowrap;
   display: flex;
@@ -43,8 +43,8 @@
 }
 
 .cuisine-container .cuisine-img {
-  height: 120px;
-  width: 120px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
 }
 
