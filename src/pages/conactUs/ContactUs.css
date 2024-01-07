@@ -1,6 +1,14 @@
+.section-title{
+  font-size: 2.25rem;
+}
+
+.section-subtitle{
+  font-size: 1.5rem;
+}
+
 .contact-header {
   text-align: center !important;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .contact-container {
@@ -13,7 +21,7 @@
 
 .contact-title {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
 }
@@ -21,7 +29,7 @@
 .contact-info {
   display: grid;
   row-gap: 1rem;
-  grid-template-columns: 300px;
+  grid-template-columns: 200px;
 }
 
 .contact-card {
@@ -30,17 +38,18 @@
   padding: 1rem;
   border-radius: 0.75rem;
   text-align: center;
+  height: 120px;
 }
 
 .contact-card-icon {
-  font-size: 1.5rem;
+  font-size: 2rem;
   /* color: blue; */
-  margin-bottom: 0.25rem;
+  /* margin-bottom: 0.1rem; */
 }
 
 .contact-card-title,
 .contact-card-data {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .contact-card-title {
@@ -82,7 +91,7 @@
 .contact-form-div {
   position: relative;
   margin-bottom: 2rem;
-  height: 4rem;
+  height: 0.5rem;
   /* border: 1px solid red; */
 }
 
@@ -103,16 +112,18 @@
 
 .contact-form-tag {
   background-color: white;
-  font-size: 0.885rem;
+  font-size: 1.25rem;
   left: 1.25rem;
   padding: 0.25rem;
   position: absolute;
-  top: -0.8rem;
+  top: -0.9rem;
   z-index: 10;
 }
 
 .contact-form-area {
-  height: 11rem;
+  position: relative;
+  margin-bottom: 2rem;
+  height: 10rem;
 }
 
 .contact-form-area textarea {
