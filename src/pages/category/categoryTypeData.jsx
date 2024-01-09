@@ -1,7 +1,7 @@
-export const categoryType = [
+export const categoryTypeData = [
   {
     id: 1,
-    name: "Beef",
+    name: "Chicken",
   },
   {
     id: 2,
@@ -9,7 +9,7 @@ export const categoryType = [
   },
   {
     id: 3,
-    name: "Chicken",
+    name: "Beef",
   },
 
   {
@@ -26,7 +26,7 @@ export const categoryType = [
   },
   {
     id: 7,
-    name: "Miscellaneous",
+    name: "Vegan",
   },
   {
     id: 8,
@@ -34,11 +34,11 @@ export const categoryType = [
   },
   {
     id: 9,
-    name: "Pork",
+    name: "Vegetarian",
   },
   {
     id: 10,
-    name: "Pork",
+    name: "Seafood",
   },
   {
     id: 11,
@@ -47,13 +47,5 @@ export const categoryType = [
   {
     id: 12,
     name: "Starter",
-  },
-  {
-    id: 13,
-    name: "Vegan",
-  },
-  {
-    id: 14,
-    name: "Vegetarian",
   },
 ];

@@ -1,0 +1,138 @@
+.category-wrapper {
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.category-inner-wrapper {
+  max-width: calc(1180px - 20px);
+}
+
+.category-title {
+  font-size: 35px;
+  color: #124559;
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.category-row-column {
+  max-width: calc(1180px - 20px);
+  margin-top: 40px;
+}
+
+.category-column {
+  margin: 0;
+  padding: 0px;
+}
+
+.btn-category-name {
+  min-width: 100px;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 145px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 15px;
+}
+
+.drawer-buttons {
+  display: none;
+}
+
+.drawer-wrappers {
+  display: none;
+}
+
+.auth-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media only screen and (max-width: 1439px) {
+  .category-inner-wrapper {
+    max-width: calc(992px - 20px);
+  }
+
+  .category-title {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .category-row-column {
+    max-width: calc(992px - 20px);
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category-container {
+    width: 90px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .category-inner-wrapper {
+    max-width: calc(758px - 20px);
+  }
+
+  .category-title {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .category-row-column {
+    max-width: calc(758px - 20px);
+    height: 80px;
+  }
+
+  .category-container {
+    width: 80px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .category-title {
+    display: none;
+  }
+  .drawer-wrappers {
+    display: block;
+  }
+
+  .drawer-buttons {
+    display: block;
+    gap: 20px;
+  }
+
+  .category-row-column {
+    display: none;
+  }
+
+  .cuisine-titles {
+    color: black;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
