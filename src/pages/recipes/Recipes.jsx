@@ -1,4 +1,4 @@
-import { Button, Drawer } from "antd";
+import { Button, Col, Drawer, Row } from "antd";
 import CuisinesType from "../../components/cuisinesType/CuisinesType";
 import "./Recipes.css";
 import { typeData } from "./typeData";
@@ -21,18 +21,20 @@ const Recipes = () => {
     <div className="recipes-wrapper">
       <div className="recipe-inner-wrapper">
         <h1 className="header-text">Cuisines</h1>
-        <div className="cuisine-rows">
-          {typeData.map((type) => (
-            <div key={type.id} className="cuisine-column">
-              <div
-                className="cuisine-container"
+        <div className="cuisine-row-column">
+          <Row gutter={[10, 10]} align={"Middle"}>
+            {typeData.map((type) => (
+              <Col
+                lg={3}
+                md={6}
+                key={type.id}
+                className="cuisine-column"
                 onClick={() => setTypeName(type.name)}
               >
-                <img className="cuisine-img" src={type.image} alt={type.name} />
-                <p className="cuisine-titles">{type.name}</p>
-              </div>
-            </div>
-          ))}
+                <Button className="btn-cuisine-name">{type.name}</Button>
+              </Col>
+            ))}
+          </Row>
         </div>
         <div>
           <div className="action-button">

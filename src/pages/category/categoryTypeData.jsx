@@ -48,4 +48,12 @@ export const categoryTypeData = [
     id: 12,
     name: "Starter",
   },
+  {
+    id: 13,
+    name: "Vegan",
+  },
+  {
+    id: 12,
+    name: "Pork",
+  },
 ];
