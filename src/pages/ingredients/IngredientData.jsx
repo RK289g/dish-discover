@@ -32,10 +32,6 @@ export const ingredientData = [
     name: "Bay Leaf",
   },
   {
-    id: 9,
-    name: "Biryani Masala",
-  },
-  {
     id: 10,
     name: "Bread",
   },
@@ -196,18 +192,6 @@ export const ingredientData = [
     name: "Tuna",
   },
   {
-    id: 50,
-    name: "Yogurt",
-  },
-  {
-    id: 51,
-    name: "Squid",
-  },
-  {
-    id: 52,
-    name: "Duck",
-  },
-  {
     id: 53,
     name: "Mozzarella",
   },
@@ -217,10 +201,6 @@ export const ingredientData = [
   },
   {
     id: 55,
-    name: "Tortillas",
-  },
-  {
-    id: 56,
     name: "Yeast",
   },
   {
@@ -233,10 +213,6 @@ export const ingredientData = [
   },
   {
     id: 59,
-    name: "Muffins",
-  },
-  {
-    id: 60,
     name: "Mayonnaise",
   },
 ];

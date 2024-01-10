@@ -2,9 +2,10 @@ import { useState } from "react";
 import "./Ingredients.css";
 import { ingredientData } from "./IngredientData";
 import { Button, Col, Drawer, Row } from "antd";
+import IngredientType from "../../components/ingredientType/InggredientType";
 
 const Ingredient = () => {
-//   const [IngredientName, setIngredientName] = useState("Salmon");
+  const [IngredientName, setIngredientName] = useState("Salmon");
 
   const [open, setOpen] = useState(false);
 
@@ -24,11 +25,11 @@ const Ingredient = () => {
           <Row gutter={[10, 10]} align={"Middle"}>
             {ingredientData.map((type) => (
               <Col
-                lg={4}
-                md={6}
+                lg={3}
+                md={4}
                 key={type.id}
                 className="category-column"
-                // onClick={() => setIngredientName(type.name)}
+                onClick={() => setIngredientName(type.name)}
               >
                 <Button className="btn-category-name">{type.name}</Button>
               </Col>
@@ -63,7 +64,7 @@ const Ingredient = () => {
             ))}
           </Drawer>
         </div>
-        {/* <IngredientType typeName={IngredientName} /> */}
+        <IngredientType typeName={IngredientName} />
       </div>
     </div>
   );
