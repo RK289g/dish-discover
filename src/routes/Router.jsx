@@ -7,6 +7,7 @@ import RandomRecipe from "../pages/randomRecipe/RandomRecipe";
 import Recipes from "../pages/recipes/Recipes";
 import ContactUs from "../pages/conactUs/ContactUs";
 import Category from "../pages/category/Category";
+import Ingredient from "../pages/ingredients/Ingredients";
 
 
 const AppRouter = () => {
@@ -16,6 +17,7 @@ const AppRouter = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cuisines" element={<Recipes />} />
         <Route path="/categories" element={<Category />} />
+        <Route path="/ingredients" element={<Ingredient />} />
         <Route path="/recipe/:recipeId" element={<Recipe />} />
         <Route path="/random-recipe" element={<RandomRecipe />} />
         <Route path="/contact-us" element={<ContactUs />} />

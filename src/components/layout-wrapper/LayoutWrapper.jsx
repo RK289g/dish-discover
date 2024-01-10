@@ -16,6 +16,10 @@ const LayoutWrapper = () => {
       label: <Link to="/categories">Categories</Link>,
       key: "6",
     },
+    {
+      label: <Link to="/ingredients">Ingredients</Link>,
+      key: "7",
+    },
   ];
 
   function getItem(label, key, icon, children, type) {
