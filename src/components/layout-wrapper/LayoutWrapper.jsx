@@ -20,6 +20,10 @@ const LayoutWrapper = () => {
       label: <Link to="/ingredients">Ingredients</Link>,
       key: "7",
     },
+    {
+      label: <Link to="/search-AtoZ">Search A-Z</Link>,
+      key: "7",
+    },
   ];
 
   function getItem(label, key, icon, children, type) {

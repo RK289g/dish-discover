@@ -8,6 +8,7 @@ import Recipes from "../pages/recipes/Recipes";
 import ContactUs from "../pages/conactUs/ContactUs";
 import Category from "../pages/category/Category";
 import Ingredient from "../pages/ingredients/Ingredients";
+import AtoZ from "../pages/aToZ/AtoZ";
 
 
 const AppRouter = () => {
@@ -18,6 +19,7 @@ const AppRouter = () => {
         <Route path="/cuisines" element={<Recipes />} />
         <Route path="/categories" element={<Category />} />
         <Route path="/ingredients" element={<Ingredient />} />
+        <Route path="/search-AtoZ" element={<AtoZ />} />
         <Route path="/recipe/:recipeId" element={<Recipe />} />
         <Route path="/random-recipe" element={<RandomRecipe />} />
         <Route path="/contact-us" element={<ContactUs />} />
