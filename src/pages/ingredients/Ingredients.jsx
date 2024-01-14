@@ -1,11 +1,31 @@
 import { useState } from "react";
 import "./Ingredients.css";
-import { ingredientData } from "./IngredientData";
+// import { ingredientData } from "./IngredientData";
 import { Select } from "antd";
 import IngredientType from "../../components/ingredientType/InggredientType";
+import axios from "axios";
 
 const Ingredient = () => {
+  const [ingredientType, setIngredientType] = useState([]);
   const [ingredientName, setIngredientName] = useState("Salmon");
+
+  const fetchIngredientType = async () => {
+    // setIsLoading(true);
+    axios
+      .get(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`)
+      .then((res) => {
+        setIngredientType(res.data.meals);
+        // setIsLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching tasks: ", err);
+        // setIsLoading(false);
+      });
+  };
+
+  // useEffect(() => {
+  fetchIngredientType();
+  // }, );
 
   const handleSearch = (inputValue, option) =>
     (option.label ?? "").toLowerCase().includes(inputValue.toLowerCase());
@@ -30,9 +50,9 @@ const Ingredient = () => {
             }
             onChange={(value) => setIngredientName(value)}
             onSearch={(inputValue) => setIngredientName(inputValue)}
-            options={ingredientData.map((type) => ({
-              value: type.name,
-              label: type.name,
+            options={ingredientType.map((type) => ({
+              value: type.strIngredient,
+              // label: type.strIngredient,
             }))}
           />
         </div>
