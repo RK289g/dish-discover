@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./Ingredients.css";
-// import { ingredientData } from "./IngredientData";
 import { Select } from "antd";
 import IngredientType from "../../components/ingredientType/InggredientType";
 import axios from "axios";
@@ -15,17 +14,14 @@ const Ingredient = () => {
       .get(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`)
       .then((res) => {
         setIngredientType(res.data.meals);
-        // setIsLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching tasks: ", err);
-        // setIsLoading(false);
       });
   };
 
-  // useEffect(() => {
   fetchIngredientType();
-  // }, );
+ 
 
   const handleSearch = (inputValue, option) =>
     (option.label ?? "").toLowerCase().includes(inputValue.toLowerCase());
@@ -52,7 +48,6 @@ const Ingredient = () => {
             onSearch={(inputValue) => setIngredientName(inputValue)}
             options={ingredientType.map((type) => ({
               value: type.strIngredient,
-              // label: type.strIngredient,
             }))}
           />
         </div>
