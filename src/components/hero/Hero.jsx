@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import "./Hero.css";
 
 import display1 from "./images/display-2.jpg";
@@ -13,6 +14,7 @@ const Hero = () => {
         <h4 className="text-2">
           Search, Save, and Share Your Favorite Recipes Instantly.
         </h4>
+        <Button className="btn-get-recipe">Get Recipes</Button>
       </div>
     </div>
   );

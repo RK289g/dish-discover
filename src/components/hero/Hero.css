@@ -32,6 +32,19 @@
   font-size: 35px;
 }
 
+.btn-get-recipe {
+  background-color: #2a6f97;
+  color: #10002b;
+  font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 30px;
+  border: none;
+}
+.btn-get-recipe:hover {
+  background-color: #89c2d9;
+  color: #10002b;
+}
+
 @media only screen and (max-width: 1200px) {
   .Hero-wrapper .hero-image {
     height: 380px;
