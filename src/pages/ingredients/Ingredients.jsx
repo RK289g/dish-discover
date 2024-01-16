@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Ingredients.css";
 import { Select } from "antd";
 import IngredientType from "../../components/ingredientType/InggredientType";
@@ -8,20 +8,20 @@ const Ingredient = () => {
   const [ingredientType, setIngredientType] = useState([]);
   const [ingredientName, setIngredientName] = useState("Salmon");
 
-  const fetchIngredientType = async () => {
-    // setIsLoading(true);
-    axios
-      .get(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`)
-      .then((res) => {
-        setIngredientType(res.data.meals);
-      })
-      .catch((err) => {
-        console.error("Error fetching tasks: ", err);
-      });
-  };
+  useEffect(() => {
+    const fetchIngredientType = () => {
+      axios
+        .get("https://www.themealdb.com/api/json/v1/1/list.php?i=list")
+        .then((response) => {
+          setIngredientType(response.data.meals);
+        })
+        .catch((error) => {
+          console.error("Error fetching ingredient types: ", error);
+        });
+    };
 
-  fetchIngredientType();
- 
+    fetchIngredientType();
+  }, []); // Run only once on component mount
 
   const handleSearch = (inputValue, option) =>
     (option.label ?? "").toLowerCase().includes(inputValue.toLowerCase());
@@ -45,11 +45,13 @@ const Ingredient = () => {
                 .localeCompare((optionB?.label ?? "").toLowerCase())
             }
             onChange={(value) => setIngredientName(value)}
-            onSearch={(inputValue) => setIngredientName(inputValue)}
-            options={ingredientType.map((type) => ({
-              value: type.strIngredient,
-            }))}
-          />
+          >
+            {ingredientType.map((type) => (
+              <Select.Option key={type.idIngredient} value={type.strIngredient}>
+                {type.strIngredient}
+              </Select.Option>
+            ))}
+          </Select>
         </div>
         <IngredientType typeName={ingredientName} />
       </div>
