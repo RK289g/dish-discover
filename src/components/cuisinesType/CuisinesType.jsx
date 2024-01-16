@@ -5,14 +5,14 @@ import PropTypes from "prop-types";
 import { Card, Col, Image, Row, Skeleton } from "antd";
 import { useNavigate } from "react-router-dom";
 
-const CuisinesType = ({ typeName }) => {
+const CuisinesType = ({ cuisineTypeName }) => {
   const [cuisineData, setCuisineData] = useState([]);
   const [isLoading, setIsLoading] = useState([]);
 
   const fetchCuisineRecipes = async () => {
     setIsLoading(true);
     axios
-      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${typeName}`)
+      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisineTypeName}`)
       .then((res) => {
         setCuisineData(res.data.meals);
         setIsLoading(false);
@@ -27,7 +27,7 @@ const CuisinesType = ({ typeName }) => {
 
   useEffect(() => {
     fetchCuisineRecipes();
-  }, [typeName]);
+  }, [cuisineTypeName]);
 
   const handleCuisineClick = (recipeId) => {
     navigate(`/recipe/${recipeId}`);
@@ -36,7 +36,7 @@ const CuisinesType = ({ typeName }) => {
   return (
     <div className="cuisines-type-wrapper">
       <h1 className="type-header-text">
-        Cuisines Type: <span>{typeName}</span>
+        Cuisines Type: <span>{cuisineTypeName}</span>
       </h1>
 
       <Row gutter={50} style={{ margin: "0px", padding: "0px 20px" }}>
@@ -77,7 +77,7 @@ const CuisinesType = ({ typeName }) => {
 };
 
 CuisinesType.propTypes = {
-  typeName: PropTypes.string.isRequired,
+  cuisineTypeName: PropTypes.string.isRequired,
 };
 
 export default CuisinesType;

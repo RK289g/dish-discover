@@ -1,11 +1,31 @@
-import { Button, Col, Drawer, Row } from "antd";
+import { Button, Col, Drawer, Row, Spin } from "antd";
 import CuisinesType from "../../components/cuisinesType/CuisinesType";
 import "./Recipes.css";
-import { typeData } from "./typeData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Recipes = () => {
-  const [typeName, setTypeName] = useState("American");
+  const [cuisineTypeName, setCuisineTypeName] = useState("American");
+  const [CuisineTypes, setCuisineTypes] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchCuisineType = () => {
+    setIsLoading(true);
+    axios
+      .get("https://www.themealdb.com/api/json/v1/1/list.php?a=list")
+      .then((response) => {
+        setCuisineTypes(response.data.meals);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching ingredient types: ", error);
+        setIsLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    fetchCuisineType();
+  }, []);
 
   const [open, setOpen] = useState(false);
 
@@ -19,57 +39,60 @@ const Recipes = () => {
 
   return (
     <div className="recipes-wrapper">
-      <div className="recipe-inner-wrapper">
-        <h1 className="header-text">Cuisines</h1>
-        <div className="cuisine-row-column">
-          <Row gutter={[10, 10]} align={"Middle"}>
-            {typeData.map((type) => (
-              <Col
-                lg={3}
-                md={6}
-                key={type.id}
-                className="cuisine-column"
-                onClick={() => setTypeName(type.name)}
-              >
-                <Button className="btn-cuisine-name">{type.name}</Button>
-              </Col>
-            ))}
-          </Row>
+      {isLoading ? (
+        <div className="recipes-spinner">
+          <Spin fullscreen={true} size="large" />
         </div>
-        <div>
-          <div className="action-button">
-            <Button className="drawer-buttons" onClick={showDrawer}>
-              Cuisines
-            </Button>
-          </div>
-          <Drawer
-            title="Cuisines"
-            placement={"right"}
-            closable={true}
-            onClose={onClose}
-            open={open}
-            key={"right"}
-            className="drawer-wrappers"
-          >
-            {typeData.map((type) => (
-              <div key={type.id} className="cuis" onClick={onClose}>
-                {/* <img
-                    className="cuisine-img"
-                    src={type.image}
-                    alt={type.name}
-                  /> */}
-                <Button
-                  className="cuisine-titles"
-                  onClick={() => setTypeName(type.name)}
+      ) : (
+        <div className="recipe-inner-wrapper">
+          <h1 className="header-text">Cuisines</h1>
+          <div className="cuisine-row-column">
+            <Row gutter={[10, 10]} align={"Middle"}>
+              {CuisineTypes.map((cusineType, index) => (
+                <Col
+                  lg={3}
+                  md={6}
+                  key={index}
+                  className="cuisine-column"
+                  onClick={() => setCuisineTypeName(cusineType.strArea)}
                 >
-                  {type.name}
-                </Button>
-              </div>
-            ))}
-          </Drawer>
+                  <Button className="btn-cuisine-name">
+                    {cusineType.strArea}
+                  </Button>
+                </Col>
+              ))}
+            </Row>
+          </div>
+          <div>
+            <div className="action-button">
+              <Button className="drawer-buttons" onClick={showDrawer}>
+                Cuisines
+              </Button>
+            </div>
+            <Drawer
+              title="Cuisines"
+              placement={"right"}
+              closable={true}
+              onClose={onClose}
+              open={open}
+              key={"right"}
+              className="drawer-wrappers"
+            >
+              {CuisineTypes.map((cusineType, index) => (
+                <div key={index} className="cuis" onClick={onClose}>
+                  <Button
+                    className="cuisine-titles"
+                    onClick={() => setCuisineTypeName(cusineType.strArea)}
+                  >
+                    {cusineType.strArea}
+                  </Button>
+                </div>
+              ))}
+            </Drawer>
+          </div>
+          <CuisinesType cuisineTypeName={cuisineTypeName} />
         </div>
-        <CuisinesType typeName={typeName} />
-      </div>
+      )}
     </div>
   );
 };

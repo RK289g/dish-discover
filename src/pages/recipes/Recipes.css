@@ -6,6 +6,12 @@
   min-height: 100vh;
 }
 
+.recipes-wrapper .recipes-spinner {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
 .recipe-inner-wrapper {
   max-width: calc(1180px - 20px);
 }

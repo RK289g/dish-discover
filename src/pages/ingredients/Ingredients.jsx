@@ -8,23 +8,23 @@ const Ingredient = () => {
   const [ingredientType, setIngredientType] = useState([]);
   const [ingredientName, setIngredientName] = useState("Salmon");
 
+  const fetchIngredientType = () => {
+    axios
+      .get("https://www.themealdb.com/api/json/v1/1/list.php?i=list")
+      .then((response) => {
+        setIngredientType(response.data.meals);
+        // console.log(response.data.meals);
+      })
+      .catch((error) => {
+        console.error("Error fetching ingredient types: ", error);
+      });
+  };
+
   useEffect(() => {
-    const fetchIngredientType = () => {
-      axios
-        .get("https://www.themealdb.com/api/json/v1/1/list.php?i=list")
-        .then((response) => {
-          setIngredientType(response.data.meals);
-        })
-        .catch((error) => {
-          console.error("Error fetching ingredient types: ", error);
-        });
-    };
-
     fetchIngredientType();
-  }, []); // Run only once on component mount
+  }, []);
 
-  const handleSearch = (inputValue, option) =>
-    (option.label ?? "").toLowerCase().includes(inputValue.toLowerCase());
+  
 
   return (
     <div className="category-wrapper">
@@ -38,12 +38,7 @@ const Ingredient = () => {
             }}
             placeholder="Select ingredients"
             optionFilterProp="children"
-            filterOption={handleSearch}
-            filterSort={(optionA, optionB) =>
-              (optionA?.label ?? "")
-                .toLowerCase()
-                .localeCompare((optionB?.label ?? "").toLowerCase())
-            }
+            
             onChange={(value) => setIngredientName(value)}
           >
             {ingredientType.map((type) => (
