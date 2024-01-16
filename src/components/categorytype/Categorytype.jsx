@@ -5,14 +5,14 @@ import PropTypes from "prop-types";
 import { Card, Col, Image, Row, Skeleton } from "antd";
 import { useNavigate } from "react-router-dom";
 
-const CategoryType = ({ typeName }) => {
+const CategoryType = ({ categoryName }) => {
   const [cuisineData, setCategoryData] = useState([]);
   const [isLoading, setIsLoading] = useState([]);
 
   const fetchCategoryRecipes = async () => {
     setIsLoading(true);
     axios
-      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${typeName}`)
+      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`)
       .then((res) => {
         setCategoryData(res.data.meals);
         setIsLoading(false);
@@ -27,7 +27,7 @@ const CategoryType = ({ typeName }) => {
 
   useEffect(() => {
     fetchCategoryRecipes();
-  }, [typeName]);
+  }, [categoryName]);
 
   const handleCategoryClick = (recipeId) => {
     navigate(`/recipe/${recipeId}`);
@@ -36,7 +36,7 @@ const CategoryType = ({ typeName }) => {
   return (
     <div className="cuisines-type-wrapper">
       <h1 className="type-header-text">
-        Category name: <span>{typeName}</span>
+        Category name: <span>{categoryName}</span>
       </h1>
 
       <Row gutter={50} style={{ margin: "0px", padding: "0px 20px" }}>
@@ -77,7 +77,7 @@ const CategoryType = ({ typeName }) => {
 };
 
 CategoryType.propTypes = {
-  typeName: PropTypes.string.isRequired,
+  categoryName: PropTypes.string.isRequired,
 };
 
 export default CategoryType;

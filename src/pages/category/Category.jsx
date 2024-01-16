@@ -1,11 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Category.css";
-import { categoryTypeData } from "./categoryTypeData";
-import { Button, Col, Drawer, Row } from "antd";
+import { Button, Col, Drawer, Row, Spin } from "antd";
 import CategoryType from "../../components/categorytype/Categorytype";
+import axios from "axios";
 
 const Category = () => {
   const [categoryName, setCategoryName] = useState("Chicken");
+  const [categoryType, setCategoryType] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchCategoryType = () => {
+    setIsLoading(true);
+    axios
+      .get("https://www.themealdb.com/api/json/v1/1/list.php?c=list")
+      .then((response) => {
+        setCategoryType(response.data.meals);
+        console.log(response.data.meals);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching ingredient types: ", error);
+        setIsLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    fetchCategoryType();
+  }, []);
 
   const [open, setOpen] = useState(false);
 
@@ -19,53 +40,61 @@ const Category = () => {
 
   return (
     <div className="category-wrapper">
-      <div className="category-inner-wrapper">
-        <h1 className="category-title">Categories</h1>
-        <div className="category-row-column">
-          <Row gutter={[10, 10]} align={"Middle"}>
-            {categoryTypeData.map((type) => (
-              <Col
-                lg={4}
-                md={6}
-                key={type.id}
-                className="category-column"
-                onClick={() => setCategoryName(type.name)}
-              >
-                <Button className="btn-category-name">{type.name}</Button>
-              </Col>
-            ))}
-          </Row>
+      {isLoading ? (
+        <div className="category-spinner">
+          <Spin fullscreen={true} size="large" />
         </div>
-
-        <div>
-          <div className="action-button">
-            <Button className="drawer-buttons" onClick={showDrawer}>
-              Categories
-            </Button>
-          </div>
-          <Drawer
-            title="Categories"
-            placement={"right"}
-            closable={true}
-            onClose={onClose}
-            open={open}
-            key={"right"}
-            className="drawer-wrappers"
-          >
-            {categoryTypeData.map((type) => (
-              <div key={type.id} className="cuis" onClick={onClose}>
-                <Button
-                  className="cuisine-titles"
-                  onClick={() => setCategoryName(type.name)}
+      ) : (
+        <div className="category-inner-wrapper">
+          <h1 className="category-title">Categories</h1>
+          <div className="category-row-column">
+            <Row gutter={[10, 10]} align={"Middle"}>
+              {categoryType.map((categoryType, index) => (
+                <Col
+                  lg={4}
+                  md={6}
+                  key={index}
+                  className="category-column"
+                  onClick={() => setCategoryName(categoryType.strCategory)}
                 >
-                  {type.name}
-                </Button>
-              </div>
-            ))}
-          </Drawer>
+                  <Button className="btn-category-name">
+                    {categoryType.strCategory}
+                  </Button>
+                </Col>
+              ))}
+            </Row>
+          </div>
+
+          <div>
+            <div className="action-button">
+              <Button className="drawer-buttons" onClick={showDrawer}>
+                Categories
+              </Button>
+            </div>
+            <Drawer
+              title="Categories"
+              placement={"right"}
+              closable={true}
+              onClose={onClose}
+              open={open}
+              key={"right"}
+              className="drawer-wrappers"
+            >
+              {categoryType.map((categoryType, index) => (
+                <div key={index} className="cuis" onClick={onClose}>
+                  <Button
+                    className="cuisine-titles"
+                    onClick={() => setCategoryName(categoryType.strCategory)}
+                  >
+                    {categoryType.strCategory}
+                  </Button>
+                </div>
+              ))}
+            </Drawer>
+          </div>
+          <CategoryType categoryName={categoryName} />
         </div>
-        <CategoryType typeName={categoryName} />
-      </div>
+      )}
     </div>
   );
 };
