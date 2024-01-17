@@ -6,6 +6,7 @@ import Card from "antd/es/card/Card";
 import { Col, Row, Button } from "antd"; // Import Button from antd
 import { useNavigate } from "react-router-dom";
 import RecipeByCategory from "../../assets/recipeInHomePage/recipeByCategory/RecipeByCategory";
+import RecipeByCuisine from "../../assets/recipeInHomePage/recipeByCuisine/RecipeByCuisine";
 
 const Home = () => {
   const [recipeData, setRecipeData] = useState([]);
@@ -40,6 +41,7 @@ const Home = () => {
       <div>
         <Hero />
         <RecipeByCategory />
+        <RecipeByCuisine />
       </div>
       <div className="home-wrapper">
         <h1 className="popular-recipe">Popular Recipe</h1>
