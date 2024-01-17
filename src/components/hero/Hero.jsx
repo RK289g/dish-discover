@@ -20,7 +20,7 @@ const Hero = () => {
         <h4 className="text-2">
           Search, Save, and Share Your Favorite Recipes Instantly.
         </h4>
-        <Button
+        <Button size="large"
           onClick={() => {
             handleExploreRecipe();
           }}

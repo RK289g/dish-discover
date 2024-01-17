@@ -33,17 +33,13 @@
 }
 
 .btn-get-recipe {
-  background-color: #2a6f97;
+  /* background-color: white; */
   color: #10002b;
-  font-weight: 600;
-  font-size: 22px;
-  padding-bottom: 30px;
+  font-weight: 500;
   border: none;
-  min-width: 200px;
-  height: 40px;
 }
 .btn-get-recipe:hover {
-  background-color: #0b3d5a;
+  /* background-color: #0b3d5a; */
   color: #401788;
 }
 
