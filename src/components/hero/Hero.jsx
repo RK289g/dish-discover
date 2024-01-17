@@ -2,8 +2,14 @@ import { Button } from "antd";
 import "./Hero.css";
 
 import display1 from "./images/display-2.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleExploreRecipe = () => {
+    navigate(`/cuisines`);
+  };
   return (
     <div className="Hero-wrapper">
       <img className="hero-image" src={display1} alt="" />
@@ -14,7 +20,14 @@ const Hero = () => {
         <h4 className="text-2">
           Search, Save, and Share Your Favorite Recipes Instantly.
         </h4>
-        <Button className="btn-get-recipe">Get Recipes</Button>
+        <Button
+          onClick={() => {
+            handleExploreRecipe();
+          }}
+          className="btn-get-recipe"
+        >
+          Explore Recipes
+        </Button>
       </div>
     </div>
   );
