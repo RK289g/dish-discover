@@ -74,7 +74,7 @@ const LayoutWrapper = () => {
     <>
       <Header className="header">
         <Link to="/" className="logo">
-          <img src="./images/logo.png" alt="" />
+          Dish Discover
         </Link>
 
         <Menu
