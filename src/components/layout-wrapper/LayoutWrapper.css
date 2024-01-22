@@ -10,11 +10,15 @@
   padding-right: 4%;
 }
 
-.logo {
+.logo-wrapper {
   color: white;
   font-size: 22px;
   font-weight: 700;
   padding-left: 4%;
+}
+
+.logo{
+  display: flex;
 }
 
 .drawer-button {
