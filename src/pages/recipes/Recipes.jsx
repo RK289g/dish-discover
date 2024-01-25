@@ -1,4 +1,4 @@
-import { Button, Col, Drawer, Row, Spin } from "antd";
+import { Button, Col, Drawer, Input, Row, Spin } from "antd";
 import CuisinesType from "../../components/cuisinesType/CuisinesType";
 import "./Recipes.css";
 import { useEffect, useState } from "react";
@@ -39,7 +39,27 @@ const Recipes = () => {
 
   return (
     <div className="recipes-wrapper">
-      {isLoading ? (
+      <div className="recipes-banner"></div>
+      <div className="recipes-inner-wrapper">
+        <Input
+          size="large"
+          placeholder="Search Recipes"
+          className="recipes-search"
+        />
+
+        <div className="recipes-layout">
+          <Row>
+            <Col span={8} style={{ border: "1px solid red" }}>
+              all types
+            </Col>
+            <Col span={16} style={{ border: "1px solid red" }}>
+              card
+            </Col>
+          </Row>
+        </div>
+      </div>
+
+      {/* {isLoading ? (
         <div className="recipes-spinner">
           <Spin fullscreen={true} size="large" />
         </div>
@@ -92,7 +112,7 @@ const Recipes = () => {
           </div>
           <CuisinesType cuisineTypeName={cuisineTypeName} />
         </div>
-      )}
+      )} */}
     </div>
   );
 };

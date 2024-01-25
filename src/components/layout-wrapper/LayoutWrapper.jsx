@@ -1,31 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
 import "./LayoutWrapper.css";
-import { Drawer, Dropdown, Menu, Space } from "antd";
+import { Drawer, Menu } from "antd";
 import { Header } from "antd/es/layout/layout";
 import Footer from "../footer/Footer";
 import { useState } from "react";
-import { DownOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { MenuFoldOutlined } from "@ant-design/icons";
 
 const LayoutWrapper = () => {
-  const dropdwn = [
-    {
-      label: <Link to="/cuisines">Cuisines</Link>,
-      key: "5",
-    },
-    {
-      label: <Link to="/categories">Categories</Link>,
-      key: "6",
-    },
-    {
-      label: <Link to="/ingredients">Ingredients</Link>,
-      key: "7",
-    },
-    {
-      label: <Link to="/search-AtoZ">Search A-Z</Link>,
-      key: "7",
-    },
-  ];
-
   function getItem(label, key, icon, children, type) {
     return {
       key: key,
@@ -48,24 +29,7 @@ const LayoutWrapper = () => {
 
   const items = [
     getItem(<Link to="/">Home</Link>, "1"),
-    getItem(
-      <Dropdown
-        overlay={
-          <Menu>
-            {dropdwn.map((item) => (
-              <Menu.Item key={item.key}>{item.label}</Menu.Item>
-            ))}
-          </Menu>
-        }
-      >
-        <a onClick={(e) => e.preventDefault()}>
-          <Space>
-            Recipes
-            <DownOutlined />
-          </Space>
-        </a>
-      </Dropdown>
-    ),
+    getItem(<Link to="/recipes">Recipe</Link>, "2"),
     getItem(<Link to="/random-recipe">Random Recipe</Link>, "3"),
     getItem(<Link to="/contact-us">Contact Us</Link>, "4"),
   ];

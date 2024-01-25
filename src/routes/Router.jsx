@@ -10,13 +10,12 @@ import Category from "../pages/category/Category";
 import Ingredient from "../pages/ingredients/Ingredients";
 import AtoZ from "../pages/aToZ/AtoZ";
 
-
 const AppRouter = () => {
   return (
     <Routes>
       <Route element={<LayoutWrapper />}>
         <Route path="/" element={<Home />} />
-        <Route path="/cuisines" element={<Recipes />} />
+        <Route path="/recipes" element={<Recipes />} />
         <Route path="/categories" element={<Category />} />
         <Route path="/ingredients" element={<Ingredient />} />
         <Route path="/search-AtoZ" element={<AtoZ />} />
