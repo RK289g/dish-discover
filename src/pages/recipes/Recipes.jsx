@@ -1,41 +1,130 @@
-import { Button, Col, Drawer, Input, Row, Spin } from "antd";
-import CuisinesType from "../../components/cuisinesType/CuisinesType";
+import axios from "axios";
 import "./Recipes.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { Button, Col, Collapse, Input, Row, Tag } from "antd";
+import { CaretRightOutlined } from "@ant-design/icons";
+import RecipeCard from "../../components/common/recipe-card/RecipeCard";
 
 const Recipes = () => {
-  const [cuisineTypeName, setCuisineTypeName] = useState("American");
+  const [recipeData, setRecipeData] = useState([]);
+
   const [CuisineTypes, setCuisineTypes] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [categoryTypes, setCategoryTypes] = useState([]);
+
+  const fetchCategoryRecipes = async (categoryTypeName) => {
+    axios
+      .get(
+        `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryTypeName}`
+      )
+      .then((res) => {
+        setRecipeData(res.data.meals);
+      })
+      .catch((err) => {
+        console.error("Error fetching tasks: ", err);
+      });
+  };
+
+  const fetchCuisineRecipes = async (cuisineTypeName) => {
+    axios
+      .get(
+        `https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisineTypeName}`
+      )
+      .then((res) => {
+        setRecipeData(res.data.meals);
+      })
+      .catch((err) => {
+        console.error("Error fetching tasks: ", err);
+      });
+  };
+
+  const fetchRecipes = async () => {
+    axios
+      .get("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+      .then((res) => {
+        setRecipeData(res.data.meals);
+      })
+      .catch((err) => {
+        console.error("Error fetching tasks: ", err);
+      });
+  };
+
+  const fetchCategoryType = () => {
+    axios
+      .get("https://www.themealdb.com/api/json/v1/1/list.php?c=list")
+      .then((response) => {
+        setCategoryTypes(response.data.meals);
+      })
+      .catch((error) => {
+        console.error("Error fetching ingredient types: ", error);
+      });
+  };
 
   const fetchCuisineType = () => {
-    setIsLoading(true);
     axios
       .get("https://www.themealdb.com/api/json/v1/1/list.php?a=list")
       .then((response) => {
         setCuisineTypes(response.data.meals);
-        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching ingredient types: ", error);
-        setIsLoading(false);
       });
   };
 
   useEffect(() => {
+    fetchRecipes();
     fetchCuisineType();
+    fetchCategoryType();
   }, []);
 
-  const [open, setOpen] = useState(false);
-
-  const showDrawer = () => {
-    setOpen(true);
+  const panelStyle = {
+    marginBottom: 24,
+    background: "white",
+    borderRadius: 5,
+    border: "1px solid gray",
   };
 
-  const onClose = () => {
-    setOpen(false);
-  };
+  const getItems = (panelStyle) => [
+    {
+      key: "1",
+      label: "Cuisines",
+      children: (
+        <div className="tags-wrapper">
+          {CuisineTypes.map((cusineType, index) => (
+            <Tag
+              key={index}
+              className="cuisine-column"
+              onClick={() => fetchCuisineRecipes(cusineType?.strArea)}
+            >
+              <Button className="btn-cuisine-name">
+                {cusineType?.strArea}
+              </Button>
+            </Tag>
+          ))}
+        </div>
+      ),
+      style: panelStyle,
+    },
+    {
+      key: "2",
+      label: "Categories",
+      children: (
+        <div className="tags-wrapper">
+          {categoryTypes.map((categoryType, index) => (
+            <Tag
+              key={index}
+              className="cuisine-column"
+              onClick={() => fetchCategoryRecipes(categoryType?.strCategory)}
+            >
+              <Button className="btn-cuisine-name">
+                {categoryType?.strCategory}
+              </Button>
+            </Tag>
+          ))}
+        </div>
+      ),
+      style: panelStyle,
+    },
+  ];
 
   return (
     <div className="recipes-wrapper">
@@ -49,70 +138,27 @@ const Recipes = () => {
 
         <div className="recipes-layout">
           <Row>
-            <Col span={8} style={{ border: "1px solid red" }}>
-              all types
+            <Col span={8}>
+              <div className="cuisines-section">
+                <h1 className="header-text">Decide What To Write</h1>
+                <Collapse
+                  bordered={false}
+                  defaultActiveKey={["1"]}
+                  expandIcon={({ isActive }) => (
+                    <CaretRightOutlined rotate={isActive ? 90 : 0} />
+                  )}
+                  items={getItems(panelStyle)}
+                />
+
+                {/* <CuisinesType cuisineTypeName={cuisineTypeName} /> */}
+              </div>
             </Col>
-            <Col span={16} style={{ border: "1px solid red" }}>
-              card
+            <Col span={16}>
+              <RecipeCard recipeData={recipeData} />
             </Col>
           </Row>
         </div>
       </div>
-
-      {/* {isLoading ? (
-        <div className="recipes-spinner">
-          <Spin fullscreen={true} size="large" />
-        </div>
-      ) : (
-        <div className="recipe-inner-wrapper">
-          <h1 className="header-text">Cuisines</h1>
-          <div className="cuisine-row-column">
-            <Row gutter={[10, 10]} align={"Middle"}>
-              {CuisineTypes.map((cusineType, index) => (
-                <Col
-                  lg={3}
-                  md={6}
-                  key={index}
-                  className="cuisine-column"
-                  onClick={() => setCuisineTypeName(cusineType.strArea)}
-                >
-                  <Button className="btn-cuisine-name">
-                    {cusineType.strArea}
-                  </Button>
-                </Col>
-              ))}
-            </Row>
-          </div>
-          <div>
-            <div className="action-button">
-              <Button className="drawer-buttons" onClick={showDrawer}>
-                Cuisines
-              </Button>
-            </div>
-            <Drawer
-              title="Cuisines"
-              placement={"right"}
-              closable={true}
-              onClose={onClose}
-              open={open}
-              key={"right"}
-              className="drawer-wrappers"
-            >
-              {CuisineTypes.map((cusineType, index) => (
-                <div key={index} className="cuis" onClick={onClose}>
-                  <Button
-                    className="cuisine-titles"
-                    onClick={() => setCuisineTypeName(cusineType.strArea)}
-                  >
-                    {cusineType.strArea}
-                  </Button>
-                </div>
-              ))}
-            </Drawer>
-          </div>
-          <CuisinesType cuisineTypeName={cuisineTypeName} />
-        </div>
-      )} */}
     </div>
   );
 };

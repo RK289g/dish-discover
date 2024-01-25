@@ -17,8 +17,9 @@
   padding-left: 4%;
 }
 
-.logo{
+.logo {
   display: flex;
+  flex-direction: row;
 }
 
 .drawer-button {
