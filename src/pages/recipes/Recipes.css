@@ -2,7 +2,7 @@
   /* display: flex;
   flex-direction: column;
   align-items: center; */
-  min-height: 100vh;
+  min-height: 90vh;
   overflow-x: hidden;
 }
 
@@ -16,10 +16,13 @@
 }
 
 .recipes-banner {
-  height: 200px;
-  width: 100%;
-  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
   margin-bottom: 40px;
+}
+
+.recipes-banner .banner-img {
+  width: 1440px;
 }
 
 .recipes-layout {
@@ -50,6 +53,13 @@
   font-size: 28px;
   color: #124559;
   text-align: center;
+}
+
+.recipe-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20%;
 }
 
 .tags-wrapper {

@@ -1,44 +1,53 @@
 import axios from "axios";
 import "./Recipes.css";
 import { useEffect, useState } from "react";
-import { Button, Col, Collapse, Input, Row, Tag } from "antd";
+import { Button, Col, Collapse, Image, Input, Row, Spin, Tag } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 import RecipeCard from "../../components/common/recipe-card/RecipeCard";
+import banner from "../../assets/banner/banner.png";
 
 const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [CuisineTypes, setCuisineTypes] = useState([]);
   const [categoryTypes, setCategoryTypes] = useState([]);
   const [searchByName, setSearchByName] = useState("");
 
   const fetchCategoryRecipes = async (categoryTypeName) => {
+    setIsLoading(true);
     axios
       .get(
         `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryTypeName}`
       )
       .then((res) => {
         setRecipeData(res.data.meals);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching tasks: ", err);
+        setIsLoading(false);
       });
   };
 
   const fetchCuisineRecipes = async (cuisineTypeName) => {
+    setIsLoading(true);
     axios
       .get(
         `https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisineTypeName}`
       )
       .then((res) => {
         setRecipeData(res.data.meals);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching tasks: ", err);
+        setIsLoading(false);
       });
   };
 
   const fetchSearchByName = async () => {
+    setIsLoading(true);
     axios
       .get(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchByName}`
@@ -46,9 +55,12 @@ const Recipes = () => {
       .then((res) => {
         console.log(res.data.meals, "res.data.meals");
         setRecipeData(res.data.meals);
+        setIsLoading(false);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching tasks: ", err);
+        isLoading(false);
       });
   };
 
@@ -136,7 +148,9 @@ const Recipes = () => {
 
   return (
     <div className="recipes-wrapper">
-      <div className="recipes-banner"></div>
+      <div className="recipes-banner">
+        <Image className="banner-img" preview={false} src={banner} />
+      </div>
       <div className="recipes-inner-wrapper">
         <Input
           size="large"
@@ -161,7 +175,13 @@ const Recipes = () => {
               </div>
             </Col>
             <Col span={16}>
-              <RecipeCard recipeData={recipeData} />
+              {isLoading ? (
+                <div className="recipe-spinner">
+                  <Spin size="large" />
+                </div>
+              ) : (
+                <RecipeCard recipeData={recipeData} />
+              )}
             </Col>
           </Row>
         </div>
