@@ -29,7 +29,7 @@ const LayoutWrapper = () => {
 
   const items = [
     getItem(<Link to="/">Home</Link>, "1"),
-    getItem(<Link to="/recipes">Recipe</Link>, "2"),
+    getItem(<Link to="/recipes">Recipes</Link>, "2"),
     getItem(<Link to="/random-recipe">Random Recipe</Link>, "3"),
     getItem(<Link to="/contact-us">Contact Us</Link>, "4"),
   ];

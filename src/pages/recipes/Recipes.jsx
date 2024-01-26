@@ -10,6 +10,7 @@ const Recipes = () => {
 
   const [CuisineTypes, setCuisineTypes] = useState([]);
   const [categoryTypes, setCategoryTypes] = useState([]);
+  const [searchByName, setSearchByName] = useState("");
 
   const fetchCategoryRecipes = async (categoryTypeName) => {
     axios
@@ -37,10 +38,13 @@ const Recipes = () => {
       });
   };
 
-  const fetchRecipes = async () => {
+  const fetchSearchByName = async () => {
     axios
-      .get("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+      .get(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchByName}`
+      )
       .then((res) => {
+        console.log(res.data.meals, "res.data.meals");
         setRecipeData(res.data.meals);
       })
       .catch((err) => {
@@ -71,10 +75,14 @@ const Recipes = () => {
   };
 
   useEffect(() => {
-    fetchRecipes();
+    fetchSearchByName();
     fetchCuisineType();
     fetchCategoryType();
   }, []);
+
+  useEffect(() => {
+    fetchSearchByName();
+  }, [searchByName]);
 
   const panelStyle = {
     marginBottom: 24,
@@ -134,6 +142,7 @@ const Recipes = () => {
           size="large"
           placeholder="Search Recipes"
           className="recipes-search"
+          onChange={(ev) => setSearchByName(ev.target.value)}
         />
 
         <div className="recipes-layout">
@@ -149,8 +158,6 @@ const Recipes = () => {
                   )}
                   items={getItems(panelStyle)}
                 />
-
-                {/* <CuisinesType cuisineTypeName={cuisineTypeName} /> */}
               </div>
             </Col>
             <Col span={16}>
