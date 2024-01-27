@@ -10,13 +10,17 @@ import noData from "../../assets/logo/Empty-bro.svg";
 const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isCusineActive, setIsCusineActive] = useState("");
+  const [isCategoryActive, setIsCategoryActive] = useState("");
 
   const [CuisineTypes, setCuisineTypes] = useState([]);
   const [categoryTypes, setCategoryTypes] = useState([]);
   const [searchByName, setSearchByName] = useState("");
 
-  const fetchCategoryRecipes = async (categoryTypeName) => {
+  const fetchCategoryRecipes = async (categoryTypeName, index) => {
     setIsLoading(true);
+    setIsCategoryActive(index);
+    setIsCusineActive(-1);
     axios
       .get(
         `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryTypeName}`
@@ -31,8 +35,10 @@ const Recipes = () => {
       });
   };
 
-  const fetchCuisineRecipes = async (cuisineTypeName) => {
+  const fetchCuisineRecipes = async (cuisineTypeName, index) => {
     setIsLoading(true);
+    setIsCusineActive(index);
+    setIsCategoryActive(-1);
     axios
       .get(
         `https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisineTypeName}`
@@ -49,6 +55,8 @@ const Recipes = () => {
 
   const fetchSearchByName = async () => {
     setIsLoading(true);
+    setIsCusineActive(-1);
+    setIsCategoryActive(-1);
     axios
       .get(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchByName}`
@@ -114,9 +122,15 @@ const Recipes = () => {
             <Tag
               key={index}
               className="cuisine-column"
-              onClick={() => fetchCuisineRecipes(cusineType?.strArea)}
+              onClick={() => fetchCuisineRecipes(cusineType?.strArea, index)}
             >
-              <Button className="btn-cuisine-name">
+              <Button
+                className={
+                  index === isCusineActive
+                    ? "btn-active-cuisine-name"
+                    : "btn-cuisine-name"
+                }
+              >
                 {cusineType?.strArea}
               </Button>
             </Tag>
@@ -134,9 +148,17 @@ const Recipes = () => {
             <Tag
               key={index}
               className="cuisine-column"
-              onClick={() => fetchCategoryRecipes(categoryType?.strCategory)}
+              onClick={() =>
+                fetchCategoryRecipes(categoryType?.strCategory, index)
+              }
             >
-              <Button className="btn-cuisine-name">
+              <Button
+                className={
+                  index === isCategoryActive
+                    ? "btn-active-cuisine-name"
+                    : "btn-cuisine-name"
+                }
+              >
                 {categoryType?.strCategory}
               </Button>
             </Tag>
@@ -168,8 +190,8 @@ const Recipes = () => {
                 <Collapse
                   bordered={false}
                   defaultActiveKey={["1"]}
-                  expandIcon={({ isActive }) => (
-                    <CaretRightOutlined rotate={isActive ? 90 : 0} />
+                  expandIcon={({ isCusineActive }) => (
+                    <CaretRightOutlined rotate={isCusineActive ? 90 : 0} />
                   )}
                   items={getItems(panelStyle)}
                 />

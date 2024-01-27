@@ -64,6 +64,9 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  background-color: #a3cef1;
+  border-radius: 10px;
+  padding: 10px 0;
 }
 
 .no-data-container {
@@ -81,6 +84,12 @@
 
 .btn-cuisine-name {
   min-width: 100px;
+}
+
+.btn-active-cuisine-name {
+  background-color: #001529;
+  min-width: 100px;
+  color: white;
 }
 
 .cuisine-container .cuisine-img {
