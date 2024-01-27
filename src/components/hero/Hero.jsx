@@ -8,7 +8,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const handleExploreRecipe = () => {
-    navigate(`/cuisines`);
+    navigate(`/recipes`);
   };
   return (
     <div className="Hero-wrapper">

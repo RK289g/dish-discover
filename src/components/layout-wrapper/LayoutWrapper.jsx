@@ -5,6 +5,7 @@ import { Header } from "antd/es/layout/layout";
 import Footer from "../footer/Footer";
 import { useState } from "react";
 import { MenuFoldOutlined } from "@ant-design/icons";
+import useGetMenuKey from "../../hooks/useGetMenuKey";
 
 const LayoutWrapper = () => {
   function getItem(label, key, icon, children, type) {
@@ -28,11 +29,13 @@ const LayoutWrapper = () => {
   };
 
   const items = [
-    getItem(<Link to="/">Home</Link>, "1"),
-    getItem(<Link to="/recipes">Recipes</Link>, "2"),
-    getItem(<Link to="/random-recipe">Random Recipe</Link>, "3"),
-    getItem(<Link to="/contact-us">Contact Us</Link>, "4"),
+    getItem(<Link to="/">Home</Link>, ""),
+    getItem(<Link to="/recipes">Recipes</Link>, "recipes"),
+    getItem(<Link to="/random-recipe">Random Recipe</Link>, "random-recipe"),
+    getItem(<Link to="/contact-us">Contact Us</Link>, "contact-us"),
   ];
+
+  const menuKey = useGetMenuKey();
 
   return (
     <>
@@ -48,9 +51,8 @@ const LayoutWrapper = () => {
           theme="dark"
           color="#ffffff"
           mode="horizontal"
-          defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub1"]}
           items={items}
+          selectedKeys={menuKey}
         />
 
         <MenuFoldOutlined className="drawer-button" onClick={showDrawer} />

@@ -1,7 +1,4 @@
 .recipes-wrapper {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   min-height: 90vh;
   overflow-x: hidden;
 }
@@ -12,13 +9,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 
 .recipes-banner {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+  position: relative;
 }
 
 .recipes-banner .banner-img {
@@ -28,7 +25,6 @@
 .recipes-layout {
   margin-top: 40px;
   width: 100%;
-  /* border: 1px solid red; */
 }
 
 .recipes-search {
@@ -68,6 +64,14 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+}
+
+.no-data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
 }
 
 .cuisine-column {

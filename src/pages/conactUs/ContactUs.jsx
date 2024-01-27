@@ -1,126 +1,183 @@
-import {
-  ArrowRightOutlined,
-  FacebookOutlined,
-  LinkedinOutlined,
-  MailOutlined,
-  SendOutlined,
-} from "@ant-design/icons";
+import { useRef, useState } from "react";
 import "./ContactUs.css";
-// import emailjs from "@emailjs/browser";
+import { Controller, useForm } from "react-hook-form";
+import { Button, Col, Input, Row, message } from "antd";
+import emailjs from "@emailjs/browser";
+import TextArea from "antd/es/input/TextArea";
+import { Link } from "react-router-dom";
+import FacebookIcon from "../../components/common/logo/FacebookIcon";
+import LinkedinIcon from "../../components/common/logo/LinkedInIcon";
+import TwitterIcon from "../../components/common/logo/TwitterIcon";
 
 const ContactUs = () => {
-  // const form = useRef();
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
+  const [isLoading, setIsLoading] = useState(false);
 
-  //   emailjs.sendForm(
-  //     "service_tdxz4vb",
-  //     "template_8rhqj9d",
-  //     form.current,
-  //     "u0pxBIKMVXsbY35NH"
-  //   );
-  //   e.target.reset();
-  // };
+  const form = useRef(null);
+
+  const onSubmit = (data) => {
+    console.log(data);
+    setIsLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_9cetc9a",
+        "template_z4daixp",
+        form.current,
+        "qXkCWWJXXy1G1ho97"
+      )
+      .then(
+        (result) => {
+          setIsLoading(false);
+          console.log(result.text);
+          message.success("Got your message, thank you");
+          reset();
+        },
+        (error) => {
+          setIsLoading(false);
+          console.log(error.text);
+          message.success("Email sending failed");
+        }
+      );
+  };
+
   return (
-    <section>
-      <div className="contact-header">
-        <h2 className="section-title">Get in touch</h2>
-        <h3 className="section-subtitle">Contact Us</h3>
-      </div>
-
-      <div className="contact-container">
-        <div>
-          <h3 className="contact-title">Talk to us</h3>
-
-          <div className="contact-info">
-            <div className="contact-info">
-              <div className="contact-card">
-                <MailOutlined className="contact-card-icon" />
-                <h3 className="contact-card-title">Email</h3>
-                <a href="mailto:rksaju80@gmail.com" className="contact-button">
-                  Connect us <ArrowRightOutlined />
-                </a>
-              </div>
+    <div className="contact-me-wrapper">
+      <div className="contact-me-inner-wrapper">
+        <Row gutter={{ md: 60 }} align="middle">
+          <Col span={24} md={{ span: 12 }}>
+            <div className="contact-us-title">
+              <h3 className="page-title">Get in touch</h3>
+              <p className="page-sub-title">Need to get in touch with us?</p>
+              <p className="page-sub-title">
+                Use the form or Social Media link below
+              </p>
             </div>
-
-            <div className="contact-info">
-              <div className="contact-card">
-                <FacebookOutlined className="contact-card-icon" />
-                <h3 className="contact-card-title">Facebook</h3>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100086738076898"
-                  className="contact-button"
+            <div className="user-social-media-wrapper">
+              <div className="user-social-media">
+                <Link
+                  to="https://www.linkedin.com/in/raisul-karim-saju/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="user-link"
                 >
-                  Connect us <ArrowRightOutlined />
-                </a>
+                  <LinkedinIcon />
+                </Link>
               </div>
-            </div>
-
-            <div className="contact-info">
-              <div className="contact-card">
-                <LinkedinOutlined className="contact-card-icon" />
-                <h3 className="contact-card-title">LinkedIn</h3>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100086738076898"
-                  className="contact-button"
+              <div className="user-social-media">
+                <Link
+                  to="https://twitter.com/RaisulSaju"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="user-link"
                 >
-                  Connect us <ArrowRightOutlined />
-                </a>
+                  <TwitterIcon />
+                </Link>
+              </div>
+              <div className="user-social-media">
+                <Link
+                  to="https://www.facebook.com/profile.php?id=100086738076898"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="user-link"
+                >
+                  <FacebookIcon />
+                </Link>
               </div>
             </div>
-          </div>
-        </div>
+          </Col>
+          <Col span={24} md={{ span: 12 }}>
+            <div className="form-wrapper">
+              <p className="page-sub-title">Fill the form to connect</p>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                ref={form}
+                className="contact-us-form"
+              >
+                <div className="margin-bottom-30">
+                  <Controller
+                    render={({ field }) => (
+                      <Input
+                        {...field}
+                        placeholder="Full Name"
+                        className="general-input"
+                      />
+                    )}
+                    name="to_name"
+                    control={control}
+                    rules={{ required: true }}
+                  />
+                  {errors?.to_name?.type === "required" && (
+                    <span className="error-message">
+                      Please Enter Your Name
+                    </span>
+                  )}
+                </div>
+                <div className="margin-bottom-30">
+                  <Controller
+                    render={({ field }) => (
+                      <Input
+                        {...field}
+                        placeholder="Email"
+                        className="general-input"
+                      />
+                    )}
+                    name="from_email"
+                    control={control}
+                    // rules={{ required: true, pattern: RegexValidators.EMAIL }}
+                  />
+                  {errors?.from_email?.type === "required" && (
+                    <span className="error-message">
+                      Please Enter Your Email
+                    </span>
+                  )}
+                  {errors?.from_email?.type === "pattern" && (
+                    <span className="error-message">
+                      Please Enter a valid Email Address Name
+                    </span>
+                  )}
+                </div>
+                <div className="margin-bottom-30">
+                  <Controller
+                    render={({ field }) => (
+                      <TextArea
+                        {...field}
+                        placeholder="Message"
+                        className="general-input"
+                        autoSize={{ minRows: 3, maxRows: 5 }}
+                      />
+                    )}
+                    name="message"
+                    control={control}
+                    rules={{ required: true }}
+                  />
 
-        <div className="contact-content">
-          <h3 className="contact-title">Write us</h3>
-          <form className="contact-form">
-            {/* <form ref={form} onSubmit={sendEmail} className="contact__form"> */}
-            <div className="contact-form-div">
-              <label className="contact-form-tag">Name</label>
-              <input
-                type="text"
-                name="name"
-                className="contact-form-input"
-                placeholder="Insert your name"
-              />
+                  {errors?.from_email?.type === "required" && (
+                    <span className="error-message">
+                      Please Enter Your Message
+                    </span>
+                  )}
+                </div>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="submit-button"
+                  loading={isLoading}
+                >
+                  Send Message
+                </Button>
+              </form>
             </div>
-
-            <div className="contact-form-div">
-              <label className="contact-form-tag">Mail</label>
-              <input
-                type="email"
-                name="email"
-                className="contact-form-input"
-                placeholder="Insert your email"
-              />
-            </div>
-
-            <div className="contact-form-area">
-              <label className="contact-form-tag">Project</label>
-              <textarea
-                name="project"
-                cols="30"
-                rows="10"
-                className="contact-form-input"
-                placeholder="Write your message"
-              ></textarea>
-            </div>
-            <button className="button button--flex">
-              Send Message <SendOutlined className="send-button"/>
-              <path
-                d="M14.2199 21.9352C13.0399 21.9352 11.3699 21.1052 10.0499 17.1352L9.32988 14.9752L7.16988 14.2552C3.20988 12.9352 2.37988 11.2652 2.37988 10.0852C2.37988 8.91525 3.20988 7.23525 7.16988 5.90525L15.6599 3.07525C17.7799 2.36525 19.5499 2.57525 20.6399 3.65525C21.7299 4.73525 21.9399 6.51525 21.2299 8.63525L18.3999 17.1252C17.0699 21.1052 15.3999 21.9352 14.2199 21.9352ZM7.63988 7.33525C4.85988 8.26525 3.86988 9.36525 3.86988 10.0852C3.86988 10.8052 4.85988 11.9052 7.63988 12.8252L10.1599 13.6652C10.3799 13.7352 10.5599 13.9152 10.6299 14.1352L11.4699 16.6552C12.3899 19.4352 13.4999 20.4252 14.2199 20.4252C14.9399 20.4252 16.0399 19.4352 16.9699 16.6552L19.7999 8.16525C20.3099 6.62525 20.2199 5.36525 19.5699 4.71525C18.9199 4.06525 17.6599 3.98525 16.1299 4.49525L7.63988 7.33525Z"
-                fill="var(--container-color)"
-              ></path>
-              <path
-                d="M10.11 14.7052C9.92005 14.7052 9.73005 14.6352 9.58005 14.4852C9.29005 14.1952 9.29005 13.7152 9.58005 13.4252L13.16 9.83518C13.45 9.54518 13.93 9.54518 14.22 9.83518C14.51 10.1252 14.51 10.6052 14.22 10.8952L10.64 14.4852C10.5 14.6352 10.3 14.7052 10.11 14.7052Z"
-                fill="var(--container-color)"
-              ></path>
-            </button>
-          </form>
-        </div>
+          </Col>
+        </Row>
       </div>
-    </section>
+    </div>
   );
 };
 

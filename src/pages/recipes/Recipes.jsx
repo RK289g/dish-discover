@@ -5,6 +5,7 @@ import { Button, Col, Collapse, Image, Input, Row, Spin, Tag } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 import RecipeCard from "../../components/common/recipe-card/RecipeCard";
 import banner from "../../assets/banner/banner.png";
+import noData from "../../assets/logo/Empty-bro.svg";
 
 const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);
@@ -150,15 +151,15 @@ const Recipes = () => {
     <div className="recipes-wrapper">
       <div className="recipes-banner">
         <Image className="banner-img" preview={false} src={banner} />
-      </div>
-      <div className="recipes-inner-wrapper">
         <Input
           size="large"
           placeholder="Search Recipes"
           className="recipes-search"
           onChange={(ev) => setSearchByName(ev.target.value)}
+          style={{ position: "absolute", top: "50%" }}
         />
-
+      </div>
+      <div className="recipes-inner-wrapper">
         <div className="recipes-layout">
           <Row>
             <Col span={8}>
@@ -175,12 +176,19 @@ const Recipes = () => {
               </div>
             </Col>
             <Col span={16}>
-              {isLoading ? (
-                <div className="recipe-spinner">
-                  <Spin size="large" />
-                </div>
+              {recipeData && recipeData.length > 0 ? (
+                isLoading ? (
+                  <div className="recipe-spinner">
+                    <Spin size="large" />
+                  </div>
+                ) : (
+                  <RecipeCard recipeData={recipeData} />
+                )
               ) : (
-                <RecipeCard recipeData={recipeData} />
+                <div className="no-data-container">
+                  <Image preview={false} src={noData} />
+                  <h2>No recipe Found</h2>
+                </div>
               )}
             </Col>
           </Row>
