@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { Button, Col, Collapse, Image, Input, Row, Spin, Tag } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 import RecipeCard from "../../components/common/recipe-card/RecipeCard";
-import banner from "../../assets/banner/banner.png";
+import bannerFinal from "../../assets/banner/banner-final.jpg";
 import noData from "../../assets/logo/Empty-bro.svg";
+import { useLocation } from "react-router-dom";
 
 const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);
@@ -17,16 +18,34 @@ const Recipes = () => {
   const [categoryTypes, setCategoryTypes] = useState([]);
   const [searchByName, setSearchByName] = useState("");
 
+  const CategoryLocation = useLocation();
+  const { CategoryRecipeKey = "", CategoryRecipeIndex = "" } =
+    CategoryLocation.state || {};
+
+  const CuisineLocation = useLocation();
+  const { recipeKey = "", recipeIndex = "" } = CuisineLocation.state || {};
+
+  const [isCategoryDummy, setIsCategoryDummy] = useState(CategoryRecipeIndex);
+  const [isCuisineDummy, setIsCuisineDummy] = useState(recipeIndex);
+
+  const handleChange = (ev) => {
+    setSearchByName(ev.target.value);
+    setIsCategoryDummy(-1);
+    setIsCuisineDummy(-1);
+  };
+
   const fetchCategoryRecipes = async (categoryTypeName, index) => {
     setIsLoading(true);
     setIsCategoryActive(index);
     setIsCusineActive(-1);
+
     axios
       .get(
         `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryTypeName}`
       )
       .then((res) => {
         setRecipeData(res.data.meals);
+        console.log(index, "inside category");
         setIsLoading(false);
       })
       .catch((err) => {
@@ -62,10 +81,9 @@ const Recipes = () => {
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchByName}`
       )
       .then((res) => {
-        console.log(res.data.meals, "res.data.meals");
         setRecipeData(res.data.meals);
         setIsLoading(false);
-        setIsLoading(false);
+        console.log("inside search by namne");
       })
       .catch((err) => {
         console.error("Error fetching tasks: ", err);
@@ -96,14 +114,37 @@ const Recipes = () => {
   };
 
   useEffect(() => {
-    fetchSearchByName();
+    if (recipeKey && recipeIndex) {
+      fetchCuisineRecipes(recipeKey, recipeIndex);
+    } else {
+      console.log("jesatat");
+      fetchSearchByName();
+    }
+  }, [recipeKey, recipeIndex]);
+
+  useEffect(() => {
+    if (CategoryRecipeKey && CategoryRecipeIndex) {
+      fetchCategoryRecipes(CategoryRecipeKey, CategoryRecipeIndex);
+    } else {
+      console.log("jesatat");
+      fetchSearchByName();
+    }
+  }, [CategoryRecipeKey, CategoryRecipeIndex]);
+
+  useEffect(() => {
     fetchCuisineType();
     fetchCategoryType();
   }, []);
 
   useEffect(() => {
-    fetchSearchByName();
+    if (isCategoryDummy < 0 && isCuisineDummy < 0) fetchSearchByName();
+    console.log("sercfhjoant");
   }, [searchByName]);
+
+  // useEffect(() => {
+  //   if (isCuisineDummy < 0) fetchSearchByName();
+  //   console.log("sercfhjoant");
+  // }, [searchByName]);
 
   const panelStyle = {
     marginBottom: 24,
@@ -172,12 +213,12 @@ const Recipes = () => {
   return (
     <div className="recipes-wrapper">
       <div className="recipes-banner">
-        <Image className="banner-img" preview={false} src={banner} />
+        <Image className="banner-img" preview={false} src={bannerFinal} />
         <Input
           size="large"
           placeholder="Search Recipes"
           className="recipes-search"
-          onChange={(ev) => setSearchByName(ev.target.value)}
+          onChange={handleChange}
           style={{ position: "absolute", top: "50%" }}
         />
       </div>
