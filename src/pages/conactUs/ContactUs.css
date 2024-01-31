@@ -71,6 +71,10 @@
   border-radius: 50%;
 }
 
+.user-social-media:hover {
+  background-color: rgb(136, 118, 118);
+}
+
 .user-icons {
   font-size: 20px;
 }

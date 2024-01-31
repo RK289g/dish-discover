@@ -22,7 +22,6 @@ const ContactUs = () => {
   const form = useRef(null);
 
   const onSubmit = (data) => {
-    console.log(data);
     setIsLoading(true);
 
     emailjs
