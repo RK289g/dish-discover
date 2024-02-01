@@ -55,14 +55,16 @@ const Footer = () => {
       <div className="quick-links">
         {/* <h4>Quick Links</h4> */}
         <div className="quick-link-wrapper">
-          <Link to="/Recipes" className="items">
+          <Link to="/recipes" className="items">
             Recipes
           </Link>
-          <Link to="/RandomRecipe" className="items">
+          <Link to="/random-recipe" className="items">
             Random Recipe
           </Link>
-          <Link className="items">Articles</Link>
-          <Link className="items">Contact Us</Link>
+          {/* <Link className="items">Articles</Link> */}
+          <Link to="/contact-us" className="items">
+            Contact Us
+          </Link>
         </div>
       </div>
       <div>
