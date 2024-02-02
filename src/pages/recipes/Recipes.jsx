@@ -81,11 +81,13 @@ const Recipes = () => {
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchByName}`
       )
       .then((res) => {
-        setRecipeData(res.data.meals);
+        const response = res.data.meals;
+        console.log("inside search by namne", res.data.meals);
+        setRecipeData(response === null ? [] : response);
         setIsLoading(false);
-        console.log("inside search by namne");
       })
       .catch((err) => {
+        setRecipeData([]);
         console.error("Error fetching tasks: ", err);
         isLoading(false);
       });
@@ -116,20 +118,24 @@ const Recipes = () => {
   useEffect(() => {
     if (recipeKey && recipeIndex) {
       fetchCuisineRecipes(recipeKey, recipeIndex);
+    } else if (CategoryRecipeKey && CategoryRecipeIndex) {
+      console.log("first useeffect");
+      fetchCategoryRecipes(CategoryRecipeKey, CategoryRecipeIndex);
     } else {
-      console.log("jesatat");
+      console.log("problem useeffect");
       fetchSearchByName();
     }
   }, [recipeKey, recipeIndex]);
 
-  useEffect(() => {
-    if (CategoryRecipeKey && CategoryRecipeIndex) {
-      fetchCategoryRecipes(CategoryRecipeKey, CategoryRecipeIndex);
-    } else {
-      console.log("jesatat");
-      fetchSearchByName();
-    }
-  }, [CategoryRecipeKey, CategoryRecipeIndex]);
+  // useEffect(() => {
+  //   if (CategoryRecipeKey && CategoryRecipeIndex) {
+  //     console.log("first useeffect");
+  //     fetchCategoryRecipes(CategoryRecipeKey, CategoryRecipeIndex);
+  //   } else {
+  //     console.log("second useeffect");
+  //     fetchSearchByName();
+  //   }
+  // }, [CategoryRecipeKey, CategoryRecipeIndex]);
 
   useEffect(() => {
     fetchCuisineType();
@@ -137,8 +143,10 @@ const Recipes = () => {
   }, []);
 
   useEffect(() => {
-    if (isCategoryDummy < 0 && isCuisineDummy < 0) fetchSearchByName();
-    console.log("sercfhjoant");
+    if (isCategoryDummy < 0 || isCuisineDummy < 0) {
+      console.log("last effect");
+      fetchSearchByName();
+    }
   }, [searchByName]);
 
   // useEffect(() => {
@@ -239,7 +247,7 @@ const Recipes = () => {
               </div>
             </Col>
             <Col span={16}>
-              {recipeData && recipeData.length > 0 ? (
+              {/* {recipeData && recipeData.length > 0 ? (
                 isLoading ? (
                   <div className="recipe-spinner">
                     <Spin size="large" />
@@ -252,6 +260,18 @@ const Recipes = () => {
                   <Image preview={false} src={noData} />
                   <h2>No recipe Found</h2>
                 </div>
+              )} */}
+              {isLoading ? (
+                <div className="recipe-spinner">
+                  <Spin size="large" />
+                </div>
+              ) : recipeData.length <= 0 ? (
+                <div className="no-data-container">
+                  <Image preview={false} src={noData} />
+                  <h2>No recipe Found</h2>
+                </div>
+              ) : (
+                <RecipeCard recipeData={recipeData} />
               )}
             </Col>
           </Row>

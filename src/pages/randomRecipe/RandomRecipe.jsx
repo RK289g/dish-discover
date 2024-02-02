@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./RandomRecipe.css";
-import { Button, Image } from "antd";
+import { Image } from "antd";
 
 const randomRecipe = () => {
   const [recipeData, setRecipeData] = useState([]);
@@ -19,9 +19,9 @@ const randomRecipe = () => {
 
   return (
     <div className="btn-get-recipe-wrapper">
-      <Button className="btn-get-recipe" onClick={() => fetchRandomRecipe()}>
+      <button className="btn-get-recipe" onClick={() => fetchRandomRecipe()}>
         Get Random Recipe
-      </Button>
+      </button>
 
       {recipeData?.map((recData) => {
         return (

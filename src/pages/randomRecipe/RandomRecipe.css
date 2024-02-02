@@ -6,19 +6,34 @@
   min-height: 100vh;
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .btn-get-recipe-wrapper .btn-get-recipe {
   font-size: 25px;
   height: 50px;
-  background-color: blueviolet;
-  margin: 50px;
-  color: white;
+  /* background-color: blueviolet; */
+  /* margin: 50px; */
+  /* color: white; */
   padding: 8px;
   border-radius: 12px;
   cursor: pointer;
+  animation: bounce 0.5s ease infinite; 
+  background-color: skyblue;
 }
 
 .btn-get-recipe-wrapper .btn-get-recipe:hover {
-  background-color: blue;
+  background-color: rgb(171, 171, 199);
+  animation: none;
 }
 
 @media only screen and (max-width: 767px) {
