@@ -18,6 +18,7 @@
 .column-recipe-category {
   display: flex;
   gap: 20px;
+  cursor: pointer;
 }
 
 .category-card-container {
@@ -36,7 +37,7 @@
   transition-duration: 1s;
   margin: 0px;
   padding: 0px;
-  filter: brightness(50%);
+  filter: brightness(60%);
 }
 
 .text-recipe-category {
@@ -48,4 +49,13 @@
   position: absolute;
   bottom: 0;
   color: white;
+}
+
+.img-recipe-category:hover {
+  filter: brightness(40%);
+  object-fit: cover;
+  transition-duration: 1s;
+  transform: scale(1.1);
+  overflow: hidden;
+  filter: brightness(30%);
 }
