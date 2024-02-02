@@ -36,9 +36,9 @@
 
 .page-sub-title {
   text-align: left;
-  line-height: 30px;
+  /* line-height: 30px; */
   margin: 0;
-  font-size: 20px;
+  font-size: 24px;
   color: black;
   font-family: "Calibri";
   /* border: 1px solid red; */
@@ -46,7 +46,8 @@
 
 .page-title {
   margin: 0;
-  margin-bottom: 20px;
+  padding: 0;
+  /* margin-bottom: 20px; */
   font-size: 42px;
   font-family: "Calibri";
 }
@@ -75,7 +76,7 @@
   color: #001529;
 }
 
-.user-link:hover{
+.user-link:hover {
   color: #0b4780;
 }
 
@@ -91,6 +92,10 @@
   color: white;
   background-color: #001529;
   border-radius: 8px;
+}
+
+.submit-button:hover{
+  background-color: #084074 !important;
 }
 
 @media (max-width: 992px) {

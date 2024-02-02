@@ -1,13 +1,14 @@
 import { useRef, useState } from "react";
 import "./ContactUs.css";
 import { Controller, useForm } from "react-hook-form";
-import { Button, Col, Input, Row, message } from "antd";
+import { Button, Col, Image, Input, Row, message } from "antd";
 import emailjs from "@emailjs/browser";
 import TextArea from "antd/es/input/TextArea";
 import { Link } from "react-router-dom";
 import FacebookIcon from "../../components/common/logo/FacebookIcon";
 import LinkedinIcon from "../../components/common/logo/LinkedInIcon";
 import TwitterIcon from "../../components/common/logo/TwitterIcon";
+import contactImg from "../../assets/logo/Call-center-cuate.png";
 
 const ContactUs = () => {
   const {
@@ -50,49 +51,18 @@ const ContactUs = () => {
     <div className="contact-me-wrapper">
       <div className="contact-me-inner-wrapper">
         <Row gutter={{ md: 60 }} align="middle">
-          <Col span={24} md={{ span: 12 }}>
+          <Col span={8} >
+            <Image src={contactImg} preview={false} height={400} />
+          </Col>
+          <Col span={12}>
+            <div className="form-wrapper">
             <div className="contact-us-title">
               <h3 className="page-title">Get in touch</h3>
-              <p className="page-sub-title">Need to get in touch with us?</p>
+              {/* <p className="page-sub-title">Need to get in touch with us?</p>
               <p className="page-sub-title">
                 Use the form or Social Media link below
-              </p>
+              </p> */}
             </div>
-            <div className="user-social-media-wrapper">
-              <div className="user-social-media">
-                <Link
-                  to="https://www.linkedin.com/in/raisul-karim-saju/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="user-link"
-                >
-                  <LinkedinIcon />
-                </Link>
-              </div>
-              <div className="user-social-media">
-                <Link
-                  to="https://twitter.com/RaisulSaju"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="user-link"
-                >
-                  <TwitterIcon />
-                </Link>
-              </div>
-              <div className="user-social-media">
-                <Link
-                  to="https://www.facebook.com/profile.php?id=100086738076898"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="user-link"
-                >
-                  <FacebookIcon />
-                </Link>
-              </div>
-            </div>
-          </Col>
-          <Col span={24} md={{ span: 12 }}>
-            <div className="form-wrapper">
               <p className="page-sub-title">Fill the form to connect</p>
               <form
                 onSubmit={handleSubmit(onSubmit)}
