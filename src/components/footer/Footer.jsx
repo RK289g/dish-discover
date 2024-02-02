@@ -1,12 +1,9 @@
-import {
-  FacebookFilled,
-  GithubFilled,
-  InstagramFilled,
-  LinkedinFilled,
-} from "@ant-design/icons";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import LinkedinIcon from "../common/logo/LinkedInIcon";
+import TwitterIcon from "../common/logo/TwitterIcon";
+import FacebookIcon from "../common/logo/FacebookIcon";
 
 const Footer = () => {
   const [currentYear] = useState(new Date().getFullYear());
@@ -15,40 +12,37 @@ const Footer = () => {
       <div className="contact-section-wrapper">
         {/* <h4>Contact Us</h4> */}
         <div className="contact-section">
-          <a
-            className="logo-linkedin"
-            href="https://www.linkedin.com/in/raisul-karim-saju/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedinFilled />
-          </a>
-          <a
-            className="logo-github"
-            href="https://github.com/RK289g"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubFilled />
-          </a>
+          <div>
+            <Link
+              to="https://www.linkedin.com/in/raisul-karim-saju/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-user-link"
+            >
+              <LinkedinIcon />
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="https://twitter.com/RaisulSaju"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-user-link"
+            >
+              <TwitterIcon />
+            </Link>
+          </div>
 
-          <a
-            className="logo-facebook"
-            href="https://www.facebook.com/profile.php?id=100086738076898"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FacebookFilled />
-          </a>
-
-          <a
-            className="logo-insta"
-            href="https://www.instagram.com/raisul_saju/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <InstagramFilled />
-          </a>
+          <div>
+            <Link
+              to="https://www.facebook.com/profile.php?id=100086738076898"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-user-link"
+            >
+              <FacebookIcon />
+            </Link>
+          </div>
         </div>
       </div>
 

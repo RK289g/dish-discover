@@ -47,7 +47,7 @@
 }
 
 .card:hover .card-text {
-  height: 100px;
+  height: 80px;
   /* background-color: t; */
 }
 
@@ -55,6 +55,7 @@
   margin: 0px;
   padding: 0px;
   text-align: start;
+  font-size: 25px;
 }
 
 .card .card-text .text-btn-wrapper {
@@ -66,7 +67,7 @@
 }
 
 .card .card-text .text-btn-wrapper p {
-  font-size: 20px;
+  font-size: 18px;
   margin: 0px;
   /* padding: 8px; */
   font-weight: 600;

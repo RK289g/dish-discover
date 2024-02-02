@@ -71,8 +71,12 @@
   border-radius: 50%;
 }
 
-.user-social-media:hover {
-  background-color: rgb(136, 118, 118);
+.user-link {
+  color: #001529;
+}
+
+.user-link:hover{
+  color: #0b4780;
 }
 
 .user-icons {

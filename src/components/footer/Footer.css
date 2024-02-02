@@ -3,11 +3,10 @@
   display: flex;
   flex-direction: column;
   padding: 40px;
-  gap: 20px; /* Reduce the gap for smaller screens */
-  align-items: center; /* Center content horizontally */
+  gap: 20px;
+  align-items: center;
   position: relative;
   bottom: 0;
-  /* width: 100%; */
 }
 
 .contact-section-wrapper {
@@ -16,17 +15,24 @@
   gap: 20px;
 }
 
-.contact-section-wrapper .contact-section a {
+.contact-section {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-user-link {
   padding: 6px;
   font-size: 22px;
   text-decoration: none;
   border-radius: 50%;
-  color: white;
+  cursor: pointer;
+  color: #1677ff;
 }
 
-.contact-section-wrapper .contact-section a:hover {
-  color: rgb(203, 193, 212);
+.footer-user-link:hover{
+  color: #1250ad;
 }
+
 
 .quick-links {
   display: flex;
