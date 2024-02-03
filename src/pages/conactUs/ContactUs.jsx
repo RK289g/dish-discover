@@ -51,7 +51,7 @@ const ContactUs = () => {
     <div className="contact-me-wrapper">
       <div className="contact-me-inner-wrapper">
         <Row gutter={{ md: 60 }} align="middle">
-          <Col span={8} >
+          <Col span={12} >
             <Image src={contactImg} preview={false} height={400} />
           </Col>
           <Col span={12}>

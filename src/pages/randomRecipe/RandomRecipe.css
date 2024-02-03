@@ -1,9 +1,9 @@
-.btn-get-recipe-wrapper {
+.random-recipe-button-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 @keyframes bounce {
@@ -18,31 +18,87 @@
   }
 }
 
-.btn-get-recipe-wrapper .btn-get-recipe {
-  font-size: 25px;
-  height: 50px;
-  /* background-color: blueviolet; */
-  /* margin: 50px; */
-  /* color: white; */
-  padding: 8px;
-  border-radius: 12px;
+.random-recipe-hero {
+  display: block;
+}
+
+.random-recipe-hero-hidden {
+  display: none;
+}
+
+.template-image {
+  position: relative;
+}
+
+.random-recipe-button-wrapper {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.random-recipe-button {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 12px;
+
+  height: 80px;
+  font-size: 32px;
+  font-weight: 500;
+  padding: 16px 40px;
+  background-color: #ffffff;
+  color: black !important;
+  border-radius: 26px;
   cursor: pointer;
-  animation: bounce 0.5s ease infinite; 
-  background-color: skyblue;
+  animation: bounce 1.2s ease infinite;
 }
 
-.btn-get-recipe-wrapper .btn-get-recipe:hover {
-  background-color: rgb(171, 171, 199);
+.random-recipe-button:hover {
   animation: none;
+  border: 2px solid blue;
 }
 
-@media only screen and (max-width: 767px) {
-  .btn-get-recipe-wrapper .btn-get-recipe {
-    font-size: 18px;
-    height: 35px;
-    background-color: blueviolet;
-    margin: 10px;
-    padding: 8px;
-    border-radius: 6px;
-  }
+.button-vector {
+  height: 44px;
+  width: 44px;
+}
+
+.random-recipe-button-clicked-wrapper {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+}
+
+.spinner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.random-recipe-button-clicked {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 12px;
+
+  height: 80px;
+  font-size: 32px;
+  font-weight: 500;
+  padding: 16px 40px;
+  background-color: #ffffff;
+  color: black !important;
+  border-radius: 26px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.random-recipe-button-clicked:hover {
+  animation: none;
+  border: 2px solid blue;
 }
