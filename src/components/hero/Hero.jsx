@@ -1,8 +1,10 @@
-import { Button } from "antd";
+import { Button, Image } from "antd";
 import "./Hero.css";
 
-import display1 from "./images/display-2.jpg";
 import { useNavigate } from "react-router-dom";
+import heroImage1 from "../../assets/hero-images/hero-image-1.png";
+import heroImage2 from "../../assets/hero-images/hero-image-5.png";
+import arrowOutline from "../../assets/hero-images/ArrowRightOutline.png";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -11,23 +13,28 @@ const Hero = () => {
     navigate(`/recipes`);
   };
   return (
-    <div className="Hero-wrapper">
-      <img className="hero-image" src={display1} alt="" />
-      <div className="hero-text">
-        <h4 className="hero-header">
-          Discover more than 5000+ <span>Unique Recipes</span>
-        </h4>
-        <h4 className="text-2">
-          Search, Save, and Share Your Favorite Recipes Instantly.
-        </h4>
-        <Button size="large"
-          onClick={() => {
-            handleExploreRecipe();
-          }}
-          className="btn-get-recipe"
+    <div className="hero-wrapper">
+      <div className="hero-image-1-wrapper">
+        <Image src={heroImage1} preview={false} className="hero-image-1" />
+      </div>
+      <div className="hero-text-wrapper">
+        <h1 className="hero-title">
+          Discover more than <br /> <span>5000+</span> unique <br /> Recipes
+        </h1>
+        <h3 className="hero-text">
+          Search, Save, Share your favourite recipes instantly
+        </h3>
+        <Button
+          size="large"
+          shape="round"
+          className="CTA-button"
+          icon={<Image src={arrowOutline} preview={false} className="CTA-button-icon" />}
         >
-          Explore Recipes
+          Start explore
         </Button>
+      </div>
+      <div className="hero-image-2-wrapper">
+        <Image src={heroImage2} preview={false} className="hero-image-2" />
       </div>
     </div>
   );

@@ -1,80 +1,64 @@
-.Hero-wrapper {
+/* .hero-image-1-wrapper {
   position: relative;
-  text-align: center;
-  color: white;
+} */
+
+.hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
 }
 
-.Hero-wrapper .hero-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  filter: brightness(50%);
-}
-
-.Hero-wrapper .hero-text {
+.hero-text-wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: 114px;
 }
 
-.Hero-wrapper .hero-text .hero-header {
-  font-size: 60px;
+.hero-title {
+  font-family: "Cormorant Infant", serif;
+  font-weight: 600;
+  font-style: normal;
+
+  font-size: 96px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.hero-title span {
+  color: #3c7d06;
+}
+
+.hero-text {
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: #606060;
+}
+
+.hero-image-2-wrapper {
+  position: relative;
+  width: 574px;
+  height: 721px;
+
+  top: 0%;
+}
+
+.CTA-button {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+
   margin: 0;
   padding: 0;
+
+  background-color: #3c7d06;
+  color: white;
+  font-weight: 600;
 }
 
-.Hero-wrapper .hero-header span {
-  color: #a3cef1;
-}
-
-.Hero-wrapper .text-2 {
-  font-size: 35px;
-}
-
-.btn-get-recipe {
-  /* background-color: white; */
-  color: #10002b;
-  font-weight: 500;
-  border: none;
-}
-.btn-get-recipe:hover {
-  /* background-color: #0b3d5a; */
-  color: #401788;
-}
-
-@media only screen and (max-width: 1200px) {
-  .Hero-wrapper .hero-image {
-    height: 380px;
-  }
-  .Hero-wrapper .hero-text .hero-header {
-    font-size: 35px;
-  }
-
-  .Hero-wrapper .text-2 {
-    font-size: 20px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .Hero-wrapper .hero-image {
-    height: 220px;
-  }
-  .Hero-wrapper .hero-text .hero-header {
-    font-size: 25px;
-  }
-
-  .Hero-wrapper .text-2 {
-    font-size: 20px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .Hero-wrapper .hero-text .hero-header {
-    font-size: 20px;
-  }
-
-  .Hero-wrapper .text-2 {
-    font-size: 16px;
-  }
+.CTA-button-icon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 4px;
 }
