@@ -4,7 +4,7 @@ import "./Hero.css";
 import { useNavigate } from "react-router-dom";
 import heroImage1 from "../../assets/hero-images/hero-image-1.png";
 import heroImage2 from "../../assets/hero-images/hero-image-5.png";
-import arrowOutline from "../../assets/hero-images/ArrowRightOutline.png";
+import arrow from "../../assets/hero-images/arrow.png";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -28,17 +28,18 @@ const Hero = () => {
         </h3>
         <Button
           size="large"
-          shape="round"
+          // shape="round"
           className="CTA-button"
+          onClick={() => handleExploreRecipe()}
           icon={
             <Image
-              src={arrowOutline}
+              src={arrow}
               preview={false}
               className="CTA-button-icon"
             />
           }
         >
-          Start explore
+          Start Explore
         </Button>
       </div>
       <div className="hero-image-2-wrapper">
