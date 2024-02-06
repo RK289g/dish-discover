@@ -1,8 +1,12 @@
 body,
 html {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Inter Tight", sans-serif;
   margin: 0px;
   padding: 0px;
+}
+
+.font-infant {
+  font-family: "Cormorant Infant", serif;
 }
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

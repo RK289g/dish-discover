@@ -10,9 +10,17 @@
 }
 
 .title-recipe-category {
-  font-family: "Cormorant Infant", serif;
   text-align: center;
   font-size: 60px;
+}
+
+.card-image-wrapper {
+  height: 90px;
+  width: 100px;
+}
+
+.card-image {
+  overflow: hidden;
 }
 
 .column-recipe-category {
@@ -24,12 +32,16 @@
 }
 
 .category-card-container {
-  width: 282px;
+  min-width: 282px;
   height: 137px;
-  font-family: "Inter Tight", sans-serif;
   background-color: #eefddd;
-  border-top-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px solid white;
+}
+
+.category-card-container:hover {
+  border: 0.5px solid #3c7d06;
 }
 
 .upper-card-wrapper {

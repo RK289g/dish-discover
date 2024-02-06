@@ -16,7 +16,7 @@ const RecipeByCuisine = () => {
   return (
     <div className="recipe-category-wrapper">
       <div className="recipe-category-inner-wrapper">
-        <h1 className="title-recipe-category">Recipe By Cuisine</h1>
+        <h1 className="title-recipe-category font-infant">Top Cuisines</h1>
 
         <div className="column-recipe-category">
           <div
