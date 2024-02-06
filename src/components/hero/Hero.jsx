@@ -18,7 +18,7 @@ const Hero = () => {
         <Image src={heroImage1} preview={false} className="hero-image-1" />
       </div>
       <div className="hero-text-wrapper">
-        <h1 className="hero-title">
+        <h1 className="hero-title font-fanlste">
           Discover more than <br /> <span>5000+</span> unique <br /> Recipes
         </h1>
         <h3 className="hero-text">
@@ -28,8 +28,7 @@ const Hero = () => {
         </h3>
         <Button
           size="large"
-          // shape="round"
-          className="CTA-button"
+          className="explore-CTA-button"
           onClick={() => handleExploreRecipe()}
           icon={
             <Image

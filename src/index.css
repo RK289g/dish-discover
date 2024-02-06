@@ -5,8 +5,13 @@ html {
   padding: 0px;
 }
 
-.font-infant {
-  font-family: "Cormorant Infant", serif;
+@font-face {
+  font-family: fanlste;
+  src: url("../public/fanlste.otf");
+}
+
+.font-fanlste {
+  font-family: fanlste;
 }
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

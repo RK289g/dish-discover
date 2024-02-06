@@ -20,7 +20,7 @@ const RecipeByCategory = () => {
   return (
     <div className="recipe-category-wrapper">
       <div className="recipe-category-inner-wrapper">
-        <h1 className="title-recipe-category font-infant">Top Categories</h1>
+        <h1 className="title-recipe-category font-fanlste">Top Categories</h1>
 
         <div className="column-recipe-category">
           <div
