@@ -51,7 +51,7 @@ const RecipeByCategory = () => {
               />
             </div>
             <div className="lower-card-wrapper">
-              <h4>300+ recipes</h4>
+              <h4>200+ recipes</h4>
               <ArrowRightOutlined />
             </div>
           </div>
@@ -68,7 +68,7 @@ const RecipeByCategory = () => {
               />
             </div>
             <div className="lower-card-wrapper">
-              <h4>300+ recipes</h4>
+              <h4>150+ recipes</h4>
               <ArrowRightOutlined />
             </div>
           </div>
@@ -77,7 +77,7 @@ const RecipeByCategory = () => {
             onClick={() => goToRecipe("Side", 10)}
           >
             <div className="upper-card-wrapper">
-              <h1 className="text-recipe-category">Side Items</h1>
+              <h1 className="text-recipe-category">Side <br /> Items</h1>
               <Image
                 src={additionalItems}
                 preview={false}
@@ -85,44 +85,11 @@ const RecipeByCategory = () => {
               />
             </div>
             <div className="lower-card-wrapper">
-              <h4>300+ recipes</h4>
+              <h4>60+ recipes</h4>
               <ArrowRightOutlined />
             </div>
           </div>
-          {/* <div
-            className="category-card-container"
-            onClick={() => goToRecipe("Starter", 11)}
-          >
-            <img
-              className="img-recipe-category"
-              src="https://www.themealdb.com/images/media/meals/tvvxpv1511191952.jpg"
-              alt=""
-            />
-            <h1 className="text-recipe-category">Starter</h1>
-          </div>
-          <div
-            className="category-card-container"
-            onClick={() => goToRecipe("Dessert", 3)}
-          >
-            <img
-              className="img-recipe-category"
-              src="https://www.themealdb.com/images/media/meals/yypvst1511386427.jpg"
-              alt=""
-            />
-            <h1 className="text-recipe-category">Dessert</h1>
-          </div>
-
-          <div
-            className="category-card-container"
-            onClick={() => goToRecipe("Side", 10)}
-          >
-            <img
-              className="img-recipe-category"
-              src="https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg"
-              alt=""
-            />
-            <h1 className="text-recipe-category">Side</h1>
-          </div> */}
+          
         </div>
       </div>
     </div>

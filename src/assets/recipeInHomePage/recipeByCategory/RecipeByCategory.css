@@ -17,7 +17,9 @@
 
 .column-recipe-category {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   cursor: pointer;
 }
 
