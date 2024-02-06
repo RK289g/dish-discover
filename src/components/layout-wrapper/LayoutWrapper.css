@@ -3,23 +3,36 @@
   justify-content: space-between;
   align-items: center;
   color: lightblue !important ;
+  background-color: white;
+  border-bottom: 1px solid gray;
 }
 
 .layout-menu {
   display: block;
   padding-right: 4%;
+  font-weight: 500;
+  font-size: 16px;
+  border-bottom: 1px solid gray;
 }
 
 .logo-wrapper {
-  color: white;
+  /* color: white; */
   font-size: 22px;
-  font-weight: 700;
+  /* font-weight: 700; */
   padding-left: 4%;
+  /* height: 84px; */
 }
 
-.logo {
+.logo-inner-wrapper{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-inner-wrapper h2{
+  color: black;
+  font-size: 24px;
 }
 
 .drawer-button {
@@ -36,7 +49,7 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .logo {
+  .logo-inner-wrapper {
     font-size: 20px;
   }
 

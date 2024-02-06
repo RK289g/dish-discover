@@ -1,11 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
 import "./LayoutWrapper.css";
-import { Drawer, Menu } from "antd";
+import { Drawer, Image, Menu } from "antd";
 import { Header } from "antd/es/layout/layout";
 import Footer from "../footer/Footer";
 import { useState } from "react";
 import { MenuFoldOutlined } from "@ant-design/icons";
 import useGetMenuKey from "../../hooks/useGetMenuKey";
+import logo from "./images/logo-vector.png";
 
 const LayoutWrapper = () => {
   function getItem(label, key, icon, children, type) {
@@ -41,14 +42,15 @@ const LayoutWrapper = () => {
     <>
       <Header className="header">
         <Link to="/" className="logo-wrapper">
-          <div className="logo">
-            <h3>Dish Discover</h3>
+          <div className="logo-inner-wrapper">
+           <Image src={logo} preview={false} />
+           <h2>Dish discover</h2>
           </div>
         </Link>
 
         <Menu
           className="layout-menu"
-          theme="dark"
+          theme="light"
           color="#ffffff"
           mode="horizontal"
           items={items}

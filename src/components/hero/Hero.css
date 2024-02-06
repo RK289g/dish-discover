@@ -31,7 +31,7 @@
 .hero-text {
   font-family: "Inter Tight", sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 24px;
   color: #606060;
 }
 
@@ -54,6 +54,7 @@
 
   background-color: #3c7d06;
   color: white;
+  font-size: 24px;
   font-weight: 600;
 }
 

@@ -22,13 +22,21 @@ const Hero = () => {
           Discover more than <br /> <span>5000+</span> unique <br /> Recipes
         </h1>
         <h3 className="hero-text">
-          Search, Save, Share your favourite recipes instantly
+          Search, Save, Share your favourite
+          <br />
+          recipes instantly
         </h3>
         <Button
           size="large"
           shape="round"
           className="CTA-button"
-          icon={<Image src={arrowOutline} preview={false} className="CTA-button-icon" />}
+          icon={
+            <Image
+              src={arrowOutline}
+              preview={false}
+              className="CTA-button-icon"
+            />
+          }
         >
           Start explore
         </Button>
