@@ -8,9 +8,9 @@ import FacebookIcon from "../common/logo/FacebookIcon";
 const Footer = () => {
   const [currentYear] = useState(new Date().getFullYear());
   return (
-    <footer className="footer-wrapper">
+    <footer className="footer-wrapper ">
+      <h4 className="footer-heading font-inter">Connect with us</h4>
       <div className="contact-section-wrapper">
-        {/* <h4>Contact Us</h4> */}
         <div className="contact-section">
           <div>
             <Link

@@ -1,18 +1,34 @@
 .footer-wrapper {
-  background-color: #001529;
+  background-color: #0F100E;
   display: flex;
   flex-direction: column;
   padding: 40px;
   gap: 20px;
   align-items: center;
-  position: relative;
+  /* position: relative; */
   bottom: 0;
 }
 
 .contact-section-wrapper {
+  
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+.footer-heading {
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  border-bottom: 1px solid white;
+  /* width: 100%; */
+  padding-left: 324px;
+padding-bottom: 15px;
+  padding-right: 324px;
 }
 
 .contact-section {
@@ -26,13 +42,12 @@
   text-decoration: none;
   border-radius: 50%;
   cursor: pointer;
-  color: #1677ff;
+  color: white;
 }
 
-.footer-user-link:hover{
+.footer-user-link:hover {
   color: #1250ad;
 }
-
 
 .quick-links {
   display: flex;
