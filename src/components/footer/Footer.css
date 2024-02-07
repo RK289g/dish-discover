@@ -1,5 +1,5 @@
 .footer-wrapper {
-  background-color: #0F100E;
+  background-color: #0f100e;
   display: flex;
   flex-direction: column;
   padding: 40px;
@@ -10,7 +10,6 @@
 }
 
 .contact-section-wrapper {
-  
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -27,7 +26,7 @@
   border-bottom: 1px solid white;
   /* width: 100%; */
   padding-left: 324px;
-padding-bottom: 15px;
+  padding-bottom: 15px;
   padding-right: 324px;
 }
 

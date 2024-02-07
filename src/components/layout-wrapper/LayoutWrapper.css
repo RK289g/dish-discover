@@ -5,6 +5,48 @@
   color: lightblue !important ;
   background-color: white;
   border-bottom: 1px solid gray;
+  overflow: hidden;
+}
+
+.ant-menu-horizontal.ant-menu-root {
+  font-size: 16px;
+  border: none;
+}
+
+.ant-menu-horizontal.ant-menu-root .ant-menu-item {
+  color: black;
+  height: 32px;
+  margin-bottom: 12px;
+}
+
+.ant-menu-horizontal.ant-menu-root .ant-menu-item > span {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-menu-horizontal.ant-menu-root .ant-menu-item:hover::after {
+  border: none;
+}
+
+.ant-menu-horizontal.ant-menu-root .ant-menu-item-selected {
+  height: 32px;
+  color: #3c7d06;
+  font-weight: 500;
+  background-color: #e5f2de;
+  border-radius: 22px;
+  border: none;
+}
+
+.ant-menu-horizontal.ant-menu-root .ant-menu-item-selected:hover{
+  background-color: #e5f2de !important;
+}
+
+.ant-menu-horizontal.ant-menu-root .ant-menu-item-selected::after {
+  /* border-bottom: 2px solid #ff5500; */
+  border: none;
+  background-color: #e5f2de !important;
 }
 
 .layout-menu {
@@ -12,7 +54,7 @@
   padding-right: 4%;
   font-weight: 500;
   font-size: 16px;
-  border-bottom: 1px solid gray;
+  /* border-bottom: 1px solid gray; */
 }
 
 .logo-wrapper {
