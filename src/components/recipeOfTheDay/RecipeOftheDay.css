@@ -1,0 +1,58 @@
+.day-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-card-inner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+
+  background-color: #f4ffe5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* .day-image-wrapper{
+    
+}
+
+.day-image{
+ 
+} */
+
+.day-text{
+    padding-right: 14px;
+}
+
+.day-text-header {
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.day-text-paragraph {
+  font-weight: 300;
+  font-size: 24px;
+  color: #5a5a5a;
+}
+
+.day-recipe-button {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  background-color: #12822a;
+  border-radius: 31px;
+  color: white;
+  cursor: pointer;
+}
+
+.day-recipe-button:hover {
+  color: white !important;
+}
