@@ -6,24 +6,25 @@
 }
 
 .card-wrapper {
-  max-width: calc(1180px - 20px);
+  max-width: 1200px;
 }
 .popular-recipe {
   margin-top: 60px;
   text-align: center;
-  font-size: 40px;
-  color: #124559;
+  font-size: 60px;
 }
 
 .card {
   margin-bottom: 16px;
-  /* height: 350px; */
   padding: 0px;
-  border-radius: 6px;
-  box-shadow: 0px 1px 2px gray;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
-  /* border: 1px solid red; */
+
+  height: 357px;
+  width: 384px;
+
+  border: 1px solid #ededed;
 }
 
 .card .ant-card-body {
@@ -34,42 +35,50 @@
 .card .card-text {
   width: 100%;
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
   height: 0px;
   padding-left: 10px;
   padding-right: 5px;
   position: absolute;
   bottom: 0;
-  color: white;
-  /* background-color: white; */
+  color: black;
+  height: 133px;
+  background-color: white;
   transition: height 1s ease-out;
   /* border: 1px solid red; */
 }
 
-.card:hover .card-text {
-  height: 80px;
-  /* background-color: t; */
+.card .card-text h1 {
+  margin: 0px;
+  padding-left: 10px;
+  text-align: start;
+  font-size: 32px;
 }
 
-.card .card-text h1 {
+.card .card-text h5 {
   margin: 0px;
   padding: 0px;
   text-align: start;
-  font-size: 25px;
+  font-size: 16px;
+  font-weight: 300;
+  width: 352px;
 }
 
-.card .card-text .text-btn-wrapper {
+.button-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0px;
-  padding: 0px;
+  flex-direction: row-reverse;
 }
 
-.card .card-text .text-btn-wrapper p {
-  font-size: 18px;
-  margin: 0px;
-  /* padding: 8px; */
+.card-button {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 6px;
+
+  margin-right: 20px;
+  border: none;
+  color: #12822a;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -91,7 +100,7 @@
 .card:hover .image {
   transform: scale(1.1);
   overflow: hidden;
-  filter: brightness(30%);
+  /* filter: brightness(30%); */
 }
 
 .btn-see-more {

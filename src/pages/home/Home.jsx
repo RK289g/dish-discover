@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import RecipeByCategory from "../../assets/recipeInHomePage/recipeByCategory/RecipeByCategory";
 import RecipeByCuisine from "../../assets/recipeInHomePage/recipeByCuisine/RecipeByCuisine";
 import RecipeOftheDay from "../../components/recipeOfTheDay/RecipeOftheDay";
+import { RightOutlined } from "@ant-design/icons";
 
 const Home = () => {
   const [recipeData, setRecipeData] = useState([]);
@@ -46,12 +47,12 @@ const Home = () => {
         <RecipeOftheDay />
       </div>
       <div className="home-wrapper">
-        <h1 className="popular-recipe">Popular Recipe</h1>
+        <h1 className="popular-recipe font-fanlste">Featured Recipes</h1>
         <div className="card-wrapper">
           <Row
             align={"middle"}
-            gutter={[40, 16]}
-            style={{ margin: "0px", padding: "0px 10px" }}
+            gutter={[16, 16]}
+            style={{ margin: "0px", padding: "0px 0px" }}
           >
             {recipeData?.slice(0, visibleRecipes).map((recData) => (
               <Col
@@ -62,13 +63,7 @@ const Home = () => {
                 key={recData?.idMeal}
                 // style={{ border: "1px solid red" }}
               >
-                <Card
-                  onClick={() => {
-                    handleClick(recData.idMeal);
-                  }}
-                  hoverable
-                  className="card"
-                >
+                <Card hoverable className="card">
                   <div>
                     <img
                       className="image"
@@ -76,10 +71,27 @@ const Home = () => {
                       alt="ThumbNail"
                     />
                     <div className="card-text">
-                      <h1>{recData?.strMeal}</h1>
+                      <h1 className="font-inter">
+                        {recData?.strMeal && recData.strMeal.length > 18
+                          ? recData.strMeal.substring(0, 20) + " ..."
+                          : recData.strMeal}
+                      </h1>
                       <div className="text-btn-wrapper">
-                        <p>Category: {recData?.strCategory}</p>
+                        {/* <p>Category: {recData?.strCategory}</p> */}
+                        <h5 className="font-inter">{recData?.strInstructions.substring(0,90) + " ..."}</h5>
                       </div>
+                      <div className="button-wrapper">
+                        <Button
+                        onClick={() => {
+                          handleClick(recData.idMeal);
+                        }}
+                        className="card-button"
+                        icon={
+                          <RightOutlined />
+                        }
+                      >
+                        See Recipe
+                      </Button></div>
                     </div>
                   </div>
                 </Card>
