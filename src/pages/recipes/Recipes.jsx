@@ -45,7 +45,6 @@ const Recipes = () => {
       )
       .then((res) => {
         setRecipeData(res.data.meals);
-        console.log(index, "inside category");
         setIsLoading(false);
       })
       .catch((err) => {
@@ -63,6 +62,7 @@ const Recipes = () => {
         `https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisineTypeName}`
       )
       .then((res) => {
+        console.log(res.data.meals, "american");
         setRecipeData(res.data.meals);
         setIsLoading(false);
       })
@@ -82,7 +82,6 @@ const Recipes = () => {
       )
       .then((res) => {
         const response = res.data.meals;
-        console.log("inside search by namne", res.data.meals);
         setRecipeData(response === null ? [] : response);
         setIsLoading(false);
       })
@@ -109,6 +108,7 @@ const Recipes = () => {
       .get("https://www.themealdb.com/api/json/v1/1/list.php?a=list")
       .then((response) => {
         setCuisineTypes(response.data.meals);
+        console.log(response.data.meals, "response.data.meals");
       })
       .catch((error) => {
         console.error("Error fetching ingredient types: ", error);
@@ -116,13 +116,13 @@ const Recipes = () => {
   };
 
   useEffect(() => {
-    if (recipeKey && recipeIndex) {
+    console.log(recipeKey, "recipeKey");
+    if (recipeKey) {
+      console.log("kam korram ami");
       fetchCuisineRecipes(recipeKey, recipeIndex);
     } else if (CategoryRecipeKey && CategoryRecipeIndex) {
-      console.log("first useeffect");
       fetchCategoryRecipes(CategoryRecipeKey, CategoryRecipeIndex);
     } else {
-      console.log("problem useeffect");
       fetchSearchByName();
     }
   }, [recipeKey, recipeIndex]);

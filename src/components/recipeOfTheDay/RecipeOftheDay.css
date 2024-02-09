@@ -23,8 +23,8 @@
  
 } */
 
-.day-text{
-    padding-right: 14px;
+.day-text {
+  padding-right: 14px;
 }
 
 .day-text-header {
@@ -55,4 +55,22 @@
 
 .day-recipe-button:hover {
   color: white !important;
+}
+
+.like-section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 44px;
+  margin: 10px;
+}
+
+.like-section p {
+  font-weight: 300;
+  color: #5a5a5a;
+  font-size: 16px;
+}
+
+.like-image {
+  height: 44px;
 }

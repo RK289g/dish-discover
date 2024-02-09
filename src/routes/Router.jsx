@@ -19,7 +19,7 @@ const AppRouter = () => {
         <Route path="/categories" element={<Category />} />
         <Route path="/ingredients" element={<Ingredient />} />
         <Route path="/search-AtoZ" element={<AtoZ />} />
-        <Route path="/recipe/:recipeId" element={<Recipe />} />
+        <Route path="/recipes/:recipeId" element={<Recipe />} />
         <Route path="/random-recipe" element={<RandomRecipe />} />
         <Route path="/contact-us" element={<ContactUs />} />
       </Route>

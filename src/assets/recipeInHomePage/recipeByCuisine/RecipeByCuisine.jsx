@@ -1,11 +1,7 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Image } from "antd";
 import { useNavigate } from "react-router-dom";
-
-import americanItems from "../../../assets/top-cuisines/american-items.png";
-import mexicancanItems from "../../../assets/top-cuisines/mexican-items.png";
-import japaneseItems from "../../../assets/top-cuisines/japanese-items.png";
-import chineseItems from "../../../assets/top-cuisines/chinese-items.png";
+import { recipeByCuisineData } from "./recipeByCuisineData";
 
 const RecipeByCuisine = () => {
   const navigate = useNavigate();
@@ -19,24 +15,27 @@ const RecipeByCuisine = () => {
         <h1 className="title-recipe-category font-fanlste">Top Cuisines</h1>
 
         <div className="column-recipe-category">
-          <div
-            className="category-card-container"
-            onClick={() => goToRecipe("American", 0)}
-          >
-            <div className="upper-card-wrapper">
-              <h1 className="text-recipe-category">American Cusines</h1>
-              <Image
-                src={americanItems}
-                preview={false}
-                className="card-image"
-              />
+          {recipeByCuisineData.map((type) => (
+            <div
+              key={type.id}
+              className="category-card-container"
+              onClick={() => goToRecipe(type.subName, type.id)}
+            >
+              <div className="upper-card-wrapper">
+                <h1 className="text-recipe-category">{type.name}</h1>
+                <Image
+                  src={type.image}
+                  preview={false}
+                  className="card-image"
+                />
+              </div>
+              <div className="lower-card-wrapper">
+                <h4>{type.recipeNumber}</h4>
+                <ArrowRightOutlined />
+              </div>
             </div>
-            <div className="lower-card-wrapper">
-              <h4>300+ recipes</h4>
-              <ArrowRightOutlined />
-            </div>
-          </div>
-          <div
+          ))}
+          {/* <div
             className="category-card-container"
             onClick={() => goToRecipe("Mexican", 17)}
           >
@@ -86,7 +85,7 @@ const RecipeByCuisine = () => {
               <h4>300+ recipes</h4>
               <ArrowRightOutlined />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

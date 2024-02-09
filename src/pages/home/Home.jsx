@@ -30,7 +30,7 @@ const Home = () => {
   }, []);
 
   const handleClick = (recipeId) => {
-    navigate(`/recipe/${recipeId}`);
+    navigate(`/recipes/${recipeId}`);
   };
 
   const handleSeeMore = () => {
