@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const RecipeOftheDay = () => {
   const navigate = useNavigate();
   const recipeOftheDayClick = (recipeId) => {
-    navigate(`/recipe/${recipeId}`);
+    navigate(`/recipes/${recipeId}`);
   };
 
   return (

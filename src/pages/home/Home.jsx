@@ -5,10 +5,11 @@ import "./Home.css";
 import Card from "antd/es/card/Card";
 import { Col, Row, Button } from "antd"; // Import Button from antd
 import { useNavigate } from "react-router-dom";
-import RecipeByCategory from "../../assets/recipeInHomePage/recipeByCategory/RecipeByCategory";
-import RecipeByCuisine from "../../assets/recipeInHomePage/recipeByCuisine/RecipeByCuisine";
-import RecipeOftheDay from "../../components/recipeOfTheDay/RecipeOftheDay";
+
 import { RightOutlined } from "@ant-design/icons";
+import RecipeByCategory from './../../components/recipeInHomePage/recipeByCategory/RecipeByCategory';
+import RecipeByCuisine from './../../components/recipeInHomePage/recipeByCuisine/RecipeByCuisine';
+import RecipeOftheDay from './../../components/recipeOfTheDay/RecipeOftheDay';
 
 const Home = () => {
   const [recipeData, setRecipeData] = useState([]);
