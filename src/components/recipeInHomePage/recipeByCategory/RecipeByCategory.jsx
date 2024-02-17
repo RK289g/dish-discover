@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import "./recipeByCategory.css";
 import { Image } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { recipeByCategoryData } from "./recipeByCategoryData";
