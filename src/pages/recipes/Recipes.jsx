@@ -127,16 +127,6 @@ const Recipes = () => {
     }
   }, [recipeKey, recipeIndex]);
 
-  // useEffect(() => {
-  //   if (CategoryRecipeKey && CategoryRecipeIndex) {
-  //     console.log("first useeffect");
-  //     fetchCategoryRecipes(CategoryRecipeKey, CategoryRecipeIndex);
-  //   } else {
-  //     console.log("second useeffect");
-  //     fetchSearchByName();
-  //   }
-  // }, [CategoryRecipeKey, CategoryRecipeIndex]);
-
   useEffect(() => {
     fetchCuisineType();
     fetchCategoryType();
@@ -148,11 +138,6 @@ const Recipes = () => {
       fetchSearchByName();
     }
   }, [searchByName]);
-
-  // useEffect(() => {
-  //   if (isCuisineDummy < 0) fetchSearchByName();
-  //   console.log("sercfhjoant");
-  // }, [searchByName]);
 
   const panelStyle = {
     marginBottom: 24,
@@ -247,20 +232,6 @@ const Recipes = () => {
               </div>
             </Col>
             <Col span={16}>
-              {/* {recipeData && recipeData.length > 0 ? (
-                isLoading ? (
-                  <div className="recipe-spinner">
-                    <Spin size="large" />
-                  </div>
-                ) : (
-                  <RecipeCard recipeData={recipeData} />
-                )
-              ) : (
-                <div className="no-data-container">
-                  <Image preview={false} src={noData} />
-                  <h2>No recipe Found</h2>
-                </div>
-              )} */}
               {isLoading ? (
                 <div className="recipe-spinner">
                   <Spin size="large" />

@@ -4,10 +4,6 @@ import { Controller, useForm } from "react-hook-form";
 import { Button, Col, Image, Input, Row, message } from "antd";
 import emailjs from "@emailjs/browser";
 import TextArea from "antd/es/input/TextArea";
-import { Link } from "react-router-dom";
-import FacebookIcon from "../../components/common/logo/FacebookIcon";
-import LinkedinIcon from "../../components/common/logo/LinkedInIcon";
-import TwitterIcon from "../../components/common/logo/TwitterIcon";
 import contactImg from "../../assets/logo/Call-center-cuate.png";
 
 const ContactUs = () => {
@@ -22,7 +18,7 @@ const ContactUs = () => {
 
   const form = useRef(null);
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     setIsLoading(true);
 
     emailjs
