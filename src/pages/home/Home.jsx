@@ -7,9 +7,9 @@ import { Col, Row, Button } from "antd"; // Import Button from antd
 import { useNavigate } from "react-router-dom";
 
 import { RightOutlined } from "@ant-design/icons";
-import RecipeByCategory from './../../components/recipeInHomePage/recipeByCategory/RecipeByCategory';
-import RecipeByCuisine from './../../components/recipeInHomePage/recipeByCuisine/RecipeByCuisine';
-import RecipeOftheDay from './../../components/recipeOfTheDay/RecipeOftheDay';
+import RecipeOftheDay from "./../../components/recipeOfTheDay/RecipeOftheDay";
+import RecipeCategory from "../../components/home/recipe-category/RecipeCategory";
+import RecipeCuisine from "../../components/home/recipe-cuisine/RecipeCuisine";
 
 const Home = () => {
   const [recipeData, setRecipeData] = useState([]);
@@ -43,8 +43,8 @@ const Home = () => {
     <div>
       <div>
         <Hero />
-        <RecipeByCategory />
-        <RecipeByCuisine />
+        <RecipeCategory />
+        <RecipeCuisine />
         <RecipeOftheDay />
       </div>
       <div className="home-wrapper">
@@ -79,20 +79,21 @@ const Home = () => {
                       </h1>
                       <div className="text-btn-wrapper">
                         {/* <p>Category: {recData?.strCategory}</p> */}
-                        <h5 className="font-inter">{recData?.strInstructions.substring(0,90) + " ..."}</h5>
+                        <h5 className="font-inter">
+                          {recData?.strInstructions.substring(0, 90) + " ..."}
+                        </h5>
                       </div>
                       <div className="button-wrapper">
                         <Button
-                        onClick={() => {
-                          handleClick(recData.idMeal);
-                        }}
-                        className="card-button"
-                        icon={
-                          <RightOutlined />
-                        }
-                      >
-                        See Recipe
-                      </Button></div>
+                          onClick={() => {
+                            handleClick(recData.idMeal);
+                          }}
+                          className="card-button"
+                          icon={<RightOutlined />}
+                        >
+                          See Recipe
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </Card>

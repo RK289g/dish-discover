@@ -1,23 +1,21 @@
-import { useNavigate } from "react-router-dom";
 import { Image } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import { recipeByCategoryData } from "./recipeByCategoryData";
+import { recipeByCuisineData } from "./recipeByCuisineData";
+import { useNavigate } from "react-router-dom";
 
-const RecipeByCategory = () => {
+const RecipeCuisine = () => {
   const navigate = useNavigate();
-  const goToRecipe = (stateValue, CategoryRecipeIndex) => {
-    navigate("/recipes", {
-      state: { CategoryRecipeKey: stateValue, CategoryRecipeIndex },
-    });
+  const goToRecipe = (stateValue, recipeIndex) => {
+    navigate("/recipes", { state: { recipeKey: stateValue, recipeIndex } });
   };
 
   return (
     <div className="recipe-category-wrapper">
       <div className="recipe-category-inner-wrapper">
-        <h1 className="title-recipe-category font-fanlste">Top Categories</h1>
+        <h1 className="title-recipe-category font-fanlste">Top Cuisines</h1>
 
         <div className="column-recipe-category">
-          {recipeByCategoryData.map((type) => (
+          {recipeByCuisineData.map((type) => (
             <div
               key={type.id}
               className="category-card-container"
@@ -43,4 +41,4 @@ const RecipeByCategory = () => {
   );
 };
 
-export default RecipeByCategory;
+export default RecipeCuisine;
