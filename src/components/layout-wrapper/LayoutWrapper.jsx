@@ -43,8 +43,8 @@ const LayoutWrapper = () => {
       <Header className="header">
         <Link to="/" className="logo-wrapper">
           <div className="logo-inner-wrapper">
-           <Image src={logo} preview={false} />
-           <h2>Dish discover</h2>
+            <Image src={logo} preview={false} />
+            <h2>Dish discover</h2>
           </div>
         </Link>
 
@@ -81,7 +81,7 @@ const LayoutWrapper = () => {
       </Header>
 
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
