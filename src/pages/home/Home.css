@@ -1,5 +1,5 @@
 .home-wrapper {
-  padding: 0 20px; /* Adjusted padding for smaller screens */
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,6 +7,7 @@
 
 .card-wrapper {
   max-width: 1200px;
+  margin-bottom: 50px;
 }
 .popular-recipe {
   margin-top: 60px;
@@ -45,7 +46,6 @@
   height: 133px;
   background-color: white;
   transition: height 1s ease-out;
-  /* border: 1px solid red; */
 }
 
 .card .card-text h1 {
@@ -100,7 +100,6 @@
 .card:hover .image {
   transform: scale(1.1);
   overflow: hidden;
-  /* filter: brightness(30%); */
 }
 
 .btn-see-more {
