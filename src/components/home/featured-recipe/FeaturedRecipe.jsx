@@ -33,7 +33,7 @@ const FeaturedRecipe = () => {
 
   return (
     <div className="home-wrapper">
-      <h1 className="popular-recipe font-fanlste">Featured Recipes</h1>
+      <h1 className="title-recipe-category font-fanlste">Featured Recipes</h1>
       <div className="card-wrapper">
         <Row
           align={"middle"}
@@ -46,7 +46,7 @@ const FeaturedRecipe = () => {
             </div>
           ) : (
             recipeData?.slice(0, 6).map((recData) => (
-              <Col align="middle" lg={8} xs={24} sm={12} key={recData?.idMeal}>
+              <Col align="middle" xl={8} lg={12} sm={24} key={recData?.idMeal}>
                 <Card hoverable className="card">
                   <div>
                     <img

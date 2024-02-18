@@ -81,7 +81,7 @@ const LayoutWrapper = () => {
       </Header>
 
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

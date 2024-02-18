@@ -7,6 +7,7 @@
 
 .card-wrapper {
   max-width: 1200px;
+  /* border: 1px solid red; */
   margin-bottom: 50px;
 }
 .popular-recipe {
@@ -106,10 +107,10 @@
   margin-bottom: 10px;
   font-weight: 800;
   color: #124559;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
-@media only screen and (max-width: 762px) {
+/* @media only screen and (max-width: 762px) {
   .popular-recipe {
     margin-top: 30px;
     font-size: 30px;
@@ -117,7 +118,6 @@
   .card {
     width: 250px;
     height: 250px;
-    /* border: 1px solid red; */
   }
 
   .card .card-text {
@@ -130,4 +130,4 @@
     overflow: hidden;
     filter: brightness(50%);
   }
-}
+} */

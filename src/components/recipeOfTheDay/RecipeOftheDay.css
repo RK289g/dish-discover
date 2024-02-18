@@ -6,7 +6,7 @@
 
 .day-card-inner-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 22px;
 
@@ -14,14 +14,6 @@
   border-radius: 20px;
   overflow: hidden;
 }
-
-/* .day-image-wrapper{
-    
-}
-
-.day-image{
- 
-} */
 
 .day-text {
   padding-right: 14px;
@@ -57,20 +49,32 @@
   color: white !important;
 }
 
-.like-section {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  height: 44px;
-  margin: 10px;
+@media only screen and (max-width: 1024px) {
+  .day-image {
+    width: 320px !important;
+    height: 210px !important;
+  }
+  .day-text-header {
+    font-size: 25px;
+  }
+  .day-text-paragraph {
+    font-size: 16px;
+  }
 }
 
-.like-section p {
-  font-weight: 300;
-  color: #5a5a5a;
-  font-size: 16px;
+@media only screen and (max-width: 768px) {
+.day-card-inner-wrapper{
+  display:block;
 }
 
-.like-image {
-  height: 44px;
+  .day-image {
+    width: 254px !important;
+    height: 170px !important;
+  }
+  .day-text-header {
+    font-size: 20px;
+  }
+  .day-text-paragraph {
+    font-size: 14px;
+  }
 }
