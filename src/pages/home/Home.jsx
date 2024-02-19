@@ -11,9 +11,9 @@ const Home = () => {
       <div>
         <Hero />
         <RecipeCategory />
-        <RecipeCuisine /> 
-         <RecipeOftheDay />
-        <FeaturedRecipe /> 
+        <RecipeCuisine />
+        <RecipeOftheDay />
+        <FeaturedRecipe />
       </div>
     </div>
   );

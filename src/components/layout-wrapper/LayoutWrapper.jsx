@@ -7,6 +7,7 @@ import { useState } from "react";
 import { MenuFoldOutlined } from "@ant-design/icons";
 import useGetMenuKey from "../../hooks/useGetMenuKey";
 import logo from "./images/logo-vector.png";
+import NewsLetter from "../news-letter/NewsLetter";
 
 const LayoutWrapper = () => {
   function getItem(label, key, icon, children, type) {
@@ -81,6 +82,7 @@ const LayoutWrapper = () => {
       </Header>
 
       <Outlet />
+      <NewsLetter />
       <Footer />
     </>
   );

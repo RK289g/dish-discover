@@ -1,0 +1,33 @@
+.newsletter-wrapper {
+  background-color: #f4ffe5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 381px;
+}
+
+.newsletter-header {
+  color: #010101;
+  text-align: center;
+  font-size: 60px;
+  font: 400;
+
+  padding: 0;
+  margin: 0;
+}
+
+.newsletter-text {
+  color: #5a5a5a;
+  font-size: 24px;
+  font-weight: 400;
+  padding-bottom: 12px;
+}
+
+.search-wrapper {
+  width: 460px;
+}
+
+.newsletter-search {
+  color: #12822a !important;
+}
