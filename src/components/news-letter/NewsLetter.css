@@ -31,3 +31,7 @@
 .newsletter-search {
   color: #12822a !important;
 }
+
+.newsletter-search .ant-btn{
+    background-color: #12822a;
+}

@@ -1,8 +1,16 @@
-import { Image } from "antd";
+import { Divider, Image } from "antd";
 import "./Recipe.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import bannerFinal from "../../assets/banner/banner-final.jpg";
+import {
+  CommentOutlined,
+  HeartOutlined,
+  SaveOutlined,
+  ShareAltOutlined,
+  StarFilled,
+} from "@ant-design/icons";
 
 const Recipe = () => {
   const { recipeId } = useParams();
@@ -26,6 +34,12 @@ const Recipe = () => {
 
   return (
     <div>
+      <div className="recipes-banner">
+        <Image className="banner-img" preview={false} src={bannerFinal} />
+      </div>
+      <div className="breadcrumb-wrapper">
+        <h3>Breadcrumb</h3>
+      </div>
       {recipeIdData?.map((recData) => {
         return (
           <div className="wrapper" key={recData?.idMeal}>
@@ -39,7 +53,61 @@ const Recipe = () => {
                     alt="ThumbNail"
                   />
                 </div>
-                <div className="top-text">
+                <div>
+                  <div className="recipe-text-inner-wrapper">
+                    <h1 className="recipe-title font-inter">
+                      {recData?.strMeal}
+                    </h1>
+                    <p className="recipe-text font-inter">
+                      Cuisine: {recData?.strArea}
+                    </p>
+                    {recData?.strTags && (
+                      <p className="recipe-text">
+                        Features: {recData?.strTags}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <div className="icons">
+                      <div className="icons-wrapper-left">
+                        <HeartOutlined />
+                      </div>
+                      <div className="icons-wrapper-left">
+                        <CommentOutlined />
+                      </div>
+                      <div className="icons-wrapper-right">
+                        <ShareAltOutlined />
+                      </div>
+                      <div className="icons-wrapper-right">
+                        <SaveOutlined />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="rating-wrapper">
+                      <h3 className="recipe-text font-inter">
+                        Average Ratings
+                      </h3>
+                      <StarFilled />
+                      <StarFilled />
+                      <StarFilled />
+                      <StarFilled />
+                      <StarFilled />
+                    </div>
+                    <div className="rating-wrapper">
+                      <div>
+                        <h1 className="recipe-title font-inter">20</h1>
+                        <p className="recipe-text font inter">Ingredients</p>
+                      </div>
+                      <Divider type="vertical" className="rating-divider" />
+                      <div>
+                        <h1 className="recipe-title font-inter">10</h1>
+                        <p className="recipe-text font-inter">Minutes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* <div className="top-text">
                   <h1>{recData?.strMeal}</h1>
                   <h3>
                     Cuisine: <span>{recData?.strArea}</span>
@@ -53,7 +121,7 @@ const Recipe = () => {
                   <h3>
                     Course: <span>{recData?.strCategory}</span>
                   </h3>
-                </div>
+                </div> */}
               </div>
               <div className="table-div">
                 <h2>Ingredients</h2>
