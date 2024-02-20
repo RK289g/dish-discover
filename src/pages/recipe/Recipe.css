@@ -81,9 +81,19 @@
   gap: 15px;
 }
 
-.rating-divider{
+.rating-divider {
   height: 98px;
-  background-color:#5a5a5a;
+  background-color: #5a5a5a;
+}
+
+.instruction-div {
+  width: 586px;
+}
+
+.instruction-text{
+  font-size: 16px;
+  color: black;
+  text-align: start;
 }
 
 .wrapper .table-div table {
@@ -134,30 +144,6 @@
   padding: 0px;
   margin-top: 50px;
   margin-bottom: 8px;
-}
-
-.wrapper .instruction-div p {
-  list-style: none;
-  font-size: 25px;
-  line-height: 1.4;
-  color: black;
-}
-
-.wrapper .instruction-div ul {
-  margin: 0;
-  padding: 0;
-}
-
-.wrapper .instruction-div li {
-  list-style: none;
-  font-size: 25px;
-  line-height: 1.4;
-  color: black;
-}
-
-.wrapper .instruction-div p {
-  color: green;
-  font-size: 30px;
 }
 
 .wrapper .YT-wrapper h3 {
