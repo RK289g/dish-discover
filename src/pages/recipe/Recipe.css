@@ -7,7 +7,7 @@
 }
 
 .inner-wrapper {
-  max-width: 1204px;
+  max-width: 1440px;
 }
 
 .breadcrumb-wrapper {
@@ -116,16 +116,13 @@
   font-weight: 400;
 }
 
-.instruction-ingredient-row {
+/* .instruction-ingredient-row {
   display: flex;
-  /* gap: 10px; */
-}
+} */
 
 .instruction-div {
-  /* width: 588px !important; */
-  background-color: #dbf5cd;
+  border: 1px solid #dbf5cd;
   border-radius: 20px;
-  /* margin: 1px; */
   padding: 16px;
 }
 
