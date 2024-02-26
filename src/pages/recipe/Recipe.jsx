@@ -1,4 +1,4 @@
-import { Col, Collapse, Divider, Image, Row, Space } from "antd";
+import { Col, Collapse, Divider, Image, Row } from "antd";
 import "./Recipe.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -14,6 +14,7 @@ import {
   StarOutlined,
 } from "@ant-design/icons";
 import CollapsePanel from "antd/es/collapse/CollapsePanel";
+import CommentSection from "../../components/comment-sectuon/CommentSection";
 
 const Recipe = () => {
   const { recipeId } = useParams();
@@ -162,7 +163,9 @@ const Recipe = () => {
               </Row>
 
               <div span={24} className="YT-wrapper">
-                <h3 className="YT-header font-inter">Watch Video on {recData?.strMeal}</h3>
+                <h3 className="YT-header font-inter">
+                  Watch Video on {recData?.strMeal}
+                </h3>
                 <iframe
                   className="i-frame"
                   src={`https://www.youtube.com/embed/${getYoutubeVideoId(
@@ -177,6 +180,7 @@ const Recipe = () => {
             </div>
           );
         })}
+        <CommentSection />
       </div>
     </div>
   );
