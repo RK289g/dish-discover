@@ -7,6 +7,7 @@ import RecipeCard from "../../components/common/recipe-card/RecipeCard";
 import bannerFinal from "../../assets/banner/banner-final.jpg";
 import noData from "../../assets/logo/Empty-bro.svg";
 import { useLocation } from "react-router-dom";
+import FeaturedRecipe from "./../../components/home/featured-recipe/FeaturedRecipe";
 
 const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);
@@ -218,7 +219,7 @@ const Recipes = () => {
       <div className="recipes-inner-wrapper">
         <div className="recipes-layout">
           <Row>
-            <Col span={8}>
+            <Col span={6}>
               <div className="cuisines-section">
                 <h1 className="header-text">Decide What To Write</h1>
                 <Collapse
@@ -231,7 +232,7 @@ const Recipes = () => {
                 />
               </div>
             </Col>
-            <Col span={16}>
+            <Col span={18}>
               {isLoading ? (
                 <div className="recipe-spinner">
                   <Spin size="large" />
@@ -244,6 +245,7 @@ const Recipes = () => {
               ) : (
                 <RecipeCard recipeData={recipeData} />
               )}
+              <FeaturedRecipe />
             </Col>
           </Row>
         </div>

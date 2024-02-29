@@ -21,13 +21,13 @@ const RecipeCard = ({ recipeData }) => {
       <Row gutter={50} style={{ margin: "0px", padding: "0px 20px" }}>
         {recipeData?.slice(0, visibleRecipes).map((recData) => {
           return (
-            <Col xl={12} md={12} sm={24} key={recData?.idMeal}>
+            <Col xl={8} md={12} sm={24} key={recData?.idMeal}>
               <Card
                 onClick={() => {
                   handleRecipeClick(recData.idMeal);
                 }}
                 hoverable
-                className="card"
+                className="card-name"
               >
                 <Skeleton
                   active={true}

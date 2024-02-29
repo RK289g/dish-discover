@@ -18,6 +18,7 @@ import CommentSection from "../../components/comment-sectuon/CommentSection";
 
 const Recipe = () => {
   const { recipeId } = useParams();
+  console.log(recipeId);
   const [recipeIdData, setRecipeIdData] = useState([]);
 
   const fetchRecipeIdData = async () => {
@@ -34,7 +35,7 @@ const Recipe = () => {
 
   useEffect(() => {
     fetchRecipeIdData();
-  }, []);
+  }, [recipeId]);
 
   return (
     <div className="wrapper">
