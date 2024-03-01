@@ -245,7 +245,6 @@ const Recipes = () => {
               ) : (
                 <RecipeCard recipeData={recipeData} />
               )}
-              <FeaturedRecipe />
             </Col>
           </Row>
         </div>
