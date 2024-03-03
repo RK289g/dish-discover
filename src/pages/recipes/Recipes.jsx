@@ -7,7 +7,7 @@ import RecipeCard from "../../components/common/recipe-card/RecipeCard";
 import bannerFinal from "../../assets/banner/banner-final.jpg";
 import noData from "../../assets/logo/Empty-bro.svg";
 import { useLocation } from "react-router-dom";
-import FeaturedRecipe from "./../../components/home/featured-recipe/FeaturedRecipe";
+// import FeaturedRecipe from "./../../components/home/featured-recipe/FeaturedRecipe";
 
 const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);

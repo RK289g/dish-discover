@@ -1,4 +1,4 @@
-import { Col, Collapse, Divider, Image, Row } from "antd";
+import { Breadcrumb, Col, Collapse, Divider, Image, Row } from "antd";
 import "./Recipe.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -44,7 +44,22 @@ const Recipe = () => {
       </div>
       <div className="inner-wrapper">
         <div className="breadcrumb-wrapper">
-          <h3>Breadcrumb</h3>
+        <Breadcrumb
+    items={[
+      {
+        title: 'Home',
+      },
+      {
+        title: <a href="">Application Center</a>,
+      },
+      {
+        title: <a href="">Application List</a>,
+      },
+      {
+        title: 'An Application',
+      },
+    ]}
+  />
         </div>
         {recipeIdData?.map((recData) => {
           return (
