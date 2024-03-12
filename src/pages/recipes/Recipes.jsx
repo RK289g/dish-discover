@@ -1,8 +1,19 @@
 import axios from "axios";
 import "./Recipes.css";
 import { useEffect, useState } from "react";
-import { Button, Col, Collapse, Image, Input, Row, Spin, Tag } from "antd";
-import { CaretRightOutlined } from "@ant-design/icons";
+import {
+  Button,
+  Col,
+  Collapse,
+  Dropdown,
+  Image,
+  Input,
+  Row,
+  Space,
+  Spin,
+  Tag,
+} from "antd";
+import { CaretRightOutlined, DownOutlined } from "@ant-design/icons";
 import RecipeCard from "../../components/common/recipe-card/RecipeCard";
 import bannerFinal from "../../assets/banner/banner-final.jpg";
 import noData from "../../assets/logo/Empty-bro.svg";
@@ -208,13 +219,43 @@ const Recipes = () => {
     <div className="recipes-wrapper">
       <div className="recipes-banner">
         <Image className="banner-img" preview={false} src={bannerFinal} />
-        <Input
+        {/* <Input
           size="large"
           placeholder="Search Recipes"
           className="recipes-search"
           onChange={handleChange}
           style={{ position: "absolute", top: "50%" }}
-        />
+        /> */}
+        <Row>
+          <Col>
+            <p className="bar-title">Catefories</p>
+            <Dropdown
+              menu={{
+                items,
+              }}
+              trigger={["click"]}
+            >
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  Click me
+                  <DownOutlined />
+                </Space>
+              </a>
+            </Dropdown>
+          </Col>
+          <Col>
+            <p className="bar-title">layout</p>
+          </Col>
+          <Col>
+            <Input
+              size="large"
+              placeholder="Search Recipes"
+              className="recipes-search"
+              onChange={handleChange}
+              style={{ position: "absolute", top: "50%" }}
+            />
+          </Col>
+        </Row>
       </div>
       <div className="recipes-inner-wrapper">
         <div className="recipes-layout">
