@@ -1,15 +1,7 @@
 import axios from "axios";
 import "./Recipes.css";
 import { useEffect, useState } from "react";
-import {
-  Col,
-  Divider,
-  Image,
-  Input,
-  Row,
-  Select,
-  Spin,
-} from "antd";
+import { Col, Divider, Image, Input, Row, Select, Spin } from "antd";
 import RecipeCard from "../../components/common/recipe-card/RecipeCard";
 import bannerFinal from "../../assets/banner/banner-final.jpg";
 import noData from "../../assets/logo/Empty-bro.svg";
@@ -145,8 +137,9 @@ const Recipes = () => {
               <p className="bar-title font-inter">Catefories</p>
               <Select
                 style={{
-                  width: 120,
+                  width: 163,
                 }}
+                className="filter-select"
                 onChange={fetchCategoryRecipes}
                 options={categoryTypes}
               />
@@ -156,7 +149,7 @@ const Recipes = () => {
               <p className="bar-title font-inter">Cuisines</p>
               <Select
                 style={{
-                  width: 120,
+                  width: 163,
                 }}
                 onChange={fetchCuisineRecipes}
                 options={CuisineTypes}

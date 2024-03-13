@@ -1,4 +1,4 @@
-import { Breadcrumb, Col, Collapse, Divider, Image, Row } from "antd";
+import {  Col, Collapse, Divider, Image, Row } from "antd";
 import "./Recipe.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -15,6 +15,7 @@ import {
 } from "@ant-design/icons";
 import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import CommentSection from "../../components/comment-sectuon/CommentSection";
+import { CustomBreadcrumb } from "../../components/common/custom-breadcrumb/CustomBreadcrumb";
 
 const Recipe = () => {
   const { recipeId } = useParams();
@@ -26,7 +27,7 @@ const Recipe = () => {
       .get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + recipeId)
       .then((res) => {
         setRecipeIdData(res.data.meals);
-        console.log(res.data.meals, " helloooo");
+        console.log(res.data.meals[0].strMeal, " helloooo");
       })
       .catch((err) => {
         console.error("Error fetching tasks: ", err);
@@ -44,22 +45,7 @@ const Recipe = () => {
       </div>
       <div className="inner-wrapper">
         <div className="breadcrumb-wrapper">
-        <Breadcrumb
-    items={[
-      {
-        title: 'Home',
-      },
-      {
-        title: <a href="">Application Center</a>,
-      },
-      {
-        title: <a href="">Application List</a>,
-      },
-      {
-        title: 'An Application',
-      },
-    ]}
-  />
+          <CustomBreadcrumb title={recipeIdData[0]?.strMeal} />
         </div>
         {recipeIdData?.map((recData) => {
           return (
