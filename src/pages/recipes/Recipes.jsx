@@ -2,29 +2,25 @@ import axios from "axios";
 import "./Recipes.css";
 import { useEffect, useState } from "react";
 import {
-  Button,
   Col,
-  Collapse,
-  Dropdown,
+  Divider,
   Image,
   Input,
   Row,
-  Space,
+  Select,
   Spin,
-  Tag,
 } from "antd";
-import { CaretRightOutlined, DownOutlined } from "@ant-design/icons";
 import RecipeCard from "../../components/common/recipe-card/RecipeCard";
 import bannerFinal from "../../assets/banner/banner-final.jpg";
 import noData from "../../assets/logo/Empty-bro.svg";
 import { useLocation } from "react-router-dom";
+import { getCategoriesOptions } from "../../utils/getCategoryOptions";
+import { getCuisinesOptions } from "../../utils/getCuisinesOptions";
 // import FeaturedRecipe from "./../../components/home/featured-recipe/FeaturedRecipe";
 
 const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isCusineActive, setIsCusineActive] = useState("");
-  const [isCategoryActive, setIsCategoryActive] = useState("");
 
   const [CuisineTypes, setCuisineTypes] = useState([]);
   const [categoryTypes, setCategoryTypes] = useState([]);
@@ -46,15 +42,11 @@ const Recipes = () => {
     setIsCuisineDummy(-1);
   };
 
-  const fetchCategoryRecipes = async (categoryTypeName, index) => {
+  const fetchCategoryRecipes = async (value) => {
     setIsLoading(true);
-    setIsCategoryActive(index);
-    setIsCusineActive(-1);
 
     axios
-      .get(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryTypeName}`
-      )
+      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${value}`)
       .then((res) => {
         setRecipeData(res.data.meals);
         setIsLoading(false);
@@ -65,16 +57,11 @@ const Recipes = () => {
       });
   };
 
-  const fetchCuisineRecipes = async (cuisineTypeName, index) => {
+  const fetchCuisineRecipes = async (value) => {
     setIsLoading(true);
-    setIsCusineActive(index);
-    setIsCategoryActive(-1);
     axios
-      .get(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisineTypeName}`
-      )
+      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${value}`)
       .then((res) => {
-        console.log(res.data.meals, "american");
         setRecipeData(res.data.meals);
         setIsLoading(false);
       })
@@ -86,8 +73,6 @@ const Recipes = () => {
 
   const fetchSearchByName = async () => {
     setIsLoading(true);
-    setIsCusineActive(-1);
-    setIsCategoryActive(-1);
     axios
       .get(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchByName}`
@@ -108,7 +93,7 @@ const Recipes = () => {
     axios
       .get("https://www.themealdb.com/api/json/v1/1/list.php?c=list")
       .then((response) => {
-        setCategoryTypes(response.data.meals);
+        setCategoryTypes(getCategoriesOptions(response.data.meals));
       })
       .catch((error) => {
         console.error("Error fetching ingredient types: ", error);
@@ -119,8 +104,7 @@ const Recipes = () => {
     axios
       .get("https://www.themealdb.com/api/json/v1/1/list.php?a=list")
       .then((response) => {
-        setCuisineTypes(response.data.meals);
-        console.log(response.data.meals, "response.data.meals");
+        setCuisineTypes(getCuisinesOptions(response.data.meals));
       })
       .catch((error) => {
         console.error("Error fetching ingredient types: ", error);
@@ -151,116 +135,51 @@ const Recipes = () => {
     }
   }, [searchByName]);
 
-  const panelStyle = {
-    marginBottom: 24,
-    background: "white",
-    borderRadius: 5,
-    border: "1px solid gray",
-  };
-
-  const getItems = (panelStyle) => [
-    {
-      key: "1",
-      label: "Cuisines",
-      children: (
-        <div className="tags-wrapper">
-          {CuisineTypes.map((cusineType, index) => (
-            <Tag
-              key={index}
-              className="cuisine-column"
-              onClick={() => fetchCuisineRecipes(cusineType?.strArea, index)}
-            >
-              <Button
-                className={
-                  index === isCusineActive
-                    ? "btn-active-cuisine-name"
-                    : "btn-cuisine-name"
-                }
-              >
-                {cusineType?.strArea}
-              </Button>
-            </Tag>
-          ))}
-        </div>
-      ),
-      style: panelStyle,
-    },
-    {
-      key: "2",
-      label: "Categories",
-      children: (
-        <div className="tags-wrapper">
-          {categoryTypes.map((categoryType, index) => (
-            <Tag
-              key={index}
-              className="cuisine-column"
-              onClick={() =>
-                fetchCategoryRecipes(categoryType?.strCategory, index)
-              }
-            >
-              <Button
-                className={
-                  index === isCategoryActive
-                    ? "btn-active-cuisine-name"
-                    : "btn-cuisine-name"
-                }
-              >
-                {categoryType?.strCategory}
-              </Button>
-            </Tag>
-          ))}
-        </div>
-      ),
-      style: panelStyle,
-    },
-  ];
-
   return (
     <div className="recipes-wrapper">
       <div className="recipes-banner">
         <Image className="banner-img" preview={false} src={bannerFinal} />
-        {/* <Input
-          size="large"
-          placeholder="Search Recipes"
-          className="recipes-search"
-          onChange={handleChange}
-          style={{ position: "absolute", top: "50%" }}
-        /> */}
-        <Row>
-          <Col>
-            <p className="bar-title">Catefories</p>
-            <Dropdown
-              menu={{
-                items,
-              }}
-              trigger={["click"]}
-            >
-              <a onClick={(e) => e.preventDefault()}>
-                <Space>
-                  Click me
-                  <DownOutlined />
-                </Space>
-              </a>
-            </Dropdown>
-          </Col>
-          <Col>
-            <p className="bar-title">layout</p>
-          </Col>
-          <Col>
-            <Input
-              size="large"
-              placeholder="Search Recipes"
-              className="recipes-search"
-              onChange={handleChange}
-              style={{ position: "absolute", top: "50%" }}
-            />
-          </Col>
-        </Row>
+        <div className="filter-wrapper">
+          <Row className="filter-row filter-wrapper">
+            <Col className="filter-column">
+              <p className="bar-title font-inter">Catefories</p>
+              <Select
+                style={{
+                  width: 120,
+                }}
+                onChange={fetchCategoryRecipes}
+                options={categoryTypes}
+              />
+            </Col>
+            <Divider type="vertical" className="filter-divider" />
+            <Col className="filter-column">
+              <p className="bar-title font-inter">Cuisines</p>
+              <Select
+                style={{
+                  width: 120,
+                }}
+                onChange={fetchCuisineRecipes}
+                options={CuisineTypes}
+              />
+            </Col>
+            <Divider type="vertical" className="filter-divider" />
+            <Col className="filter-column">
+              <Input
+                size="large"
+                placeholder="Search Recipes"
+                enterButton="Search"
+                className="recipes-search"
+                onChange={handleChange}
+                // style={{ position: "absolute", top: "50%" }}
+              />
+            </Col>
+          </Row>
+        </div>
       </div>
       <div className="recipes-inner-wrapper">
         <div className="recipes-layout">
           <Row>
-            <Col span={6}>
+            {/* <Col span={6}>
               <div className="cuisines-section">
                 <h1 className="header-text">Decide What To Write</h1>
                 <Collapse
@@ -272,8 +191,8 @@ const Recipes = () => {
                   items={getItems(panelStyle)}
                 />
               </div>
-            </Col>
-            <Col span={18}>
+            </Col> */}
+            <Col span={24}>
               {isLoading ? (
                 <div className="recipe-spinner">
                   <Spin size="large" />
