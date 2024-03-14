@@ -1,0 +1,13 @@
+.breadcrumb-container {
+  font-size: 24px;
+}
+
+.breadcrumb-title {
+  font-size: 24px;
+  color: black;
+}
+
+.breadcrumb-link {
+  font-weight: 400;
+  font-size: 24px;
+}
