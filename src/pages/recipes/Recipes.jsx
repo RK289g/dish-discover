@@ -8,6 +8,9 @@ import noData from "../../assets/logo/Empty-bro.svg";
 import { useLocation } from "react-router-dom";
 import { getCategoriesOptions } from "../../utils/getCategoryOptions";
 import { getCuisinesOptions } from "../../utils/getCuisinesOptions";
+import { CategorySVG } from "../../assets/svg/CategorySVG";
+import { CusineSVG } from "../../assets/svg/CusineSVG";
+import { SearchSVG } from "../../assets/svg/SearchSVG";
 // import FeaturedRecipe from "./../../components/home/featured-recipe/FeaturedRecipe";
 
 const Recipes = () => {
@@ -134,36 +137,44 @@ const Recipes = () => {
         <div className="filter-wrapper">
           <Row className="filter-row filter-wrapper">
             <Col className="filter-column">
-              <p className="bar-title font-inter">Catefories</p>
-              <Select
-                style={{
-                  width: 163,
-                }}
-                className="filter-select"
-                onChange={fetchCategoryRecipes}
-                options={categoryTypes}
-              />
+              <p className="bar-title font-inter">Categories</p>
+              <div className="select-wrapper">
+                <CategorySVG />
+                <Select
+                  style={{
+                    width: 163,
+                  }}
+                  placeholder="Main Dishes"
+                  className="filter-select"
+                  onChange={fetchCategoryRecipes}
+                  options={categoryTypes}
+                />
+              </div>
             </Col>
             <Divider type="vertical" className="filter-divider" />
             <Col className="filter-column">
               <p className="bar-title font-inter">Cuisines</p>
-              <Select
-                style={{
-                  width: 163,
-                }}
-                onChange={fetchCuisineRecipes}
-                options={CuisineTypes}
-              />
+              <div className="select-wrapper">
+                <CusineSVG />
+                <Select
+                  style={{
+                    width: 163,
+                  }}
+                  placeholder="Main dishes"
+                  className="filter-select"
+                  onChange={fetchCuisineRecipes}
+                  options={CuisineTypes}
+                />
+              </div>
             </Col>
             <Divider type="vertical" className="filter-divider" />
             <Col className="filter-column">
               <Input
                 size="large"
-                placeholder="Search Recipes"
-                enterButton="Search"
-                className="recipes-search"
+                placeholder="Search"
+                prefix={<SearchSVG />}
+                className="recipes-search-button"
                 onChange={handleChange}
-                // style={{ position: "absolute", top: "50%" }}
               />
             </Col>
           </Row>
@@ -172,19 +183,6 @@ const Recipes = () => {
       <div className="recipes-inner-wrapper">
         <div className="recipes-layout">
           <Row>
-            {/* <Col span={6}>
-              <div className="cuisines-section">
-                <h1 className="header-text">Decide What To Write</h1>
-                <Collapse
-                  bordered={false}
-                  defaultActiveKey={["1"]}
-                  expandIcon={({ isCusineActive }) => (
-                    <CaretRightOutlined rotate={isCusineActive ? 90 : 0} />
-                  )}
-                  items={getItems(panelStyle)}
-                />
-              </div>
-            </Col> */}
             <Col span={24}>
               {isLoading ? (
                 <div className="recipe-spinner">

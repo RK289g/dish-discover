@@ -48,12 +48,38 @@
 }
 
 .filter-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   padding: 24px, 0px, 24px, 0px !important;
 }
 
 .filter-divider {
+  width: 1px; /* Adjust the width to make the divider wider */
   height: 65px;
-  color: #737373;
+  background-color: #737373;
+}
+
+.filter-select {
+  border: none !important;
+}
+
+.ant-select-selector {
+  border: none !important;
+  font-size: 20px !important;
+  font-weight: 500;
+  color: black !important;
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-wrapper {
+  font-size: 20px;
+  color: #12822a;
 }
 
 .bar-title {
@@ -61,7 +87,6 @@
   color: #737373;
   font-size: 16px;
   font-weight: 400;
-  padding: 8px;
 }
 
 .bar-sub-title {
@@ -71,11 +96,16 @@
   padding: 8px;
 }
 
-.recipes-search {
-  width: 200px;
-  border-radius: 50px;
-  border-color: #001529;
-  color: black;
+.recipes-search-button {
+  width: 157px;
+  border-radius: 8px;
+  background-color: #12822a;
+}
+
+.recipes-search-button ::placeholder {
+  color: white; /* Set the placeholder color to white */
+  font-size: 20px !important;
+  font-family: "Inter Tight", sans-serif !important;
 }
 
 .recipes-wrapper .recipes-spinner {
@@ -84,6 +114,16 @@
   align-items: center;
 }
 
+.filter-search-icon {
+  background-color: transparent !important;
+  color: white;
+}
+
+.ant-input {
+  background-color: #12822a;
+  color: #a3cef1;
+  font-size: 20px;
+}
 .cuisines-section {
   padding: 0 16px;
 }

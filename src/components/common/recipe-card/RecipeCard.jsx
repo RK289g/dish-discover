@@ -1,8 +1,9 @@
 import "./RecipeCard.css";
 import PropTypes from "prop-types";
-import { Button, Card, Col, Image, Row, Skeleton } from "antd";
+import { Button, Card, Col, Row} from "antd";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { RightOutlined } from "@ant-design/icons";
 
 const RecipeCard = ({ recipeData }) => {
   const [visibleRecipes, setVisibleRecipes] = useState(6);
@@ -22,31 +23,38 @@ const RecipeCard = ({ recipeData }) => {
         {recipeData?.slice(0, visibleRecipes).map((recData) => {
           return (
             <Col xl={8} md={12} sm={24} key={recData?.idMeal}>
-              <Card
-                onClick={() => {
-                  handleRecipeClick(recData.idMeal);
-                }}
-                hoverable
-                className="card-name"
-              >
-                <Skeleton
-                  active={true}
-                  loading={false}
-                  avatar={{ shape: "square", size: 350 }}
-                >
+              <Card hoverable className="card">
                   <div>
-                    <Image
+                    <img
                       className="image"
                       src={recData?.strMealThumb}
                       alt="ThumbNail"
-                      preview={false}
                     />
-                    <div className="card-text recipe-card-text">
-                      <h1>{recData?.strMeal}</h1>
+                    <div className="card-text">
+                      <h1 className="font-inter">
+                        {recData?.strMeal && recData.strMeal.length > 18
+                          ? recData.strMeal.substring(0, 20) + " ..."
+                          : recData.strMeal}
+                      </h1>
+                      <div className="text-btn-wrapper">
+                        <h5 className="font-inter">
+                          {recData?.strInstructions.substring(0, 90) + " ..."}
+                        </h5>
+                      </div>
+                      <div className="button-wrapper">
+                        <Button
+                          onClick={() => {
+                            handleRecipeClick(recData.idMeal);
+                          }}
+                          className="card-button"
+                          icon={<RightOutlined />}
+                        >
+                          See Recipe
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                </Skeleton>
-              </Card>
+                </Card>
             </Col>
           );
         })}
