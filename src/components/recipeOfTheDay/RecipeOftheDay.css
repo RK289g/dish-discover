@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 22px;
+  max-width: 1200px;
 
   background-color: #f4ffe5;
   border-radius: 20px;
@@ -63,9 +63,9 @@
 }
 
 @media only screen and (max-width: 768px) {
-.day-card-inner-wrapper{
-  display:block;
-}
+  .day-card-inner-wrapper {
+    display: block;
+  }
 
   .day-image {
     width: 254px !important;

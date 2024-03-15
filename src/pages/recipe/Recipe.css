@@ -189,7 +189,7 @@ tr {
   /* margin-top: 20px; */
 }
 
-.wrapper .YT-wrapper {
+ .YT-wrapper {
   margin-top: 5%;
   margin-bottom: 5%;
   display: flex;
@@ -199,7 +199,7 @@ tr {
   /* height: 100vh;  */
 }
 
-.wrapper .YT-wrapper .i-frame {
+ .i-frame {
   width: 65%;
   height: 500px;
   border-radius: 24px;
@@ -234,17 +234,17 @@ tr {
     overflow: hidden;
   }
 
-  .wrapper .YT-wrapper h3 {
+  .YT-wrapper h3 {
     font-size: 20px;
     padding-bottom: 0px;
   }
 
-  .wrapper .YT-wrapper h4 {
+  .YT-wrapper h4 {
     font-size: 12px;
     margin-top: 0px;
   }
 
-  .wrapper .YT-wrapper .i-frame {
+  .YT-wrapper .i-frame {
     width: 65%;
     height: 250px;
   }

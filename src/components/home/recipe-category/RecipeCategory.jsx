@@ -13,12 +13,12 @@ const RecipeCategory = () => {
   };
 
   return (
-    <div className="recipe-category-wrapper">
+    <div className="home-wrapper">
       <div className="recipe-category-inner-wrapper">
         <h1 className="title-recipe-category font-fanlste">Top Categories</h1>
 
         <Row
-          // gutter={[20, 20]}
+          gutter={[20, 20]}
           justify="center"
           className="column-recipe-category"
         >
@@ -29,7 +29,7 @@ const RecipeCategory = () => {
               onClick={() => goToRecipe(type.subName, type.id)}
               md={12}
               lg={8}
-              xl={6}
+              xl={8}
             >
               <div className="upper-card-wrapper">
                 <h1 className="text-recipe-category">{type.name}</h1>

@@ -1,6 +1,7 @@
 import { RightOutlined } from "@ant-design/icons";
 import { Button, Card, Col, Row, Spin } from "antd";
 import axios from "axios";
+import "./FeaturedRecipe.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -33,56 +34,66 @@ const FeaturedRecipe = () => {
 
   return (
     <div className="home-wrapper">
-      <h1 className="title-recipe-category font-fanlste">Featured Recipes</h1>
-      <div className="card-wrapper">
-        <Row
-          align={"middle"}
-          gutter={[16, 16]}
-          style={{ margin: "0px", padding: "0px 0px" }}
-        >
-          {isLoading ? (
-            <div>
-              <Spin size="large" />
-            </div>
-          ) : (
-            recipeData?.slice(0, 6).map((recData) => (
-              <Col align="middle" xl={8} lg={12} sm={24} key={recData?.idMeal}>
-                <Card hoverable className="card">
-                  <div>
-                    <img
-                      className="image"
-                      src={recData?.strMealThumb}
-                      alt="ThumbNail"
-                    />
-                    <div className="card-text">
-                      <h1 className="font-inter">
-                        {recData?.strMeal && recData.strMeal.length > 18
-                          ? recData.strMeal.substring(0, 20) + " ..."
-                          : recData.strMeal}
-                      </h1>
-                      <div className="text-btn-wrapper">
-                        <h5 className="font-inter">
-                          {recData?.strInstructions.substring(0, 90) + " ..."}
-                        </h5>
-                      </div>
-                      <div className="button-wrapper">
-                        <Button
-                          onClick={() => {
-                            handleClick(recData.idMeal);
-                          }}
-                          className="card-button"
-                          icon={<RightOutlined />}
-                        >
-                          See Recipe
-                        </Button>
+      <div className="recipe-category-inner-wrapper">
+        <h1 className="title-recipe-category featured-title font-fanlste">
+          Featured Recipes
+        </h1>
+        <div className="card-wrapper">
+          <Row
+            align={"middle"}
+            gutter={[16, 16]}
+            style={{ margin: "0px", padding: "0px 0px" }}
+          >
+            {isLoading ? (
+              <div>
+                <Spin size="large" />
+              </div>
+            ) : (
+              recipeData?.slice(0, 6).map((recData) => (
+                <Col
+                  align="middle"
+                  xl={8}
+                  lg={12}
+                  sm={24}
+                  key={recData?.idMeal}
+                >
+                  <Card hoverable className="card">
+                    <div>
+                      <img
+                        className="image"
+                        src={recData?.strMealThumb}
+                        alt="ThumbNail"
+                      />
+                      <div className="card-text">
+                        <h1 className="font-inter">
+                          {recData?.strMeal && recData.strMeal.length > 18
+                            ? recData.strMeal.substring(0, 20) + " ..."
+                            : recData.strMeal}
+                        </h1>
+                        <div className="text-btn-wrapper">
+                          <h5 className="font-inter">
+                            {recData?.strInstructions.substring(0, 90) + " ..."}
+                          </h5>
+                        </div>
+                        <div className="button-wrapper">
+                          <Button
+                            onClick={() => {
+                              handleClick(recData.idMeal);
+                            }}
+                            className="card-button"
+                            icon={<RightOutlined />}
+                          >
+                            See Recipe
+                          </Button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Card>
-              </Col>
-            ))
-          )}
-        </Row>
+                  </Card>
+                </Col>
+              ))
+            )}
+          </Row>
+        </div>
       </div>
     </div>
   );
