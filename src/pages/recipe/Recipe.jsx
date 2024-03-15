@@ -1,4 +1,4 @@
-import {  Col, Collapse, Divider, Image, Row } from "antd";
+import { Col, Collapse, Divider, Image, Row } from "antd";
 import "./Recipe.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -16,6 +16,7 @@ import {
 import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import CommentSection from "../../components/comment-sectuon/CommentSection";
 import { CustomBreadcrumb } from "../../components/common/custom-breadcrumb/CustomBreadcrumb";
+import RecipeHeader from "../../components/recipe-header/RecipeHeader";
 
 const Recipe = () => {
   const { recipeId } = useParams();
@@ -50,8 +51,14 @@ const Recipe = () => {
         {recipeIdData?.map((recData) => {
           return (
             <div key={recData?.idMeal}>
-              <Row gutter={[80, 80]} className="heading-row-wrapper">
-                <Col xs={24} md={12} lg={12} align="middle">
+              {/* <Row gutter={[80, 80]} className="heading-row-wrapper">
+                <Col
+                  xs={24}
+                  md={12}
+                  lg={12}
+                  align="middle"
+                  style={{ padding: "0px" }}
+                >
                   <div className="image-wrapper">
                     <Image
                       preview={false}
@@ -61,7 +68,7 @@ const Recipe = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={24} md={12}>
+                <Col xs={24} md={12} style={{ padding: "0px" }}>
                   <div className="recipe-text-inner-wrapper">
                     <h1 className="recipe-title font-inter">
                       {recData?.strMeal}
@@ -111,12 +118,18 @@ const Recipe = () => {
                     </div>
                   </div>
                 </Col>
-              </Row>
+              </Row> */}
+              <RecipeHeader
+                thumbnail={recData?.strMealThumb}
+                mealName={recData?.strMeal}
+                areaName={recData?.strArea}
+                tags={recData?.strTags}
+              />
 
-              <Row className="instruction-ingredient-row">
+              <Row gutter={24}>
                 <Col xs={24} md={12} className="instruction-div">
                   <h1 className="instruction-header font-inter">Ingredients</h1>
-                  <table>
+                  <table className="table-wrapper">
                     {[...Array(20)].map((_, index) => {
                       const ingredientKey = `strIngredient${index + 1}`;
                       const measureKey = `strMeasure${index + 1}`;
@@ -146,23 +159,34 @@ const Recipe = () => {
                   <h1 className="instruction-header font-inter">
                     Instructions
                   </h1>
-                  <Collapse>
-                    {recData?.strInstructions
-                      .split(/\r?\n/)
-                      .filter((instruction) => instruction.trim() !== "")
-                      .map((instruction, index) => (
-                        <CollapsePanel
-                          header={`STEP ${index + 1}`}
-                          key={index + 1}
-                        >
-                          <p className="instruction-text font-inter">
-                            {instruction}
-                          </p>
-                        </CollapsePanel>
-                      ))}
-                  </Collapse>
+                  <div>
+                    <Collapse>
+                      {recData?.strInstructions
+                        .split(/\r?\n/)
+                        .filter((instruction) => instruction.trim() !== "")
+                        .map((instruction, index) => (
+                          <CollapsePanel
+                            header={`STEP ${index + 1}`}
+                            key={index + 1}
+                          >
+                            <p className="instruction-text font-inter">
+                              {instruction}
+                            </p>
+                          </CollapsePanel>
+                        ))}
+                    </Collapse>
+                  </div>
                 </Col>
               </Row>
+              {/* 
+              <Row className="instruction-ingredient-row" gutter={24}>
+                <Col md={12} className="instruction-div">
+                  Hello
+                </Col>
+                <Col md={12} className="instruction-div">
+                  Hello 2
+                </Col>
+              </Row> */}
 
               <div span={24} className="YT-wrapper">
                 <h3 className="YT-header font-inter">
@@ -182,7 +206,7 @@ const Recipe = () => {
             </div>
           );
         })}
-        <CommentSection />
+        {/* <CommentSection /> */}
       </div>
     </div>
   );

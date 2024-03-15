@@ -1,0 +1,21 @@
+.header-image-wrapper {
+  width: 573px;
+  height: 446px;
+}
+
+.header-image-wrapper .header-image {
+  border-radius: 20px;
+  width: 573px;
+  height: 446px;
+}
+
+.recipe-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.recipe-header-wrapper .recipe-name {
+  color: black;
+  font-size: 26px;
+  font-weight: 600;
+}
