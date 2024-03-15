@@ -41,11 +41,6 @@ const RecipeOftheDay = () => {
                 >
                   See Recipe
                 </Button>
-                {/* <div className="like-section font-poppins">
-              <p>liked by</p>
-              <Image src={frame} preview={false} className="like-image" />
-              <p>4k+ People</p>
-            </div> */}
               </div>
             </div>
           </div>

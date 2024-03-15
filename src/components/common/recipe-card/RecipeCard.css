@@ -1,92 +1,90 @@
 .card-name {
-    margin-bottom: 16px;
-    padding: 0px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-  
-    height: 357px;
-    width: 384px;
-  
-    border: 1px solid #ededed;
-  }
-  
-  .card-name .ant-card-body {
-    margin: 0px !important;
-    padding: 0px !important;
-  }
-  
-  .card-name .card-text {
-    width: 100%;
-    margin: 0px;
-    padding: 10px;
-    padding-left: 10px;
-    padding-right: 5px;
-    position: absolute;
-    bottom: 0;
-    color: black;
-    height: 60px;
-    background-color: white;
-    transition: height 1s ease-out;
-  }
-  
-  .card-name .card-text h1 {
-    margin: 0px;
-    padding-left: 10px;
-    text-align: start;
-    font-size: 32px;
-  }
-  
-  .card-name .card-text h5 {
-    margin: 0px;
-    padding: 0px;
-    text-align: start;
-    font-size: 16px;
-    font-weight: 300;
-    width: 352px;
-  }
-  
-  .button-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  
-  .card-button {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 6px;
-  
-    margin-right: 20px;
-    border: none;
-    color: #12822a;
-    font-size: 20px;
-    font-weight: 600;
-  }
-  
-  .image-wrapper {
-    overflow: hidden;
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  .image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    transition-duration: 1s;
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  .card-name:hover .image {
-    transform: scale(1.1);
-    overflow: hidden;
-  }
-  
-  .btn-see-more {
-    margin-bottom: 10px;
-    font-weight: 800;
-    color: #124559;
-    /* border: 1px solid blue; */
-  }
+  margin-bottom: 16px;
+  padding: 0px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+
+  height: 357px;
+  width: 384px;
+
+  border: 1px solid #ededed;
+}
+
+.card-name .ant-card-body {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.card-text {
+  width: 100%;
+  margin: 0px;
+  padding: 16px 16px 16px 16px !important;
+  /* padding-left: 10px;
+  padding-right: 5px; */
+  position: absolute;
+  bottom: 0;
+  color: black;
+  height: 60px;
+  background-color: white;
+  transition: height 1s ease-out;
+}
+
+.card-title {
+  margin: 0px;
+  padding: 0px;
+  text-align: start;
+  font-size: 32px;
+}
+
+.card-subtitle {
+  margin: 0px;
+  padding: 0px;
+  text-align: start;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+/* .card-button {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 6px;
+
+  /* background-color: transparent; */
+  border: none;
+  color: #12822a;
+  font-size: 20px;
+  font-weight: 600;
+} */
+
+.image-wrapper {
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition-duration: 1s;
+  margin: 0px;
+  padding: 0px;
+}
+
+.card-name:hover .image {
+  transform: scale(1.1);
+  overflow: hidden;
+}
+
+.btn-see-more {
+  margin-bottom: 10px;
+  font-weight: 800;
+  color: #124559;
+  /* border: 1px solid blue; */
+}

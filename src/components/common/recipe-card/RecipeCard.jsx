@@ -41,13 +41,13 @@ const RecipeCard = ({ recipeData }) => {
                         alt="ThumbNail"
                       />
                       <div className="card-text">
-                        <h1 className="font-inter">
+                        <h1 className=" card-title cfont-inter">
                           {recData?.strMeal && recData.strMeal.length > 18
                             ? recData.strMeal.substring(0, 20) + " ..."
                             : recData.strMeal}
                         </h1>
                         <div className="text-btn-wrapper">
-                          <h5 className="font-inter">
+                          <h5 className="card-subtitle font-inter">
                             Enjoy this delicious recipe! Easy to make and
                             bursting with flavor. Perfect for any occasion.
                           </h5>
