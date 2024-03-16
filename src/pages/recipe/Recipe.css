@@ -3,7 +3,6 @@
 }
 
 .inner-wrapper {
-  border: 1px solid red;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -61,19 +60,6 @@
   padding-bottom: 14px;
 }
 
-.icons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  padding: 10px;
-  border-top: 1px solid #bfbfbf;
-  border-bottom: 1px solid #bfbfbf;
-
-  font-size: 16px;
-  color: #595959;
-  font-weight: 400;
-}
-
 .icons-wrapper-left,
 .icons-wrapper-right {
   display: flex;
@@ -92,27 +78,6 @@
 .rating-icons {
   display: flex;
   align-items: center;
-}
-
-.rating-icon-color {
-  color: #12822a;
-}
-
-.rating-inner-wrapper {
-  display: block;
-  align-items: center;
-  justify-content: center;
-}
-
-.rating-divider {
-  height: 98px;
-  background-color: #5a5a5a;
-}
-
-.rating-text {
-  text-align: center;
-  color: #5a5a5a;
-  font-weight: 400;
 }
 
 .instruction-div {
@@ -146,7 +111,6 @@
   font-weight: 500;
   text-transform: capitalize;
 
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   padding: 16px;
