@@ -29,8 +29,8 @@ const RandomRecipe = () => {
   };
 
   return (
-    <div className="btn-random-recipe-wrapper wrapper">
-      <div className="inner-wrapper">
+    <div className="btn-random-recipe-wrapper">
+      <div>
         <div
           className={
             recipeClicked ? "random-recipe-hero-hidden" : "random-recipe-hero"
@@ -85,89 +85,93 @@ const RandomRecipe = () => {
               </div>
             )}
 
-            {recipeData?.map((recData) => {
-              return (
-                <div key={recData?.idMeal}>
-                  <RecipeHeader
-                    thumbnail={recData?.strMealThumb}
-                    mealName={recData?.strMeal}
-                    areaName={recData?.strArea}
-                    tags={recData?.strTags}
-                  />
+            <div className="wrapper">
+              {recipeData?.map((recData) => {
+                return (
+                  <div key={recData?.idMeal} className="inner-wrapper">
+                    <RecipeHeader
+                      thumbnail={recData?.strMealThumb}
+                      mealName={recData?.strMeal}
+                      areaName={recData?.strArea}
+                      tags={recData?.strTags}
+                    />
 
-                  <Row gutter={24}>
-                    <Col xs={24} md={12} className="instruction-div">
-                      <h1 className="instruction-header font-inter">
-                        Ingredients
-                      </h1>
-                      <table className="table-wrapper">
-                        {[...Array(20)].map((_, index) => {
-                          const ingredientKey = `strIngredient${index + 1}`;
-                          const measureKey = `strMeasure${index + 1}`;
-                          // const ingredientImageSrc = `https://www.themealdb.com/images/ingredients/${recData[ingredientKey]}-small.png`;
+                    <Row gutter={24}>
+                      <Col xs={24} md={12} className="instruction-div">
+                        <h1 className="instruction-header font-inter">
+                          Ingredients
+                        </h1>
+                        <table className="table-wrapper">
+                          {[...Array(20)].map((_, index) => {
+                            const ingredientKey = `strIngredient${index + 1}`;
+                            const measureKey = `strMeasure${index + 1}`;
+                            // const ingredientImageSrc = `https://www.themealdb.com/images/ingredients/${recData[ingredientKey]}-small.png`;
 
-                          if (recData[ingredientKey]) {
-                            return (
-                              <tr key={index} className="table-row">
-                                <td className="td-ingredient-wrapper">
-                                  <div className="td-ingredient">
-                                    <CheckCircleOutlined className="check-icon" />
-                                    {recData[ingredientKey]}
-                                  </div>
-                                </td>
-                                <td className="td-measure">
-                                  {recData[measureKey]}
-                                </td>
-                              </tr>
-                            );
-                          }
+                            if (recData[ingredientKey]) {
+                              return (
+                                <tr key={index} className="table-row">
+                                  <td className="td-ingredient-wrapper">
+                                    <div className="td-ingredient">
+                                      <CheckCircleOutlined className="check-icon" />
+                                      {recData[ingredientKey]}
+                                    </div>
+                                  </td>
+                                  <td className="td-measure">
+                                    {recData[measureKey]}
+                                  </td>
+                                </tr>
+                              );
+                            }
 
-                          return null;
-                        })}
-                      </table>
-                    </Col>
-                    <Col xs={24} md={12} className="instruction-div">
-                      <h1 className="instruction-header font-inter">
-                        Instructions
-                      </h1>
-                      <div>
-                        <Collapse>
-                          {recData?.strInstructions
-                            .split(/\r?\n/)
-                            .filter((instruction) => instruction.trim() !== "")
-                            .map((instruction, index) => (
-                              <CollapsePanel
-                                header={`STEP ${index + 1}`}
-                                key={index + 1}
-                              >
-                                <p className="instruction-text font-inter">
-                                  {instruction}
-                                </p>
-                              </CollapsePanel>
-                            ))}
-                        </Collapse>
-                      </div>
-                    </Col>
-                  </Row>
+                            return null;
+                          })}
+                        </table>
+                      </Col>
+                      <Col xs={24} md={12} className="instruction-div">
+                        <h1 className="instruction-header font-inter">
+                          Instructions
+                        </h1>
+                        <div>
+                          <Collapse>
+                            {recData?.strInstructions
+                              .split(/\r?\n/)
+                              .filter(
+                                (instruction) => instruction.trim() !== ""
+                              )
+                              .map((instruction, index) => (
+                                <CollapsePanel
+                                  header={`STEP ${index + 1}`}
+                                  key={index + 1}
+                                >
+                                  <p className="instruction-text font-inter">
+                                    {instruction}
+                                  </p>
+                                </CollapsePanel>
+                              ))}
+                          </Collapse>
+                        </div>
+                      </Col>
+                    </Row>
 
-                  <div span={24} className="YT-wrapper">
-                    <h3 className="YT-header font-inter">
-                      Watch Video on {recData?.strMeal}
-                    </h3>
-                    <iframe
-                      className="i-frame"
-                      src={`https://www.youtube.com/embed/${getYoutubeVideoId(
-                        recData?.strYoutube
-                      )}`}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
+                    <div span={24} className="YT-wrapper">
+                      <h3 className="YT-header font-inter">
+                        Watch Video on {recData?.strMeal}
+                      </h3>
+                      <iframe
+                        className="i-frame"
+                        src={`https://www.youtube.com/embed/${getYoutubeVideoId(
+                          recData?.strYoutube
+                        )}`}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         )}
       </div>

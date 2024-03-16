@@ -20,6 +20,12 @@
   height: 446px;
 }
 
+.column-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .recipe-header-wrapper {
   display: flex;
   flex-direction: column;

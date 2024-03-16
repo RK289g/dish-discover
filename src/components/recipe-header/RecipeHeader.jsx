@@ -24,7 +24,7 @@ const RecipeHeader = ({ thumbnail, mealName, areaName, tags }) => {
             />
           </div>
         </Col>
-        <Col span={12}>
+        <Col span={12} className="">
           <div className="recipe-header-wrapper">
             <p className="recipe-title-name font-inter">{mealName}</p>
             <div className="recipe-name-wrapper">
