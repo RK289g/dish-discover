@@ -1,12 +1,12 @@
-import dessertItems from "../../../assets/top-categories/dessert-items.png";
-import beginnerItems from "../../../assets/top-categories/starter-items.png";
+import dessertItems from "../../../assets/top-categories/dessert.png";
+import beginnerItems from "../../../assets/top-categories/beginner.png";
 import additionalItems from "../../../assets/top-categories/additiona-items.png";
-import burger from "../../../assets/top-categories/burger.png";
+import breakfastItems from "../../../assets/top-categories/brkfast.png";
 
 export const recipeByCategoryData = [
   {
     id: 1,
-    image: burger,
+    image: breakfastItems,
     name: "Breakfast Items",
     subName: "Breakfast",
     recipeNumber: "300+ recipe",
@@ -24,12 +24,5 @@ export const recipeByCategoryData = [
     name: "Starter Items",
     subName: "Starter",
     recipeNumber: "200+ recipe",
-  },
-  {
-    id: 10,
-    image: additionalItems,
-    name: "Side Items",
-    subName: "Side",
-    recipeNumber: "150+ recipe",
   },
 ];

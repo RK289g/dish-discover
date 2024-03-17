@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import "./RecipeCategory.css";
 import { recipeByCategoryData } from "./recipeByCategoryData";
 import { Col, Image, Row } from "antd";
-import { ArrowRightOutlined } from "@ant-design/icons";
 
 const RecipeCategory = () => {
   const navigate = useNavigate();
@@ -31,17 +30,14 @@ const RecipeCategory = () => {
               lg={8}
               xl={8}
             >
-              <div className="upper-card-wrapper">
-                <h1 className="text-recipe-category">{type.name}</h1>
-                <Image
-                  src={type.image}
-                  preview={false}
-                  className="card-image"
-                />
-              </div>
-              <div className="lower-card-wrapper">
-                <h4>{type.recipeNumber}</h4>
-                <ArrowRightOutlined />
+              <Image src={type.image} preview={false} className="card-image" />
+              <div className="categories-text-wrapper">
+                <h1 className="categories-text-title font-inter">
+                  {type.name}
+                </h1>
+                <h4 className="categories-text-items font-inter">
+                  {type.recipeNumber}
+                </h4>
               </div>
             </Col>
           ))}
