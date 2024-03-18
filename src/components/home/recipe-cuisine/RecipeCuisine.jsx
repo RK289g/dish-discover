@@ -1,5 +1,4 @@
 import { Col, Image, Row } from "antd";
-import { ArrowRightOutlined } from "@ant-design/icons";
 import { recipeByCuisineData } from "./recipeByCuisineData";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +14,7 @@ const RecipeCuisine = () => {
         <h1 className="title-recipe-category font-fanlste">Top Cuisines</h1>
 
         <Row
-          // gutter={[20, 20]}
+          gutter={[20, 20]}
           justify="center"
           className="column-recipe-category"
         >
@@ -26,19 +25,16 @@ const RecipeCuisine = () => {
               onClick={() => goToRecipe(type.subName, type.id)}
               md={12}
               lg={8}
-              xl={6}
+              xl={8}
             >
-              <div className="upper-card-wrapper">
-                <h1 className="text-recipe-category">{type.name}</h1>
-                <Image
-                  src={type.image}
-                  preview={false}
-                  className="card-image"
-                />
-              </div>
-              <div className="lower-card-wrapper">
-                <h4>{type.recipeNumber}</h4>
-                <ArrowRightOutlined />
+              <Image src={type.image} preview={false} className="card-image" />
+              <div className="categories-text-wrapper">
+                <h1 className="categories-text-title font-inter">
+                  {type.name}
+                </h1>
+                <h4 className="categories-text-items font-inter">
+                  {type.recipeNumber}
+                </h4>
               </div>
             </Col>
           ))}

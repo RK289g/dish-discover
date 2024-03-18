@@ -1,5 +1,4 @@
 .home-wrapper {
-  /* padding: 0 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,9 +7,9 @@
 
 .card-wrapper {
   max-width: 1200px;
-  /* border: 1px solid red; */
   margin-bottom: 50px;
 }
+
 .popular-recipe {
   margin-top: 60px;
   text-align: center;
