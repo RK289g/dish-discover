@@ -6,7 +6,7 @@ import Footer from "../footer/Footer";
 import { useState } from "react";
 import { MenuFoldOutlined } from "@ant-design/icons";
 import useGetMenuKey from "../../hooks/useGetMenuKey";
-import logo from "./images/logo-vector.png";
+import logo from "./images/logo.png";
 import NewsLetter from "../news-letter/NewsLetter";
 
 const LayoutWrapper = () => {
