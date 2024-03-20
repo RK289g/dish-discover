@@ -1,6 +1,6 @@
 import { Button, Image } from "antd";
 import "./RecipeOftheDay.css";
-import dayImage from "../../assets/recipeOfTheDay/recipe-of-the-day.png";
+import dayImage from "../../assets/recipeOfTheDay/dayImage.png";
 // import frame from "../../assets/logo/Frame-1000015203.png";
 import { RightOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
