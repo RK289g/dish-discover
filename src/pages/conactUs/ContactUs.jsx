@@ -1,143 +1,43 @@
-import { useRef, useState } from "react";
+import { Button, Checkbox, Col, Image, Input, Row } from "antd";
 import "./ContactUs.css";
-import { Controller, useForm } from "react-hook-form";
-import { Button, Col, Image, Input, Row, message } from "antd";
-import emailjs from "@emailjs/browser";
-import TextArea from "antd/es/input/TextArea";
-import contactImg from "../../assets/logo/Call-center-cuate.png";
+import contactImage from "./../../assets/contactUs/contactImage.jpg";
 
 const ContactUs = () => {
-  const {
-    handleSubmit,
-    control,
-    reset,
-    formState: { errors },
-  } = useForm();
-
-  const [isLoading, setIsLoading] = useState(false);
-
-  const form = useRef(null);
-
-  const onSubmit = () => {
-    setIsLoading(true);
-
-    emailjs
-      .sendForm(
-        "service_9cetc9a",
-        "template_z4daixp",
-        form.current,
-        "qXkCWWJXXy1G1ho97"
-      )
-      .then(
-        (result) => {
-          setIsLoading(false);
-          console.log(result.text);
-          message.success("Got your message, thank you");
-          reset();
-        },
-        (error) => {
-          setIsLoading(false);
-          console.log(error.text);
-          message.success("Email sending failed");
-        }
-      );
-  };
-
   return (
-    <div className="contact-me-wrapper">
-      <div className="contact-me-inner-wrapper">
-        <Row gutter={{ md: 60 }} align="middle">
-          <Col span={12} >
-            <Image src={contactImg} preview={false} height={400} />
-          </Col>
+    <div className="home-wrapper">
+      <div className="recipe-category-inner-wrapper contact-inner-wrapper">
+        <Row>
           <Col span={12}>
-            <div className="form-wrapper">
-            <div className="contact-us-title">
-              <h3 className="page-title">Get in touch</h3>
-              {/* <p className="page-sub-title">Need to get in touch with us?</p>
-              <p className="page-sub-title">
-                Use the form or Social Media link below
-              </p> */}
-            </div>
-              <p className="page-sub-title">Fill the form to connect</p>
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                ref={form}
-                className="contact-us-form"
-              >
-                <div className="margin-bottom-30">
-                  <Controller
-                    render={({ field }) => (
-                      <Input
-                        {...field}
-                        placeholder="Full Name"
-                        className="general-input"
-                      />
-                    )}
-                    name="to_name"
-                    control={control}
-                    rules={{ required: true }}
-                  />
-                  {errors?.to_name?.type === "required" && (
-                    <span className="error-message">
-                      Please Enter Your Name
-                    </span>
-                  )}
+            <Image
+              className="contact-image"
+              src={contactImage}
+              preview={false}
+            />
+          </Col>
+          <Col span={12} className="contact-message-wrapper">
+            <div className="contact-message-inner-wrapper">
+              <div className="name-wrapper">
+                <div className="first-name-wrapper">
+                  <p className="first-name font-inter">First name</p>
+                  <Input placeholder="First name" className="name-box" />
                 </div>
-                <div className="margin-bottom-30">
-                  <Controller
-                    render={({ field }) => (
-                      <Input
-                        {...field}
-                        placeholder="Email"
-                        className="general-input"
-                      />
-                    )}
-                    name="from_email"
-                    control={control}
-                    // rules={{ required: true, pattern: RegexValidators.EMAIL }}
-                  />
-                  {errors?.from_email?.type === "required" && (
-                    <span className="error-message">
-                      Please Enter Your Email
-                    </span>
-                  )}
-                  {errors?.from_email?.type === "pattern" && (
-                    <span className="error-message">
-                      Please Enter a valid Email Address Name
-                    </span>
-                  )}
+                <div className="first-name-wrapper">
+                  <p className="first-name font-inter">Last name</p>
+                  <Input placeholder="Last name" className="name-box" />
                 </div>
-                <div className="margin-bottom-30">
-                  <Controller
-                    render={({ field }) => (
-                      <TextArea
-                        {...field}
-                        placeholder="Message"
-                        className="general-input"
-                        autoSize={{ minRows: 3, maxRows: 5 }}
-                      />
-                    )}
-                    name="message"
-                    control={control}
-                    rules={{ required: true }}
-                  />
-
-                  {errors?.from_email?.type === "required" && (
-                    <span className="error-message">
-                      Please Enter Your Message
-                    </span>
-                  )}
-                </div>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="submit-button"
-                  loading={isLoading}
-                >
-                  Send Message
-                </Button>
-              </form>
+              </div>
+              <div className="mail-wrapper">
+                <p className="first-name font-inter">Email</p>
+                <Input placeholder="you@company.com" />
+              </div>
+              <div className="message-wrapper">
+                <p className="first-name font-inter">Message</p>
+                <Input placeholder="" className="message-box" />
+              </div>
+              <Checkbox className="checkbox-container">You agree to our friendly privacy policy.</Checkbox>
+              <Button className="message-button font-inter" block>
+                Send message
+              </Button>
             </div>
           </Col>
         </Row>
@@ -145,5 +45,4 @@ const ContactUs = () => {
     </div>
   );
 };
-
 export default ContactUs;
