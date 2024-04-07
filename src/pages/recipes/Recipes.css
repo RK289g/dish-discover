@@ -97,9 +97,14 @@
 }
 
 .recipes-search-button {
-  width: 157px;
+  width: 314px;
   border-radius: 8px;
   background-color: #12822a;
+}
+
+.recipes-search-button {
+  color: white !important;
+  background-color: #3c7d06 !important;
 }
 
 .recipes-search-button ::placeholder {

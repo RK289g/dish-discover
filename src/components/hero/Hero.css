@@ -59,8 +59,13 @@
   font-weight: 500;
 }
 
-.CTA-button:hover {
+/* .CTA-button:hover {
   color: white !important;
+} */
+
+.explore-CTA-button:hover {
+  color: white !important;
+  background-color: #3c7d06 !important;
 }
 
 .ant-btn-icon {
@@ -155,9 +160,7 @@
 }
 
 @media only screen and (max-width: 550px) {
-  .hero-image-2-wrapper{
+  .hero-image-2-wrapper {
     display: none;
   }
 }
-
-

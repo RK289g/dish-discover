@@ -42,9 +42,13 @@ const RecipeCard = ({ recipeData }) => {
                       />
                       <div className="card-text">
                         <div className="card-text-category-likes-wrapper">
-                          <div className="card-text-category">
-                            <p className="font-inter">{recData?.strCategory}</p>
-                          </div>
+                          {(recData.strCategory && (
+                            <div className="card-text-category">
+                              <p className="font-inter">
+                                {recData?.strCategory}
+                              </p>
+                            </div>
+                          ))|| <p>{" "}</p>}
                           <div className="card-text-likes font-inter">
                             <HeartOutlined className="card-text-likes-icon" />
                             <p>12k likes</p>

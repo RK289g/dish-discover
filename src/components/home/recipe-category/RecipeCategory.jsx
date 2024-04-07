@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./RecipeCategory.css";
 import { recipeByCategoryData } from "./recipeByCategoryData";
-import { Col, Image, Row } from "antd";
+import { Col, Image } from "antd";
 
 const RecipeCategory = () => {
   const navigate = useNavigate();
@@ -16,9 +16,9 @@ const RecipeCategory = () => {
       <div className="recipe-category-inner-wrapper">
         <h1 className="title-recipe-category font-fanlste">Top Categories</h1>
 
-        <Row
-          gutter={[20, 20]}
-          justify="center"
+        <div
+          // gutter={[20, 20]}
+          // justify="center"
           className="column-recipe-category"
         >
           {recipeByCategoryData.map((type) => (
@@ -30,7 +30,7 @@ const RecipeCategory = () => {
               lg={8}
               xl={8}
             >
-              <Image src={type.image} preview={false} className="card-image" />
+              <Image src={type.image} preview={false} className="category-card-image" />
               <div className="categories-text-wrapper">
                 <h1 className="categories-text-title font-inter">
                   {type.name}
@@ -41,7 +41,7 @@ const RecipeCategory = () => {
               </div>
             </Col>
           ))}
-        </Row>
+        </div>
       </div>
     </div>
   );
