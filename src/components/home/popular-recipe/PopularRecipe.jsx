@@ -1,11 +1,10 @@
 import { RightOutlined, HeartOutlined } from "@ant-design/icons";
 import { Button, Card, Col, Row, Spin } from "antd";
 import axios from "axios";
-import "./FeaturedRecipe.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const FeaturedRecipe = () => {
+const PopularRecipe = () => {
   const [recipeData, setRecipeData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -13,7 +12,7 @@ const FeaturedRecipe = () => {
   const fetchRecipes = async () => {
     setIsLoading(true);
     axios
-      .get("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+      .get("https://www.themealdb.com/api/json/v1/1/search.php?f=s")
       .then((res) => {
         setRecipeData(res.data.meals);
         setIsLoading(false);
@@ -36,7 +35,7 @@ const FeaturedRecipe = () => {
     <div className="home-wrapper">
       <div className="recipe-category-inner-wrapper">
         <h1 className="title-recipe-category featured-title font-fanlste">
-          Featured Recipes
+          Popular Recipes
         </h1>
         <div className="card-wrapper">
           <Row
@@ -70,7 +69,7 @@ const FeaturedRecipe = () => {
                             <p className="font-inter">{recData?.strCategory}</p>
                           </div>
                           <div className="card-text-likes font-inter">
-                            <HeartOutlined className="card-text-likes-icon" /> 
+                            <HeartOutlined className="card-text-likes-icon" />
                             <p>12k likes</p>
                           </div>
                         </div>
@@ -107,4 +106,4 @@ const FeaturedRecipe = () => {
   );
 };
 
-export default FeaturedRecipe;
+export default PopularRecipe;

@@ -17,13 +17,13 @@
 }
 
 .card {
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   padding: 0px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
 
-  height: 357px;
+  height: 377px;
   width: 384px;
 
   border: 1px solid #ededed;
@@ -37,48 +37,87 @@
 .card .card-text {
   width: 100%;
   margin: 0px;
-  padding: 10px;
-  height: 0px;
-  padding-left: 10px;
-  padding-right: 5px;
   position: absolute;
   bottom: 0;
   color: black;
-  height: 133px;
+  height: 157px;
   background-color: white;
   transition: height 1s ease-out;
 }
 
-.card .card-text h1 {
-  margin: 0px;
-  /* padding-left: 10px; */
+.card .card-text .card-text-title {
+  margin: 0;
+  padding: 0;
   text-align: start;
   font-size: 32px;
+  font-weight: 600;
+  color: #000000;
 }
 
-.card .card-text h5 {
-  margin: 0px;
-  padding: 0px;
+.card-text-category-likes-wrapper {
+  display: flex;
+  /* gap: 150px; */
+  justify-content: space-between;
+  padding-right: 32px;
+}
+
+.card-text-category {
+  padding: 0 16px;
+  border: 1px solid #f31260;
+  border-radius: 12px;
+}
+
+.card-text-category p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  color: #f31260;
+}
+
+.card-text-likes {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.card-text-likes-icon {
+  font-size: 22px;
+  color: #464646;
+}
+
+.card-text-likes p {
+  font-size: 12px;
+  color: #595959;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.card-instruction-text {
+  margin: 0;
+  padding: 0 16px 0 0;
   text-align: start;
   font-size: 16px;
   font-weight: 300;
-  width: 352px;
 }
 
 .button-wrapper {
   display: flex;
   flex-direction: row-reverse;
+  margin: 0;
+  padding: 0;
 }
 
 .card-button {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: center;
   align-items: center;
   gap: 6px;
-
+  padding: 0;
   background-color: white;
-  margin-right: 20px;
-  border:none;
+  border: none;
   box-shadow: none;
   color: #12822a;
   font-size: 20px;

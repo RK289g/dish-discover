@@ -4,6 +4,7 @@ import RecipeOftheDay from "./../../components/recipeOfTheDay/RecipeOftheDay";
 import RecipeCategory from "../../components/home/recipe-category/RecipeCategory";
 import RecipeCuisine from "../../components/home/recipe-cuisine/RecipeCuisine";
 import FeaturedRecipe from "../../components/home/featured-recipe/FeaturedRecipe";
+import PopularRecipe from "../../components/home/popular-recipe/PopularRecipe";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <FeaturedRecipe />
         <RecipeOftheDay />
         <RecipeCuisine />
+        <PopularRecipe />
       </div>
     </div>
   );

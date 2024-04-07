@@ -9,6 +9,7 @@ import useGetMenuKey from "../../hooks/useGetMenuKey";
 import logo from "./images/logo.png";
 import NewsLetter from "../news-letter/NewsLetter";
 
+
 const LayoutWrapper = () => {
   function getItem(label, key, icon, children, type) {
     return {

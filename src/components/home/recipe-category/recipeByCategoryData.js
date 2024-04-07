@@ -1,6 +1,5 @@
 import dessertItems from "../../../assets/top-categories/dessert.png";
 import beginnerItems from "../../../assets/top-categories/beginner.png";
-import additionalItems from "../../../assets/top-categories/additiona-items.png";
 import breakfastItems from "../../../assets/top-categories/brkfast.png";
 
 export const recipeByCategoryData = [
@@ -19,7 +18,7 @@ export const recipeByCategoryData = [
     recipeNumber: "100+ recipe",
   },
   {
-    id: 1,
+    id: 10,
     image: beginnerItems,
     name: "Starter Items",
     subName: "Starter",
