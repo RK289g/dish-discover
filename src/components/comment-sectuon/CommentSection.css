@@ -1,3 +1,6 @@
+.comment-section-wrapper {
+  margin: 40px 0;
+}
 .comment-title {
   font-size: 36px;
   font-weight: 400;
@@ -63,4 +66,15 @@
   color: #12822a;
   text-align: center;
   font-size: 10x;
+}
+
+.related-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.related-recipe {
+  font-size: 36px;
+  font-weight: 400;
 }

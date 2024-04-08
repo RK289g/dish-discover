@@ -1,4 +1,4 @@
-import { Col, Collapse, Image, Row } from "antd";
+import { Col, Collapse, Image } from "antd";
 import "./Recipe.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -50,8 +50,8 @@ const Recipe = () => {
                 tags={recData?.strTags}
               />
 
-              <Row gutter={24}>
-                <Col xs={24} md={12} className="instruction-div">
+              <div className="table-instruction-wrapper">
+                <Col xs={24} md={12} className="table-div">
                   <h1 className="instruction-header font-inter">Ingredients</h1>
                   <table className="table-wrapper">
                     {[...Array(20)].map((_, index) => {
@@ -101,7 +101,7 @@ const Recipe = () => {
                     </Collapse>
                   </div>
                 </Col>
-              </Row>
+              </div>
 
               <div span={24} className="YT-wrapper">
                 <h3 className="YT-header font-inter">

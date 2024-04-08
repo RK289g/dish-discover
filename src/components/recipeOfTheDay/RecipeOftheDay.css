@@ -6,8 +6,9 @@
 
 .day-card-inner-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
+  gap: 20px;
   width: 1200px;
 
   background-color: #f4ffe5;
@@ -18,7 +19,10 @@
 .day-text {
   padding-right: 14px;
 }
-
+.day-text-category {
+  width: 40px;
+  text-align: center;
+}
 .day-text-header {
   margin: 0;
   padding: 0;
@@ -30,6 +34,7 @@
   font-weight: 300;
   font-size: 24px;
   color: #5a5a5a;
+  margin: 16px 0;
 }
 
 .day-recipe-button {
@@ -47,6 +52,7 @@
 
 .day-recipe-button:hover {
   color: white !important;
+  background-color: #12822a !important;
 }
 
 @media only screen and (max-width: 1024px) {

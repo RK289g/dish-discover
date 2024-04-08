@@ -1,14 +1,20 @@
-.wrapper {
+/* .wrapper {
   padding: 20px;
-}
+} */
 
 .inner-wrapper {
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0;
 }
 
 .breadcrumb-wrapper {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.ant-breadcrumb ol {
+  align-items: center;
 }
 
 .heading-row-wrapper {
@@ -80,10 +86,20 @@
   align-items: center;
 }
 
+.table-instruction-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
 .instruction-div {
   border: 1px solid #dbf5cd;
   border-radius: 20px;
   padding: 16px;
+}
+
+.table-div {
+  border: 1px solid #dbf5cd;
+  border-radius: 20px;
 }
 
 .instruction-text {

@@ -54,7 +54,7 @@ const RecipeCard = ({ recipeData }) => {
                             <p>12k likes</p>
                           </div>
                         </div>
-                        <h1 className="card-text-title cfont-inter">
+                        <h1 className="card-text-title font-inter">
                           {recData?.strMeal && recData.strMeal.length > 18
                             ? recData.strMeal.substring(0, 20) + " ..."
                             : recData.strMeal}

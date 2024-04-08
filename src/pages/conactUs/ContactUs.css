@@ -57,14 +57,19 @@
 
 } */
 
-.ant-checkbox{
+.ant-checkbox {
   color: #4a9c05;
 }
 
 .message-button {
-  background-color: #4a9c05;
+  background-color: #12822a;
   color: white;
   font-size: 16px;
   font-weight: 600;
   height: 48px;
+}
+
+.message-button:hover {
+  background-color: #0e6d23 !important;
+  color: white !important;
 }

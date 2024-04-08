@@ -4,6 +4,7 @@ import {
   StarFilled,
   StarOutlined,
   UserOutlined,
+  HeartOutlined,
 } from "@ant-design/icons";
 import { Button, Card, Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +16,7 @@ function CommentSection() {
     navigate(`/recipes/${recipeId}`);
   };
   return (
-    <div>
+    <div className="comment-section-wrapper">
       <Row gutter="80">
         <Col span={14}>
           <div>
@@ -98,7 +99,8 @@ function CommentSection() {
           </Row>
         </Col>
         <Col span={10}>
-          <h2>Related Recipes</h2>
+          <h2 className="related-recipe font-fanlste">Related Recipes</h2>
+          <div className="related-card-wrapper">
           <Card hoverable className="card">
             <div>
               <img
@@ -107,9 +109,18 @@ function CommentSection() {
                 alt="ThumbNail"
               />
               <div className="card-text">
-                <h1 className="font-inter">Ful Medames</h1>
+                <div className="card-text-category-likes-wrapper">
+                  <div className="card-text-category">
+                    <p className="font-inter">Egyptian</p>
+                  </div>
+                  <div className="card-text-likes font-inter">
+                    <HeartOutlined className="card-text-likes-icon" />
+                    <p>12k likes</p>
+                  </div>
+                </div>
+                <h1 className="card-text-title font-inter">Ful Medames</h1>
                 <div className="text-btn-wrapper">
-                  <h5 className="font-inter">
+                  <h5 className="card-instruction-text font-inter">
                     As the cooking time varies depending on the quality and age
                     of the beans, it is good to cook ...
                   </h5>
@@ -136,9 +147,18 @@ function CommentSection() {
                 alt="ThumbNail"
               />
               <div className="card-text">
-                <h1 className="font-inter">Banana Pancakes</h1>
+                <div className="card-text-category-likes-wrapper">
+                  <div className="card-text-category">
+                    <p className="font-inter">american</p>
+                  </div>
+                  <div className="card-text-likes font-inter">
+                    <HeartOutlined className="card-text-likes-icon" />
+                    <p>12k likes</p>
+                  </div>
+                </div>
+                <h1 className="card-text-title font-inter">Banana Pancakes</h1>
                 <div className="text-btn-wrapper">
-                  <h5 className="font-inter">
+                  <h5 className="card-instruction-text font-inter">
                     In a bowl, mash the banana with a fork until it resembles a
                     thick purée. Stir in the eggs, baking ...
                   </h5>
@@ -146,7 +166,7 @@ function CommentSection() {
                 <div className="button-wrapper">
                   <Button
                     onClick={() => {
-                      handleClick(52855);
+                      handleClick(53025);
                     }}
                     className="card-button"
                     icon={<RightOutlined />}
@@ -157,6 +177,7 @@ function CommentSection() {
               </div>
             </div>
           </Card>
+          </div>
         </Col>
       </Row>
     </div>
