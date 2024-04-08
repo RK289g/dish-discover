@@ -1,33 +1,29 @@
 .day-card-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.day-card-inner-wrapper {
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  background-color: #f8fafd;
   gap: 20px;
-  width: 1200px;
-
-  background-color: #f4ffe5;
-  border-radius: 20px;
-  overflow: hidden;
+  border-radius: 20px 20px 20px 80px;
 }
 
 .day-text {
-  padding-right: 14px;
-}
-.day-text-category {
-  width: 40px;
-  text-align: center;
-}
-.day-text-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0;
   padding: 0;
+}
+
+.day-text-category {
+  width: 50px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.day-text-header {
   font-size: 40px;
   font-weight: 600;
+  margin: 0;
 }
 
 .day-text-paragraph {
@@ -44,10 +40,13 @@
   justify-content: center;
   gap: 5px;
 
+  width: 155px;
+  font-size: 20px;
   background-color: #12822a;
   border-radius: 31px;
   color: white;
   cursor: pointer;
+  padding: 0;
 }
 
 .day-recipe-button:hover {
@@ -55,32 +54,6 @@
   background-color: #12822a !important;
 }
 
-@media only screen and (max-width: 1024px) {
-  .day-image {
-    width: 320px !important;
-    height: 210px !important;
-  }
-  .day-text-header {
-    font-size: 25px;
-  }
-  .day-text-paragraph {
-    font-size: 16px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .day-card-inner-wrapper {
-    display: block;
-  }
-
-  .day-image {
-    width: 254px !important;
-    height: 170px !important;
-  }
-  .day-text-header {
-    font-size: 20px;
-  }
-  .day-text-paragraph {
-    font-size: 14px;
-  }
+.Right-Outlined {
+  font-size: 15px;
 }
