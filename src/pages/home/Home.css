@@ -9,7 +9,6 @@
 }
 
 .card-wrapper {
-  width: 1200px;
   margin-bottom: 50px;
 }
 
@@ -20,15 +19,10 @@
 }
 
 .card {
-  /* margin-bottom: 16px; */
-  padding: 0px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-
   height: 377px;
-  width: 384px;
-
   border: 1px solid #ededed;
 }
 

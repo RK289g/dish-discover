@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./RecipeCategory.css";
 import { recipeByCategoryData } from "./recipeByCategoryData";
-import { Col, Image } from "antd";
+import { Col, Image, Row } from "antd";
 
 const RecipeCategory = () => {
   const navigate = useNavigate();
@@ -12,25 +12,24 @@ const RecipeCategory = () => {
   };
 
   return (
-    <div className="home-wrapper">
-      <div className="recipe-category-inner-wrapper">
-        <h1 className="title-recipe-category font-fanlste">Top Categories</h1>
+    <div className="recipe-category-wrapper">
+      <h1 className="title-recipe-category font-fanlste">Top Categories</h1>
 
-        <div
-          // gutter={[20, 20]}
-          // justify="center"
-          className="column-recipe-category"
-        >
-          {recipeByCategoryData.map((type) => (
-            <Col
-              key={type.id}
-              className="category-card-container"
-              onClick={() => goToRecipe(type.subName, type.id)}
-              md={12}
-              lg={8}
-              xl={8}
-            >
-              <Image src={type.image} preview={false} className="category-card-image" />
+      <Row gutter={24}>
+        {recipeByCategoryData.map((type) => (
+          <Col
+            key={type.id}
+            onClick={() => goToRecipe(type.subName, type.id)}
+            md={12}
+            lg={8}
+            xl={8}
+          >
+            <div className="category-card-container">
+              <Image
+                src={type.image}
+                preview={false}
+                className="category-card-image"
+              />
               <div className="categories-text-wrapper">
                 <h1 className="categories-text-title font-inter">
                   {type.name}
@@ -39,10 +38,10 @@ const RecipeCategory = () => {
                   {type.recipeNumber}
                 </h4>
               </div>
-            </Col>
-          ))}
-        </div>
-      </div>
+            </div>
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };

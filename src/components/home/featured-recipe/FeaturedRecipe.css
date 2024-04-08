@@ -1,3 +1,14 @@
+.featured-recipe-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+}
+
 .featured-title {
   text-align: left !important;
+}
+
+.featured-recipe-title {
+  font-size: 60px;
+  font-weight: 400;
 }
