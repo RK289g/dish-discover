@@ -60,12 +60,12 @@ const RecipeHeader = ({ thumbnail, mealName, areaName, tags }) => {
           </div>
           <div className="rating-wrapper">
             <div className="rating-inner-wrapper">
-              <h1 className="recipe-title font-inter">20</h1>
+              <h1 className="recipe-count font-inter">20</h1>
               <p className="rating-text font-inter">Ingredients</p>
             </div>
             <Divider type="vertical" className="rating-divider" />
             <div className="rating-inner-wrapper">
-              <h1 className="recipe-title font-inter">10</h1>
+              <h1 className="recipe-count font-inter">10</h1>
               <p className="rating-text font-inter">Minutes</p>
             </div>
           </div>

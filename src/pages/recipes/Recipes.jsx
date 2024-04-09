@@ -107,7 +107,7 @@ const Recipes = () => {
   };
 
   useEffect(() => {
-    console.log(recipeKey, "recipeKey");
+    // console.log(recipeKey, "recipeKey");
     if (recipeKey) {
       console.log("kam korram ami");
       fetchCuisineRecipes(recipeKey, recipeIndex);
