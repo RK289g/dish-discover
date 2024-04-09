@@ -4,8 +4,8 @@ import contactImage from "./../../assets/contactUs/contactImage.jpg";
 
 const ContactUs = () => {
   return (
-    <div className="home-wrapper">
-      <div className="recipe-category-inner-wrapper contact-inner-wrapper">
+    <div className="contact-wrapper">
+      <div className="contact-inner-wrapper">
         <Row>
           <Col span={12}>
             <Image
@@ -34,7 +34,9 @@ const ContactUs = () => {
                 <p className="first-name font-inter">Message</p>
                 <Input placeholder="" className="message-box" />
               </div>
-              <Checkbox className="checkbox-container">You agree to our friendly privacy policy.</Checkbox>
+              <Checkbox className="checkbox-container">
+                You agree to our friendly privacy policy.
+              </Checkbox>
               <Button className="message-button font-inter" block>
                 Send message
               </Button>

@@ -10,7 +10,7 @@ import { useState } from "react";
 const Footer = () => {
   const [currentYear] = useState(new Date().getFullYear());
   return (
-    <footer className="footer-wrapper ">
+    <div className="footer-wrapper ">
       <div className="footer-middle-wrapper">
         <div className="footer-inner-wrapper">
           <div className="footer-title-section">
@@ -86,7 +86,7 @@ const Footer = () => {
         </p>
       </div>
       </div>
-    </footer>
+    </div>
   );
 };
 

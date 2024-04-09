@@ -1,3 +1,4 @@
+
 .contact-image {
   margin: 0;
   padding: 0;
@@ -5,9 +6,7 @@
 }
 
 .contact-inner-wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 120px;
+  padding: 0 120px 0 0;
 }
 
 .contact-message-wrapper {
