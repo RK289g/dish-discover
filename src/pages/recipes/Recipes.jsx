@@ -109,7 +109,7 @@ const Recipes = () => {
   useEffect(() => {
     // console.log(recipeKey, "recipeKey");
     if (recipeKey) {
-      console.log("kam korram ami");
+      // console.log("kam korram ami");
       fetchCuisineRecipes(recipeKey, recipeIndex);
     } else if (CategoryRecipeKey && CategoryRecipeIndex) {
       fetchCategoryRecipes(CategoryRecipeKey, CategoryRecipeIndex);
@@ -125,7 +125,7 @@ const Recipes = () => {
 
   useEffect(() => {
     if (isCategoryDummy < 0 || isCuisineDummy < 0) {
-      console.log("last effect");
+      // console.log("last effect");
       fetchSearchByName();
     }
   }, [searchByName]);

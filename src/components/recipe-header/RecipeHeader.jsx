@@ -38,16 +38,16 @@ const RecipeHeader = ({ thumbnail, mealName, areaName, tags }) => {
           </div>
           <div className="icons font-inter">
             <div className="icons-wrapper">
-              <HeartOutlined /> <h5>12 Likes</h5>
+              <HeartOutlined className="icon-outlined" /> <h5>12 Likes</h5>
             </div>
             <div className="icons-wrapper">
-              <CommentOutlined /> <h5>48 Comments</h5>
+              <CommentOutlined className="icon-outlined" /> <h5>48 Comments</h5>
             </div>
             <div className="icons-wrapper">
-              <ShareAltOutlined /> <h5>Share</h5>
+              <ShareAltOutlined className="icon-outlined" /> <h5>Share</h5>
             </div>
             <div className="icons-wrapper">
-              <SaveOutlined /> <h5>Save</h5>
+              <SaveOutlined className="icon-outlined" /> <h5>Save</h5>
             </div>
           </div>
           <div className="rating-wrapper">

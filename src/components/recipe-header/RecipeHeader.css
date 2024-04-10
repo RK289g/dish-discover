@@ -5,7 +5,7 @@
 .recipe-row {
   margin: 24px 0 24px 0;
   padding: 16px 16px 16px 8px;
-  background-color: #e4e4e7;
+  background-color: #f8fafd;
   border-radius: 36px;
 }
 
@@ -81,6 +81,10 @@
   font-weight: 200;
   margin: 0;
   padding: 0;
+}
+
+.icons-wrapper h5, .icon-outlined {
+  cursor: pointer;
 }
 
 .avg-rating-icons {

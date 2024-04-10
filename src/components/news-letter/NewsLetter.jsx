@@ -12,9 +12,9 @@ function NewsLetter() {
       </p>
       <div className="search-wrapper">
         <Search
-          placeholder="input search text"
+          placeholder="Your Email"
           allowClear
-          enterButton="Search"
+          enterButton="Join"
           size="large"
           className="newsletter-search"
           //   onSearch={onSearch}

@@ -12,7 +12,7 @@ import RecipeHeader from "../../components/recipe-header/RecipeHeader";
 
 const Recipe = () => {
   const { recipeId } = useParams();
-  console.log(recipeId);
+  // console.log(recipeId);
   const [recipeIdData, setRecipeIdData] = useState([]);
 
   const fetchRecipeIdData = async () => {
@@ -20,7 +20,7 @@ const Recipe = () => {
       .get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + recipeId)
       .then((res) => {
         setRecipeIdData(res.data.meals);
-        console.log(res.data.meals[0].strMeal, " helloooo");
+        // console.log(res.data.meals[0].strMeal, " helloooo");
       })
       .catch((err) => {
         console.error("Error fetching tasks: ", err);
@@ -64,7 +64,10 @@ const Recipe = () => {
                           <tr key={index} className="table-row">
                             <td className="td-ingredient-wrapper">
                               <div className="td-ingredient">
-                                <CheckCircleOutlined className="check-icon" />
+                                <CheckCircleOutlined
+                                  hoverable
+                                  className="check-icon"
+                                />
                                 {recData[ingredientKey]}
                               </div>
                             </td>

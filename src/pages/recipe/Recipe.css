@@ -111,6 +111,7 @@
 .instruction-header {
   font-size: 32px;
   font-weight: 500;
+  padding-left: 16px;
 }
 
 .check-icon {

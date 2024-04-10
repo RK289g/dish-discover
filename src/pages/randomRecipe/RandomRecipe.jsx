@@ -22,7 +22,7 @@ const RandomRecipe = () => {
         setRecipeData(res.data.meals);
         setIsLoading(false);
         message.success(`${res?.data?.meals[0]?.strMeal} loaded`);
-        console.log(res?.data?.meals);
+        // console.log(res?.data?.meals);
       })
       .catch((err) => {
         console.error("Error fetching tasks: ", err);
