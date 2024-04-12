@@ -13,14 +13,14 @@ const RecipeCategory = () => {
 
   return (
     <div className="recipe-category-wrapper">
-      <h1 className="title-recipe-category font-fanlste">Top Categories</h1>
+      <p className="title-recipe-category font-fanlste">Top Categories</p>
 
-      <Row gutter={24}>
+      <Row gutter={[24,24]}>
         {recipeByCategoryData.map((type) => (
           <Col
             key={type.id}
             onClick={() => goToRecipe(type.subName, type.id)}
-            md={12}
+            md={8}
             lg={8}
             xl={8}
           >
@@ -34,9 +34,9 @@ const RecipeCategory = () => {
                 <h1 className="categories-text-title font-inter">
                   {type.name}
                 </h1>
-                <h4 className="categories-text-items font-inter">
+                <p className="categories-text-items font-inter">
                   {type.recipeNumber}
-                </h4>
+                </p>
               </div>
             </div>
           </Col>

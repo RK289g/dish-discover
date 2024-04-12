@@ -6,6 +6,7 @@
   background-color: white;
   border-bottom: 1px solid gray;
   overflow: hidden;
+  padding: 0 21px 0 0px;
 }
 
 .ant-menu-horizontal.ant-menu-root {
@@ -39,7 +40,7 @@
   border: none;
 }
 
-.ant-menu-horizontal.ant-menu-root .ant-menu-item-selected:hover{
+.ant-menu-horizontal.ant-menu-root .ant-menu-item-selected:hover {
   background-color: #e5f2de !important;
 }
 
@@ -58,11 +59,7 @@
 }
 
 .logo-wrapper {
-  /* color: white; */
-  font-size: 22px;
-  /* font-weight: 700; */
   padding-left: 4%;
-  /* height: 84px; */
 }
 
 .logo-inner-wrapper {
@@ -87,7 +84,7 @@
 
 .drawer-layout-menu {
   background-color: transparent;
-  color: black;
+  color: black !important;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -119,5 +116,21 @@
 
   .drawer-button {
     display: block;
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .logo-wrapper {
+    margin-left: 4px;
+  }
+
+  .logo-inner-wrapper h2 {
+    font-size: 10px;
+  }
+
+  .logo-image {
+    height: 16.5px !important;
+    width: 14px !important;
   }
 }

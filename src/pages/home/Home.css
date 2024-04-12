@@ -12,12 +12,6 @@
   margin-bottom: 50px;
 }
 
-.popular-recipe {
-  margin-top: 60px;
-  text-align: center;
-  font-size: 60px;
-}
-
 .card {
   border-radius: 20px;
   overflow: hidden;
@@ -33,7 +27,8 @@
 
 .card .card-text {
   width: 100%;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
   position: absolute;
   bottom: 0;
   color: black;
@@ -104,8 +99,8 @@
 .button-wrapper {
   display: flex;
   flex-direction: row-reverse;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   background-color: #f8fafd !important;
 }
 
@@ -148,27 +143,62 @@
   margin-bottom: 10px;
   font-weight: 800;
   color: #124559;
-  /* border: 1px solid blue; */
 }
 
-/* @media only screen and (max-width: 762px) {
-  .popular-recipe {
-    margin-top: 30px;
-    font-size: 30px;
-  }
+@media only screen and (max-width: 425px) {
   .card {
-    width: 250px;
-    height: 250px;
+    border-radius: 8px;
+    height: 162px;
+    width: 160px;
+    border: 0.4px solid #ededed;
   }
 
   .card .card-text {
-    height: 80px;
-    font-size: 10px;
+    height: 70px;
+    padding: 5px !important;
   }
 
-  .card .image {
-    transform: scale(1.1);
-    overflow: hidden;
-    filter: brightness(50%);
+  .card-text-category-likes-wrapper {
+    padding: 0;
+    padding-right: 32px;
+    margin: 0;
   }
-} */
+
+  .card-text-category {
+    padding: 0 6.67px;
+    border: 0.42px solid #f31260;
+    border-radius: 5px;
+  }
+
+  .card-text-category p {
+    font-size: 5px;
+  }
+
+  .card-text-likes-icon {
+    font-size: 8px;
+    margin: 0;
+  }
+
+  .card-text-likes p {
+    font-size: 5px;
+  }
+
+  .card-text-title {
+    font-size: 13px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .card-instruction-text {
+    margin: 0 !important;
+    padding: 0 !important;
+    padding: 0 10px 0 0 !important;
+    font-size: 6.67px;
+  }
+
+  .card-button {
+    font-size: 8.3px;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}

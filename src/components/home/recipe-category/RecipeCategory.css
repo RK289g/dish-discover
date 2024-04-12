@@ -38,6 +38,41 @@
 }
 
 .categories-text-items {
+  font-weight: 400;
   color: #474747;
   margin: 0;
+}
+
+@media only screen and (max-width: 425px) {
+  .recipe-category-wrapper {
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .title-recipe-category {
+    font-size: 20px;
+    margin: 15px 0;
+  }
+
+  .category-card-container {
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .category-card-image {
+    height: 46px !important;
+    width: 46px !important;
+    margin: 8px;
+    padding: 0;
+  }
+
+  .categories-text-title {
+    font-size: 10px;
+    width: 60px;
+  }
+
+  .categories-text-items {
+    font-size: 8px;
+  }
 }

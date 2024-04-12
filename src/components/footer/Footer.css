@@ -77,3 +77,9 @@
   margin: 0;
   padding-bottom: 44px;
 }
+
+@media only screen and (max-width: 425px) {
+  .footer-link-section {
+    display: none;
+  }
+}

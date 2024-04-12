@@ -45,7 +45,7 @@ const LayoutWrapper = () => {
       <Header className="header">
         <Link to="/" className="logo-wrapper">
           <div className="logo-inner-wrapper">
-            <Image src={logo} preview={false} />
+            <Image src={logo} preview={false} className="logo-image" />
             <h2>Dish discover</h2>
           </div>
         </Link>

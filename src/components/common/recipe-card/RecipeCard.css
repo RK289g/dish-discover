@@ -48,14 +48,14 @@
 .button-wrapper {
   display: flex;
   flex-direction: row;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* .card-button {
   display: flex;
   flex-direction: row-reverse;
   gap: 6px;
-
-  /* background-color: transparent; */
   border: none;
   color: #12822a;
   font-size: 20px;

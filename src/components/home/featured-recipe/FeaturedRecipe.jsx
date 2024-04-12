@@ -42,7 +42,7 @@ const FeaturedRecipe = () => {
           </div>
         ) : (
           recipeData?.slice(0, 6).map((recData) => (
-            <Col xl={8} lg={12} sm={24} key={recData?.idMeal}>
+            <Col xl={8} lg={8} sm={12} key={recData?.idMeal}>
               <Card hoverable className="card">
                 <div>
                   <Image

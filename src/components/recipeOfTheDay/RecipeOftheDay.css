@@ -57,3 +57,43 @@
 .Right-Outlined {
   font-size: 15px;
 }
+
+@media only screen and (max-width: 425px) {
+  .day-image {
+    width: 137px !important;
+    height: 101px !important;
+  }
+
+  .day-text-category {
+    width: 20px;
+  }
+
+  .day-text-category p {
+    font-size: 5px;
+  }
+
+  .day-text-header {
+    font-size: 10.9px;
+  }
+
+  .day-text-paragraph {
+    font-size: 6.5px;
+    margin: 6px 0;
+  }
+
+  .day-recipe-button {
+    width: 46.5px;
+    height: 12px;
+    font-size: 5.5px;
+    border-radius: 8.4px;
+  }
+
+  .day-recipe-button:hover {
+    color: white !important;
+    background-color: #12822a !important;
+  }
+
+  .Right-Outlined {
+    font-size: 5px;
+  }
+}

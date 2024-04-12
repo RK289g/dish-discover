@@ -36,6 +36,29 @@
   background-color: #12822a;
 }
 
-.newsletter-search .ant-btn:hover{
+.newsletter-search .ant-btn:hover {
   background-color: #0e6d23 !important;
+}
+
+@media only screen and (max-width: 425px) {
+  .newsletter-wrapper {
+    height: 113px;
+  }
+
+  .newsletter-header {
+    font-size: 16px;
+  }
+
+  .newsletter-text {
+    font-size: 8px;
+  }
+
+  .search-wrapper {
+    width: 460px;
+  }
+
+  .search-wrapper {
+    width: 205px;
+    height: 17px !important;
+  }
 }
