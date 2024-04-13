@@ -183,7 +183,7 @@ const Recipes = () => {
       <div className="recipes-inner-wrapper">
         <div className="recipes-layout">
           <Row>
-            <Col span={24}>
+            <Col xl={8} md={8} sm={8}>
               {isLoading ? (
                 <div className="recipe-spinner">
                   <Spin size="large" />

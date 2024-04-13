@@ -18,9 +18,9 @@ function CommentSection() {
   return (
     <div className="comment-section-wrapper">
       <Row gutter="80">
-        <Col span={14}>
+        <Col xl={14} md={14} sm={24}>
           <div>
-            <h2 className="comment-title font-fanlste">
+            <h2 className="title-recipe-category font-fanlste">
               Comments, questions and tips
             </h2>
             <div className="comment-rating-wrapper">
@@ -98,85 +98,87 @@ function CommentSection() {
             </Col>
           </Row>
         </Col>
-        <Col span={10}>
+        <Col xl={10} md={10} sm={12}>
           <h2 className="related-recipe font-fanlste">Related Recipes</h2>
           <div className="related-card-wrapper">
-          <Card hoverable className="card">
-            <div>
-              <img
-                className="image"
-                src="https://www.themealdb.com/images/media/meals/lvn2d51598732465.jpg"
-                alt="ThumbNail"
-              />
-              <div className="card-text">
-                <div className="card-text-category-likes-wrapper">
-                  <div className="card-text-category">
-                    <p className="font-inter">Egyptian</p>
+            <Card hoverable className="card">
+              <div>
+                <img
+                  className="image"
+                  src="https://www.themealdb.com/images/media/meals/lvn2d51598732465.jpg"
+                  alt="ThumbNail"
+                />
+                <div className="card-text">
+                  <div className="card-text-category-likes-wrapper">
+                    <div className="card-text-category">
+                      <p className="font-inter">Egyptian</p>
+                    </div>
+                    <div className="card-text-likes font-inter">
+                      <HeartOutlined className="card-text-likes-icon" />
+                      <p>12k likes</p>
+                    </div>
                   </div>
-                  <div className="card-text-likes font-inter">
-                    <HeartOutlined className="card-text-likes-icon" />
-                    <p>12k likes</p>
+                  <h1 className="card-text-title font-inter">Ful Medames</h1>
+                  <div className="text-btn-wrapper">
+                    <h5 className="card-instruction-text font-inter">
+                      As the cooking time varies depending on the quality and
+                      age of the beans, it is good to cook ...
+                    </h5>
                   </div>
-                </div>
-                <h1 className="card-text-title font-inter">Ful Medames</h1>
-                <div className="text-btn-wrapper">
-                  <h5 className="card-instruction-text font-inter">
-                    As the cooking time varies depending on the quality and age
-                    of the beans, it is good to cook ...
-                  </h5>
-                </div>
-                <div className="button-wrapper">
-                  <Button
-                    onClick={() => {
-                      handleClick(53025);
-                    }}
-                    className="card-button"
-                    icon={<RightOutlined />}
-                  >
-                    See Recipe
-                  </Button>
+                  <div className="button-wrapper">
+                    <Button
+                      onClick={() => {
+                        handleClick(53025);
+                      }}
+                      className="card-button"
+                      icon={<RightOutlined />}
+                    >
+                      See Recipe
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Card>
-          <Card hoverable className="card">
-            <div>
-              <img
-                className="image"
-                src="https://www.themealdb.com/images/media/meals/sywswr1511383814.jpg"
-                alt="ThumbNail"
-              />
-              <div className="card-text">
-                <div className="card-text-category-likes-wrapper">
-                  <div className="card-text-category">
-                    <p className="font-inter">american</p>
+            </Card>
+            <Card hoverable className="card">
+              <div>
+                <img
+                  className="image"
+                  src="https://www.themealdb.com/images/media/meals/sywswr1511383814.jpg"
+                  alt="ThumbNail"
+                />
+                <div className="card-text">
+                  <div className="card-text-category-likes-wrapper">
+                    <div className="card-text-category">
+                      <p className="font-inter">american</p>
+                    </div>
+                    <div className="card-text-likes font-inter">
+                      <HeartOutlined className="card-text-likes-icon" />
+                      <p>12k likes</p>
+                    </div>
                   </div>
-                  <div className="card-text-likes font-inter">
-                    <HeartOutlined className="card-text-likes-icon" />
-                    <p>12k likes</p>
+                  <h1 className="card-text-title font-inter">
+                    Banana Pancakes
+                  </h1>
+                  <div className="text-btn-wrapper">
+                    <h5 className="card-instruction-text font-inter">
+                      In a bowl, mash the banana with a fork until it resembles
+                      a thick purée. Stir in the eggs, baking ...
+                    </h5>
                   </div>
-                </div>
-                <h1 className="card-text-title font-inter">Banana Pancakes</h1>
-                <div className="text-btn-wrapper">
-                  <h5 className="card-instruction-text font-inter">
-                    In a bowl, mash the banana with a fork until it resembles a
-                    thick purée. Stir in the eggs, baking ...
-                  </h5>
-                </div>
-                <div className="button-wrapper">
-                  <Button
-                    onClick={() => {
-                      handleClick(53025);
-                    }}
-                    className="card-button"
-                    icon={<RightOutlined />}
-                  >
-                    See Recipe
-                  </Button>
+                  <div className="button-wrapper">
+                    <Button
+                      onClick={() => {
+                        handleClick(53025);
+                      }}
+                      className="card-button"
+                      icon={<RightOutlined />}
+                    >
+                      See Recipe
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Card>
+            </Card>
           </div>
         </Col>
       </Row>

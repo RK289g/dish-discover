@@ -27,7 +27,7 @@ const RecipeCard = ({ recipeData }) => {
         >
           {recipeData?.slice(0, visibleRecipes).map((recData) => {
             return (
-              <Col xl={8} md={12} sm={24} key={recData?.idMeal}>
+              <Col xl={8} md={8} sm={12} key={recData?.idMeal}>
                 <Card hoverable className="card">
                   <Skeleton
                     active={true}

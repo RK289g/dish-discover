@@ -12,9 +12,9 @@ import {
 
 const RecipeHeader = ({ thumbnail, mealName, areaName, tags }) => {
   return (
-    <div>
+    <div className="recipe-header=wrapper">
       <Row gutter={24} className="recipe-row">
-        <Col span={12}>
+        <Col sm={24} md={12} xl={12}>
           <div className="header-image-wrapper">
             <Image
               preview={false}
@@ -24,7 +24,7 @@ const RecipeHeader = ({ thumbnail, mealName, areaName, tags }) => {
             />
           </div>
         </Col>
-        <Col span={12} className="">
+        <Col sm={24} md={12} xl={12}>
           <div className="recipe-header-wrapper">
             <p className="recipe-title-name font-inter">{mealName}</p>
             <div className="recipe-name-wrapper">

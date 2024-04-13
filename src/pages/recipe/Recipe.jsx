@@ -51,7 +51,7 @@ const Recipe = () => {
               />
 
               <div className="table-instruction-wrapper">
-                <Col xs={24} md={12} className="table-div">
+                <Col sm={24} md={12} xl={12} className="table-div">
                   <h1 className="instruction-header font-inter">Ingredients</h1>
                   <table className="table-wrapper">
                     {[...Array(20)].map((_, index) => {
@@ -82,7 +82,7 @@ const Recipe = () => {
                     })}
                   </table>
                 </Col>
-                <Col xs={24} md={12} className="instruction-div">
+                <Col sm={24} md={12} className="instruction-div">
                   <h1 className="instruction-header font-inter">
                     Instructions
                   </h1>

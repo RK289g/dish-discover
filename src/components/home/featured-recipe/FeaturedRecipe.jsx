@@ -35,7 +35,7 @@ const FeaturedRecipe = () => {
   return (
     <div className="featured-recipe-wrapper">
       <h1 className="featured-recipe-title font-fanlste">Featured Recipes</h1>
-      <Row gutter={[24,24]}>
+      <Row gutter={[16,16]}>
         {isLoading ? (
           <div>
             <Spin size="large" />

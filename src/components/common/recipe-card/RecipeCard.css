@@ -52,16 +52,6 @@
   padding: 0 !important;
 }
 
-/* .card-button {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 6px;
-  border: none;
-  color: #12822a;
-  font-size: 20px;
-  font-weight: 600;
-} */
-
 .image-wrapper {
   overflow: hidden;
   margin: 0px;
@@ -86,5 +76,4 @@
   margin-bottom: 10px;
   font-weight: 800;
   color: #124559;
-  /* border: 1px solid blue; */
 }

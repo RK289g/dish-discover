@@ -13,8 +13,17 @@
   padding: 0;
 }
 
+.breadcrumb-link,
+.breadcrumb-title {
+  font-size: 24px !important;
+  margin: 0;
+  padding: 0;
+}
+
 .ant-breadcrumb ol {
   align-items: center;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .heading-row-wrapper {
@@ -190,6 +199,12 @@
     align-items: center;
   }
 
+  .breadcrumb-link,
+  .breadcrumb-title {
+    font-size: 10px !important;
+  }
+
+
   .wrapper .recipe-top .top-text h1 {
     font-size: 20px;
   }
@@ -222,4 +237,12 @@
     width: 65%;
     height: 250px;
   }
+
+  .table-instruction-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
+
+  
