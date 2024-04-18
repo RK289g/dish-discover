@@ -34,7 +34,7 @@ const PopularRecipe = () => {
   return (
     <div className="featured-recipe-wrapper">
       <h1 className="featured-recipe-title font-fanlste">Popular Recipes</h1>
-      <Row gutter={[24,24]}>
+      <Row gutter={[24, 24]}>
         {isLoading ? (
           <div>
             <Spin size="large" />
@@ -48,6 +48,7 @@ const PopularRecipe = () => {
                     className="image"
                     src={recData?.strMealThumb}
                     alt="ThumbNail"
+                    preview={false}
                   />
                   <div className="card-text">
                     <div className="card-text-category-likes-wrapper">
