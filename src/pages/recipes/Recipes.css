@@ -19,7 +19,7 @@
 
 .recipes-banner {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   margin-bottom: 40px;
   position: relative;

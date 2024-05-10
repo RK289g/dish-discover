@@ -183,20 +183,18 @@ const Recipes = () => {
       <div className="recipes-inner-wrapper">
         <div className="recipes-layout">
           <Row>
-            <Col xl={8} md={8} sm={8}>
-              {isLoading ? (
-                <div className="recipe-spinner">
-                  <Spin size="large" />
-                </div>
-              ) : recipeData.length <= 0 ? (
-                <div className="no-data-container">
-                  <Image preview={false} src={noData} />
-                  <h2>No recipe Found</h2>
-                </div>
-              ) : (
-                <RecipeCard recipeData={recipeData} />
-              )}
-            </Col>
+            {isLoading ? (
+              <div className="recipe-spinner">
+                <Spin size="large" />
+              </div>
+            ) : recipeData.length <= 0 ? (
+              <div className="no-data-container">
+                <Image preview={false} src={noData} />
+                <h2>No recipe Found</h2>
+              </div>
+            ) : (
+              <RecipeCard recipeData={recipeData} />
+            )}
           </Row>
         </div>
       </div>
