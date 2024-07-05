@@ -4,7 +4,7 @@ import { Button, Card, Col, Row, Skeleton } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { RightOutlined, HeartOutlined } from "@ant-design/icons";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const RecipeCard = ({ recipeData }) => {
   const [visibleRecipes, setVisibleRecipes] = useState(9);
@@ -42,7 +42,7 @@ const RecipeCard = ({ recipeData }) => {
           gutter={[16, 16]}
           style={{ margin: "0px", padding: "0px 0px" }}
         >
-          {recipeData?.slice(0, visibleRecipes).map((recData) => {
+          {recipeData?.slice(0, visibleRecipes).map((recData, index) => {
             return (
               <Col xl={8} md={8} sm={12} key={recData?.idMeal}>
                 <motion.div
@@ -50,7 +50,7 @@ const RecipeCard = ({ recipeData }) => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  custom={1}
+                  custom={index + 1}
                 >
                   <Card hoverable className="card">
                     <Skeleton
