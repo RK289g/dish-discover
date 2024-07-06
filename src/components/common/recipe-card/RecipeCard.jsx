@@ -27,8 +27,8 @@ const RecipeCard = ({ recipeData }) => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.5 * index,
-        duration: 1.5,
+        delay: 0.3 * index,
+        duration: 0.2,
         transitionProperty: "easeIn",
       },
     }),

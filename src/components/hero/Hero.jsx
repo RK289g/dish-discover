@@ -26,8 +26,8 @@ const Hero = () => {
       >
         <motion.h1
           className="hero-title font-fanlste"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
           Discover more than
@@ -42,8 +42,8 @@ const Hero = () => {
         </motion.h1>
         <motion.h3
           className="hero-text"
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
           Search, Save, Share your favourite
@@ -53,7 +53,7 @@ const Hero = () => {
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
+          transition={{ duration: 0.5, delay: 1 }}
         >
           <Button
             size="large"

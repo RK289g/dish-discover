@@ -41,8 +41,8 @@ const PopularRecipe = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.5 * index,
-        duration: 1.5,
+        delay: 0.3 * index,
+        duration: 0.2,
         transitionProperty: "easeIn",
       },
     }),
@@ -57,14 +57,14 @@ const PopularRecipe = () => {
             <Spin size="large" />
           </div>
         ) : (
-          recipeData?.slice(0, 6).map((recData) => (
+          recipeData?.slice(0, 6).map((recData, index) => (
             <Col xl={8} lg={12} sm={24} key={recData?.idMeal}>
               <motion.div
                 variants={cardVariant}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                custom={1}
+                custom={index + 1}
               >
                 <Card hoverable className="card">
                   <div>
