@@ -67,9 +67,14 @@ const Hero = () => {
           </Button>
         </motion.div>
       </motion.div>
-      <div className="hero-image-2-wrapper">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        className="hero-image-2-wrapper"
+      >
         <Image src={heroImage2} preview={false} className="hero-image-2" />
-      </div>
+      </motion.div>
     </div>
   );
 };
