@@ -51,7 +51,14 @@ const FeaturedRecipe = () => {
 
   return (
     <div className="featured-recipe-wrapper">
-      <h1 className="featured-recipe-title font-fanlste">Featured Recipes</h1>
+      <motion.h1
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 2 }}
+        className="featured-recipe-title font-fanlste"
+      >
+        Featured Recipes
+      </motion.h1>
       <Row gutter={[16, 16]}>
         {isLoading ? (
           <div>

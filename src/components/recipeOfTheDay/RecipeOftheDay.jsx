@@ -4,6 +4,7 @@ import dayImage from "../../assets/recipeOfTheDay/dayImage.png";
 // import frame from "../../assets/logo/Frame-1000015203.png";
 import { RightOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const RecipeOftheDay = () => {
   const navigate = useNavigate();
@@ -13,7 +14,14 @@ const RecipeOftheDay = () => {
 
   return (
     <div className="recipe-category-wrapper">
-      <h1 className="title-recipe-category font-fanlste">Recipe Of the Day</h1>
+      <motion.h1
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 5 }}
+        className="featured-recipe-title font-fanlste"
+      >
+        Recipe Of the Day
+      </motion.h1>
       <div className="day-card-wrapper">
         <div className="day-image-wrapper">
           <Image src={dayImage} preview={false} className="day-image" />

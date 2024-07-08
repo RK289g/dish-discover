@@ -1,6 +1,7 @@
 import { Col, Image, Row } from "antd";
 import { recipeByCuisineData } from "./recipeByCuisineData";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const RecipeCuisine = () => {
   const navigate = useNavigate();
@@ -10,7 +11,14 @@ const RecipeCuisine = () => {
 
   return (
     <div className="recipe-category-wrapper">
-      <h1 className="title-recipe-category font-fanlste">Top Cuisines</h1>
+      <motion.h1
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 6 }}
+        className="title-recipe-category font-fanlste"
+      >
+        Top Cuisines
+      </motion.h1>
 
       <Row gutter={24}>
         {recipeByCuisineData.map((type) => (
