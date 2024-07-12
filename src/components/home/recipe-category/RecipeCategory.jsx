@@ -12,6 +12,22 @@ const RecipeCategory = () => {
     });
   };
 
+  const cardVariant = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.3 * index,
+        duration: 0.2,
+        transitionProperty: "easeIn",
+      },
+    }),
+  };
+
   return (
     <div className="recipe-category-wrapper">
       <motion.p
@@ -24,7 +40,7 @@ const RecipeCategory = () => {
       </motion.p>
 
       <Row gutter={[24, 24]}>
-        {recipeByCategoryData.map((type) => (
+        {recipeByCategoryData.map((type, index) => (
           <Col
             key={type.id}
             onClick={() => goToRecipe(type.subName, type.id)}
@@ -32,7 +48,14 @@ const RecipeCategory = () => {
             lg={8}
             xl={8}
           >
-            <div className="category-card-container">
+            <motion.div
+              variants={cardVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={index + 1}
+              className="category-card-container"
+            >
               <Image
                 src={type.image}
                 preview={false}
@@ -46,7 +69,7 @@ const RecipeCategory = () => {
                   {type.recipeNumber}
                 </p>
               </div>
-            </div>
+            </motion.div>
           </Col>
         ))}
       </Row>
