@@ -117,3 +117,34 @@
   margin: 0;
   padding: 0;
 }
+
+@media only screen and (max-width: 768px) {
+  .random-recipe-button-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .random-recipe-button {
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 12x;
+  }
+
+  .button-vector {
+    height: 22px !important;
+    width: 22px !important;
+  }
+
+  .random-recipe-button-clicked {
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 12x;
+  }
+}
