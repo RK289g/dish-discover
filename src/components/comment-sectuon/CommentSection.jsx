@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import { Button, Card, Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
+import commentSectionData from "./commentSectionData";
 
 function CommentSection() {
   const navigate = useNavigate();
@@ -34,69 +35,28 @@ function CommentSection() {
               </div>
             </div>
           </div>
-          <Row className="comment-section">
-            <Col span={8} className="icon-wrapper">
-              <UserOutlined className="user-class" />
-              <p className="comment-text font-inter">1 Month ago</p>
-            </Col>
-            <Col span={16}>
-              <div className="user-icon-div">
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarOutlined />
-              </div>
-              <div>
-                <p className="comment-text font-inter">
-                  The course is extraordinary!! <br /> It explains everything
-                  from A to Z regarding Nutrition and also there are{" "}
-                </p>
-              </div>
-            </Col>
-          </Row>
-          <Row className="comment-section">
-            <Col span={8} className="icon-wrapper">
-              <UserOutlined className="user-class" />
-              <p className="comment-text font-inter">1 Month ago</p>
-            </Col>
-            <Col span={16}>
-              <div className="user-icon-div">
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarOutlined />
-              </div>
-              <div>
-                <p className="comment-text font-inter">
-                  The course is extraordinary!! <br /> It explains everything
-                  from A to Z regarding Nutrition and also there are{" "}
-                </p>
-              </div>
-            </Col>
-          </Row>
-          <Row className="comment-section">
-            <Col span={8} className="icon-wrapper">
-              <UserOutlined className="user-class" />
-              <p className="comment-text font-inter">1 Month ago</p>
-            </Col>
-            <Col span={16}>
-              <div className="user-icon-div">
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarOutlined />
-              </div>
-              <div>
-                <p className="comment-text font-inter">
-                  The course is extraordinary!! <br /> It explains everything
-                  from A to Z regarding Nutrition and also there are{" "}
-                </p>
-              </div>
-            </Col>
-          </Row>
+          {commentSectionData.map((comment) => (
+            <Row className="comment-section" key={comment.id}>
+              <Col span={8} className="icon-wrapper">
+                <UserOutlined className="user-class" />
+                <p className="comment-text font-inter">{comment.timeAgo}</p>
+              </Col>
+              <Col span={16}>
+                <div className="user-icon-div">
+                  {Array.from({ length: 5 }, (_, index) =>
+                    index < comment.rating ? (
+                      <StarFilled key={index} />
+                    ) : (
+                      <StarOutlined key={index} />
+                    )
+                  )}
+                </div>
+                <div>
+                  <p className="comment-text font-inter">{comment.text}</p>
+                </div>
+              </Col>
+            </Row>
+          ))}
         </Col>
         <Col xl={10} md={10} sm={12}>
           <h2 className="related-recipe font-fanlste">Related Recipes</h2>
