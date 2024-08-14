@@ -13,6 +13,63 @@ const Hero = () => {
   const handleExploreRecipe = () => {
     navigate(`/recipes`);
   };
+
+  const text1 = "Discover more than";
+  const text2 = "5000+";
+  const text3 = "unique";
+  const text4 = "Recipes";
+  const textVariants = {
+    hidden: {
+      clipPath: "inset(0 50% 0 50%)",
+      opacity: 0,
+    },
+    visible: {
+      clipPath: "inset(0 0% 0 0%)",
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // Delay between each letter
+      },
+    },
+  };
+  const containerVariants2 = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+        delay: 1,
+      },
+    },
+  };
+
+  const letterVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   return (
     <div className="hero-wrapper">
       <div className="hero-image-1-wrapper">
@@ -26,34 +83,69 @@ const Hero = () => {
       >
         <motion.h1
           className="hero-title font-fanlste"
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          Discover more than
+          {text1.split("").map((letter, index) => (
+            <motion.span key={index} variants={letterVariants}>
+              {letter}
+            </motion.span>
+          ))}
         </motion.h1>
-        <motion.h1
-          className="hero-title font-fanlste"
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <span className="hero-title-span">5000+</span> unique <br /> Recipes
+        <motion.h1 className="hero-title font-fanlste">
+          <motion.span
+            className="hero-title-span"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            delay="1s"
+          >
+            {text2.split("").map((letter, index) => (
+              <motion.span key={index} variants={letterVariants}>
+                {letter}
+              </motion.span>
+            ))}
+          </motion.span>{" "}
+          <motion.span
+            variants={containerVariants2}
+            initial="hidden"
+            animate="visible"
+          >
+            {text3.split("").map((letter, index) => (
+              <motion.span key={index} variants={letterVariants}>
+                {letter}
+              </motion.span>
+            ))}
+          </motion.span>
+          <br />
+          <motion.span
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {text4.split("").map((letter, index) => (
+              <motion.span key={index} variants={letterVariants}>
+                {letter}
+              </motion.span>
+            ))}
+          </motion.span>
         </motion.h1>
         <motion.h3
           className="hero-text"
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
+          style={{ transformOrigin: "center" }}
         >
           Search, Save, Share your favourite
           <br />
           recipes instantly
         </motion.h3>
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
+          initial="hidden"
+          animate="visible"
+          variants={buttonVariants}
         >
           <Button
             size="large"
