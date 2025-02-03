@@ -65,7 +65,6 @@ const Hero = () => {
     },
   };
 
-  //comment
   const letterVariants = {
     hidden: { y: 50, opacity: 0 },
     visible: { y: 0, opacity: 1 },
